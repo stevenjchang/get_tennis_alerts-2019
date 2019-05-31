@@ -20,7 +20,7 @@ class Tennis extends Component {
 
   filterPlayer = () => {
     let playerName = 'K Nishikori'
-    let result = tournament.round3.filter((match) => match.player1.fullName === playerName)
+    let result = tournament.matches.filter((match) => match.player1.name === playerName)
     console.log('result ==>', result);
     this.setState({ nextMatchInfo: result })
     return result

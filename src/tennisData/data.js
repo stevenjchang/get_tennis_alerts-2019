@@ -14,6 +14,8 @@ const newTime = (month, day, hour=0, min=0) => {
   return new Date(2019, (month - 1), day, hour, min);
 }
 
+//TODO: change name to name
+//TODO: add in additional name fields?
 export const tournament = {
   custom_id: '2019_french',
   name: '2019 French Open',
@@ -25,14 +27,14 @@ export const tournament = {
       dateTime: newTime(5, 29, 4),
       player1: {
         id,
-        fullName: 'K Nishikori',
+        name: 'K Nishikori',
         ranking: 7,
         winner: true,
         result: [4, 6, 6, 6],
       },
       player2: {
         id,
-        fullName: 'J Tsonga',
+        name: 'J Tsonga',
         ranking: null,
         winner: false,
         result: [6, 4, 4, 4],
@@ -44,14 +46,14 @@ export const tournament = {
       winner: 'player1',
       player1: {
         id,
-        fullName: 'D Thiem',
+        name: 'D Thiem',
         ranking: 4,
         winner: true,
         result: [6, 6, 6, 7]
       },
       player2: {
         id,
-        fullName: 'A Bublik',
+        name: 'A Bublik',
         ranking: null,
         winner: false,
         result: [3, 7, 3, 5]
@@ -62,14 +64,14 @@ export const tournament = {
       dateTime: newTime(5, 29, 4),
       player1: {
         id,
-        fullName: 'P Cuevas',
+        name: 'P Cuevas',
         ranking: null,
         winner: true,
         result: [7, 6, 2],
       },
       player2: {
         id,
-        fullName: 'K Edmonds',
+        name: 'K Edmonds',
         ranking: 28,
         winner: false,
         result: [6, 3, 1],
@@ -80,14 +82,14 @@ export const tournament = {
       dateTime: newTime(5, 31, 4),
       player1: {
         id,
-        fullName: 'K Nishikori',
+        name: 'K Nishikori',
         ranking: 7,
         winner: null,
         result: [],
       },
       player2: {
         id,
-        fullName: 'L Djere',
+        name: 'L Djere',
         ranking: 31,
         winner: null,
         result: [],
@@ -98,12 +100,12 @@ export const tournament = {
       dateTime: newTime(5, 31, 4),
       player1: {
         id,
-        fullName: 'P Carreno Busta',
+        name: 'P Carreno Busta',
         ranking: null,
       },
       player2: {
         id,
-        fullName: 'B Paire',
+        name: 'B Paire',
         ranking: null,
       },
     },
@@ -116,14 +118,14 @@ export const tournament = {
       dateTime: newTime(5, 31, 4),
       player1: {
         id,
-        fullName: '',
+        name: '',
         ranking: null,
         winner: null,
         result: [],
       },
       player2: {
         id,
-        fullName: '',
+        name: '',
         ranking: null,
         winner: null,
         result: [],
@@ -133,9 +135,9 @@ export const tournament = {
 
 }
 
-const result = tournament.matches.filter(match => {
+const result = tournament.matches.filter((match) => {
   // console.log('match ==>', match);
-  if (match.player1.fullName === 'K Nishikori') {
+  if (match.player1.name === '') {
     console.log('found ==>', match);
   }
 })
@@ -155,12 +157,12 @@ const result = tournament.matches.filter(match => {
       //  do I put result all together or with player1 and 2?
       player1: {
         id,
-        fullName: 'K Nishikori',
+        name: 'K Nishikori',
         ranking: 7,
       },
       player2: {
         id,
-        fullName: 'L Djere',
+        name: 'L Djere',
         ranking: 31,
       }
     },
