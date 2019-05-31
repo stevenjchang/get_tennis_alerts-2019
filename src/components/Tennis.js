@@ -5,7 +5,7 @@ import TennisMatch from './TennisMatch';
 class Tennis extends Component {
   state = {
     selectedPlayer: 'playerName',
-    nextMatchInfo: '',  //next, write a filter
+    allMatchesInfo: '',
   }
 
   handleChange = (event) => {
@@ -21,14 +21,12 @@ class Tennis extends Component {
   filterPlayer = () => {
     let playerName = 'K Nishikori'
     let result = tournament.matches.filter((match) => match.player1.name === playerName)
-    console.log('result ==>', result);
-    this.setState({ nextMatchInfo: result })
+    this.setState({ allMatchesInfo: result })
     return result
   }
 
   render() {
-    console.log('tournament ==>', tournament);
-    let { nextMatchInfo } = this.state;
+    let { allMatchesInfo } = this.state;
     return (
       <>
         <h1>When does
@@ -40,8 +38,10 @@ class Tennis extends Component {
 
         <h4>{this.state.selectedPlayer}</h4>
         {
-          this.state.nextMatchInfo &&
-            <TennisMatch matchInfo={nextMatchInfo}/>
+          this.state.allMatchesInfo &&
+            allMatchesInfo.map((matchInfo) => (
+              <TennisMatch matchInfo={matchInfo} />
+            ))
         }
       </>
     );
