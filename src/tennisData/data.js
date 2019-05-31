@@ -1,13 +1,17 @@
 const id = '1'
 
+//TODO: refactor to throw error, or some other way to not fail silently
+//TODO: move to a helper function elsewhere
 const newTime = (month, day, hour=0, min=0) => {
+  if (month < 1 || month > 12) return 'date is invalid';
+  if (day < 1 || day > 31) return 'date is invalid';
   if (month === 4 || month === 6 || month === 9 || month === 11) {
-    if (day > 30) return 'nope!!!!'
+    if (day > 30) return 'date is invalid';
   }
   if (month === 2 && day > 29) {
-    return 'nope'
+    return 'date is invalid';
   }
-  return new Date(2019, (month - 1), day, hour, min)
+  return new Date(2019, (month - 1), day, hour, min);
 }
 
 export const tournament = {
