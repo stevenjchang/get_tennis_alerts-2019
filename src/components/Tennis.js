@@ -4,14 +4,18 @@ import TennisMatch from './TennisMatch';
 
 class Tennis extends Component {
   state = {
-    selectedPlayer: 'playerName',
+    selectedPlayer: '',
     allMatchesInfo: '',
+  }
+
+  componentDidUpdate() {
+
   }
 
   handleChange = (event) => {
     this.setState({ selectedPlayer: event.target.value });
     this.filterPlayer(event.target.value)
-  }
+}
 
   handleSubmit = (event) => {
     alert('Your favorite flavor is: ' + this.state.value);
@@ -20,8 +24,7 @@ class Tennis extends Component {
 
   filterPlayer = (playerName) => {
     let result = tournament.matches.filter((match) => 
-      match.player1.name === playerName
-        || match.player2.name === 'R Federer'
+      match.player1.name === playerName || match.player2.name === playerName
     )
     this.setState({ allMatchesInfo: result })
     return result
@@ -33,8 +36,10 @@ class Tennis extends Component {
       <>
         <h1>When does
           <select value={this.state.value} onChange={this.handleChange}>
-            <option value="R Federer">Fedorer</option>
-            <option value="K Nishikori">Nishikori</option>
+            <option value="Roger Federer">Fedorer</option>
+            <option value="Kei Nishikori">Nishikori</option>
+            <option value="Rafael Nadal">Nadal</option>
+            <option value="Novak Djokovic">Djokovic</option>
           </select>
         play next?</h1>
 
