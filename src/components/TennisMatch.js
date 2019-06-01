@@ -17,6 +17,7 @@ const TennisMatch = ({ matchInfo }) => {
         isFinal
         && <p>final</p>
       }
+      <hr/>
     </>
   )
 }

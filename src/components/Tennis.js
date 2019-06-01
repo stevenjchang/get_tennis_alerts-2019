@@ -10,7 +10,7 @@ class Tennis extends Component {
 
   handleChange = (event) => {
     this.setState({ selectedPlayer: event.target.value });
-    this.filterPlayer()
+    this.filterPlayer(event.target.value)
   }
 
   handleSubmit = (event) => {
@@ -18,9 +18,11 @@ class Tennis extends Component {
     event.preventDefault();
   }
 
-  filterPlayer = () => {
-    let playerName = 'K Nishikori'
-    let result = tournament.matches.filter((match) => match.player1.name === playerName)
+  filterPlayer = (playerName) => {
+    let result = tournament.matches.filter((match) => 
+      match.player1.name === playerName
+        || match.player2.name === 'R Federer'
+    )
     this.setState({ allMatchesInfo: result })
     return result
   }
@@ -31,7 +33,7 @@ class Tennis extends Component {
       <>
         <h1>When does
           <select value={this.state.value} onChange={this.handleChange}>
-            <option value="Fedorer">Fedorer</option>
+            <option value="R Federer">Fedorer</option>
             <option value="K Nishikori">Nishikori</option>
           </select>
         play next?</h1>
