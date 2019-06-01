@@ -45,7 +45,7 @@ export const tournament = {
       dateTime: newTime(5, 29, 4),
       player1: {
         id,
-        name: 'K Nishikori',
+        name: 'Kei Nishikori',
         ranking: 7,
         winner: true,
         result: [4, 6, 6, 6],
@@ -122,7 +122,7 @@ export const tournament = {
       dateTime: newTime(5, 31, 4),
       player1: {
         id,
-        name: 'K Nishikori',
+        name: 'Kei Nishikori',
         ranking: 7,
         winner: null,
         result: [],
@@ -330,7 +330,7 @@ export const tournament = {
       },
       player2: {
         id,
-        name: 'R Federer',
+        name: 'Roger Federer',
         ranking: 3,
         winner: null,
         result: [],
@@ -348,7 +348,7 @@ export const tournament = {
       },
       player2: {
         id,
-        name: 'R Nadal',
+        name: 'Rafael Nadal',
         ranking: 2,
         winner: null,
         result: [],
@@ -359,7 +359,7 @@ export const tournament = {
       dateTime: newTime(6, 2, 1),
       player1: {
         id,
-        name: 'K Nishikori',
+        name: 'Kei Nishikori',
         ranking: 7,
         winner: null,
         result: [],
@@ -439,7 +439,7 @@ const result = tournament.matches.filter((match) => {
       //  do I put result all together or with player1 and 2?
       player1: {
         id,
-        name: 'K Nishikori',
+        name: 'Kei Nishikori',
         ranking: 7,
       },
       player2: {
