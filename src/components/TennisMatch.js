@@ -28,6 +28,7 @@ const TennisMatch = ({ matchInfo }) => {
   const { player1, player2, dateTime, round } = matchInfo;
   let month = dateTime.getMonth() + 1;
   let day = dateTime.getDate();
+  let hour = dateTime.getUTCHours();
   let dayOfTheWeek = weekday[dateTime.getDay()];
   let isFinal = dateTime.getTime() < Date.now();
 

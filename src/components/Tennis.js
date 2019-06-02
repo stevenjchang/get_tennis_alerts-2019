@@ -47,8 +47,11 @@ class Tennis extends Component {
 
   render() {
     let { allMatchesInfo } = this.state;
+    const browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
     return (
       <div style={divStyles}>
+          <p>{browserTimeZone}</p>
           <h1>When does
             <select value={this.state.value} onChange={this.handleChange}>
               <option value="Roger Federer">Fedorer</option>
