@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import { FormControl, FormGroup, FormLabel } from "@material-ui/core";
-import starWarsNames from "starwars-names";
+import { playerNames } from '../tennisData/playerNames';
 
 import MultiChipSelect from "./MultiChipSelect";
 
-export default class MultiSelect extends React.Component {
-  allItems = starWarsNames
-    .random(7)
-    .map(s => ({ name: s, id: s.toLowerCase() }));
+export default class MultiSelect extends Component {
   state = {
-    items: this.allItems,
+    items: playerNames,
     selectedItem: []
   };
 
