@@ -24,7 +24,7 @@ const pStyles = {
 }
 
 
-const TennisMatch = ({ matchInfo }) => {
+const TennisMatch = ({ matchInfo, showHistory }) => {
   const { player1, player2, dateTime, round } = matchInfo;
   let month = dateTime.getMonth() + 1;
   let day = dateTime.getDate();
@@ -32,18 +32,24 @@ const TennisMatch = ({ matchInfo }) => {
   let dayOfTheWeek = weekday[dateTime.getDay()];
   let isFinal = dateTime.getTime() < Date.now();
 
-  return (
-    <div style={divStyles}>
-      {
-        isFinal
-        && <span style={pStyles}>final</span>
-      }
-      <p>{month}/{day} - {dayOfTheWeek}</p>
-      <p>{player1.ranking} {player1.name}</p>
-      <p>{player2.ranking} {player2.name}</p>
-      <p style={pStyles}>round: {round}</p>
-    </div>
-  )
+  if (!showHistory && isFinal) {
+    return <></>
+  } else {
+    return (
+      <div style={divStyles}>
+        {
+          isFinal
+          && <span style={pStyles}>final</span>
+        }
+        <p>{month}/{day} - {dayOfTheWeek}</p>
+        <p>{player1.ranking} {player1.name}</p>
+        <p>{player2.ranking} {player2.name}</p>
+        <p style={pStyles}>round: {round}</p>
+      </div>
+    )
+  }
+
+
 }
 
 export default TennisMatch;

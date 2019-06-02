@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Picker, Switch } from 'react-native-web';
+import { Button, Picker, Switch } from 'react-native-web';
 import { tournament } from '../tennisData/data';
 import TennisMatch from './TennisMatch';
 
@@ -30,11 +30,12 @@ class Tennis extends Component {
   state = {
     selectedPlayer: '',
     allMatchesInfo: '',
-    switchValue: false,
+    showAdvanced: false,
+    showHistory: false,
   }
 
   handleSwitch = (value) => {
-    this.setState({ switchValue: !this.state.switchValue })
+    this.setState({ showAdvanced: !this.state.showAdvanced })
   }
 
   handleOnValueChange = (itemValue, itemIndex) => {
@@ -42,50 +43,76 @@ class Tennis extends Component {
     this.filterPlayer(itemValue);
   }
 
+  handleShowHistory = () => {
+    this.setState({ showHistory: !this.state.showHistory})
+
+  }
+
   filterPlayer = (playerName) => {
-    let result = tournament.matches.filter((match) => 
-      match.player1.name === playerName || match.player2.name === playerName
-    )
+    let result = tournament.matches
+      .filter((match) => 
+        match.player1.name === playerName || match.player2.name === playerName
+      )
+      .sort((a, b) => b.dateTime.getTime() - a.dateTime.getTime())
     this.setState({ allMatchesInfo: result })
     return result
   }
 
   render() {
-    let { allMatchesInfo } = this.state;
+    let { allMatchesInfo, showAdvanced, showHistory } = this.state;
     const browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     return (
       <div style={divStyles}>
-          <p>{browserTimeZone}</p>
-          <div>When does
-            <Picker
-              selectedValue={this.state.selectedPlayer}
-              style={pickerStyles}
-              onValueChange={this.handleOnValueChange}
-            >
-              <Picker.Item label="______________________" value="no player selected" />
-              <Picker.Item label="Roger Federer" value="Roger Federer" />
-              <Picker.Item label="Rafael Nadal" value="Rafael Nadal" />
-              <Picker.Item label="Novak Djokovic" value="Novak Djokovic" />
-              <Picker.Item label="Kei Nishikori" value="Kei Nishikori" />
-            </Picker>
-          play next?</div>
-
-          <div
-            style={{ marginLeft: '560px'}}
+        <p>{browserTimeZone}</p>
+        <div>When does
+          <Picker
+            selectedValue={this.state.selectedPlayer}
+            style={pickerStyles}
+            onValueChange={this.handleOnValueChange}
           >
-            <Switch
-              value={this.state.switchValue}
-              onValueChange={this.handleSwitch}
-            ></Switch><span style={{fontSize: '11px'}}>advanced</span>
-          </div>
+            <Picker.Item label="______________________" value="no player selected" />
+            <Picker.Item label="Roger Federer" value="Roger Federer" />
+            <Picker.Item label="Rafael Nadal" value="Rafael Nadal" />
+            <Picker.Item label="Novak Djokovic" value="Novak Djokovic" />
+            <Picker.Item label="Kei Nishikori" value="Kei Nishikori" />
+          </Picker>
+        play next?</div>
+
+        <div style={{ marginLeft: '560px'}}>
+          <Switch
+            value={this.state.showAdvanced}
+            onValueChange={this.handleSwitch}
+          ></Switch><span style={{fontSize: '11px'}}>advanced</span>
+        </div>
+
+        <div style={divStyles2}>
+          {
+            showAdvanced
+            && <>
+              <Button title={'Roger Federer'} />
+              <Button title={'Rafael Nadal'} />
+              <Button title={'Novak Djokovic'} />
+              <Button title={'Kei Nishikori'} />
+            </>
+          }
+        </div>
 
         <div style={divStyles2}>
         {
-          this.state.allMatchesInfo &&
-            allMatchesInfo.map((matchInfo) => (
-              <TennisMatch matchInfo={matchInfo} />
-            ))
+          allMatchesInfo
+          && allMatchesInfo.map((matchInfo) => (
+            <>
+              <TennisMatch
+                matchInfo={matchInfo}
+                showHistory={showHistory}
+              />
+            </>
+          ))
+        }
+        {
+          allMatchesInfo
+          && <p onClick={this.handleShowHistory}>show previous matches</p>
         }
         </div>
       </div>
