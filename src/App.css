@@ -1,6 +1,14 @@
+/* Color Pallet
+
+#f03434 - Pomegranate
+#d64541 - Valencia
+*/
+
 body {
-  background-color: #f03434;
+  background-color: #d64541;
 }
+
+
 
 .App {
   text-align: center;

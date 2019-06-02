@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Picker, Switch } from 'react-native-web';
 import { tournament } from '../tennisData/data';
 import TennisMatch from './TennisMatch';
 
@@ -16,15 +17,20 @@ const divStyles2 = {
   // justifyContent: 'center',
 }
 
+const pickerStyles = {
+  height: 30,
+  width: 160,
+  marginLeft: 10,
+  marginRight: 10,
+  backgroundColor: '#d64541'
+}
+
 
 class Tennis extends Component {
   state = {
     selectedPlayer: '',
     allMatchesInfo: '',
-  }
-
-  componentDidUpdate() {
-
+    switchValue: false,
   }
 
   handleChange = (event) => {
@@ -37,12 +43,21 @@ class Tennis extends Component {
     event.preventDefault();
   }
 
+  handleSwitch = (value) => {
+    this.setState({ switchValue: !this.state.switchValue })
+  }
+
   filterPlayer = (playerName) => {
     let result = tournament.matches.filter((match) => 
       match.player1.name === playerName || match.player2.name === playerName
     )
     this.setState({ allMatchesInfo: result })
     return result
+  }
+
+  handleOnValueChange = (itemValue, itemIndex) => {
+    this.setState({selectedPlayer: itemValue});
+    this.filterPlayer(itemValue);
   }
 
   render() {
@@ -52,14 +67,25 @@ class Tennis extends Component {
     return (
       <div style={divStyles}>
           <p>{browserTimeZone}</p>
-          <h1>When does
-            <select value={this.state.value} onChange={this.handleChange}>
-              <option value="Roger Federer">Fedorer</option>
-              <option value="Kei Nishikori">Nishikori</option>
-              <option value="Rafael Nadal">Nadal</option>
-              <option value="Novak Djokovic">Djokovic</option>
-            </select>
-          play next?</h1>
+          <div>When does
+            <Picker
+              selectedValue={this.state.selectedPlayer}
+              style={pickerStyles}
+              onValueChange={this.handleOnValueChange}
+            >
+              <Picker.Item label="______________________" value="java" />
+              <Picker.Item label="Roger Federer" value="Roger Federer" />
+              <Picker.Item label="Rafael Nadal" value="Rafael Nadal" />
+              <Picker.Item label="Novak Djokovic" value="Novak Djokovic" />
+              <Picker.Item label="Kei Nishikori" value="Kei Nishikori" />
+            </Picker>
+          play next?</div>
+
+          <Switch
+            value={this.state.switchValue}
+            onValueChange={this.handleSwitch}
+          ></Switch><span>advanced</span>
+
         <div style={divStyles2}>
         {
           this.state.allMatchesInfo &&
