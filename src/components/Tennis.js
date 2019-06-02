@@ -3,6 +3,8 @@ import { Button, Picker, Switch } from 'react-native-web';
 import { tournament } from '../tennisData/data';
 import TennisMatch from './TennisMatch';
 
+import MultiSelect from './MultiSelect';
+
 const divStyles = {
   display: 'flex',
   flexDirection: 'column',
@@ -65,6 +67,7 @@ class Tennis extends Component {
     return (
       <div style={divStyles}>
         <p>{browserTimeZone}</p>
+        <MultiSelect />
         <div>When does
           <Picker
             selectedValue={this.state.selectedPlayer}
