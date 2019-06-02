@@ -3,12 +3,14 @@
   "version": "0.4.0",
   "private": true,
   "dependencies": {
+    "downshift": "^3.2.10",
     "encoding": "^0.1.12",
     "node-fetch": "^2.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-native-web": "^0.11.4",
-    "react-scripts": "^3.0.0"
+    "react-scripts": "^3.0.0",
+    "starwars-names": "^1.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
