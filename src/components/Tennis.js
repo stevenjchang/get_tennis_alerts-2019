@@ -112,7 +112,13 @@ class Tennis extends Component {
         }
         {
           allMatchesInfo
+          && !showHistory
           && <p onClick={this.handleShowHistory}>show previous matches</p>
+        }
+        {
+          allMatchesInfo
+          && showHistory
+          && <p onClick={this.handleShowHistory}>hide previous matches</p>
         }
         </div>
       </div>
