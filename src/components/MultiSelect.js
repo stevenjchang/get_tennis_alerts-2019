@@ -23,7 +23,9 @@ export default class MultiSelect extends Component {
       inputValue: "",
       selectedItem: [...selectedItem, item],
       items: items.filter(i => i.name !== item)
-    }));
+    }),
+    () => this.props.filterSelected(this.state.selectedItem)
+    )
   }
 
   removeSelectedItem = item => {
