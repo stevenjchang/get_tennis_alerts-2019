@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-var d = new Date();
+//TODO: abstract into helper function
 var weekday = new Array(7);
-weekday[0] =  "Sun";
+weekday[0] = "Sun";
 weekday[1] = "Mon";
 weekday[2] = "Tues";
 weekday[3] = "Wed";
@@ -11,14 +11,16 @@ weekday[4] = "Thur";
 weekday[5] = "Fri";
 weekday[6] = "Sat";
 
-var n = weekday[d.getDay()];
-
 const divStyles = {
   // display: 'flex',
   // justifyContent: 'center',
   border: '1px solid black',
   marginBottom: '20px',
   width: '500px'
+}
+
+const pStyles = {
+  fontSize: '10px',
 }
 
 
@@ -31,14 +33,14 @@ const TennisMatch = ({ matchInfo }) => {
 
   return (
     <div style={divStyles}>
+      {
+        isFinal
+        && <span style={pStyles}>final</span>
+      }
       <p>{month}/{day} - {dayOfTheWeek}</p>
       <p>{player1.ranking} {player1.name}</p>
       <p>{player2.ranking} {player2.name}</p>
-      <p>round: {round}</p>
-      {
-        isFinal
-        && <p>final</p>
-      }
+      <p style={pStyles}>round: {round}</p>
     </div>
   )
 }

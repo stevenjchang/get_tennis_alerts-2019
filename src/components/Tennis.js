@@ -2,6 +2,21 @@ import React, { Component } from 'react';
 import { tournament } from '../tennisData/data';
 import TennisMatch from './TennisMatch';
 
+const divStyles = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+}
+
+const divStyles2 = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'space-between'
+  // justifyContent: 'center',
+}
+
+
 class Tennis extends Component {
   state = {
     selectedPlayer: '',
@@ -33,24 +48,24 @@ class Tennis extends Component {
   render() {
     let { allMatchesInfo } = this.state;
     return (
-      <>
-        <h1>When does
-          <select value={this.state.value} onChange={this.handleChange}>
-            <option value="Roger Federer">Fedorer</option>
-            <option value="Kei Nishikori">Nishikori</option>
-            <option value="Rafael Nadal">Nadal</option>
-            <option value="Novak Djokovic">Djokovic</option>
-          </select>
-        play next?</h1>
-
-        <h4>{this.state.selectedPlayer}</h4>
+      <div style={divStyles}>
+          <h1>When does
+            <select value={this.state.value} onChange={this.handleChange}>
+              <option value="Roger Federer">Fedorer</option>
+              <option value="Kei Nishikori">Nishikori</option>
+              <option value="Rafael Nadal">Nadal</option>
+              <option value="Novak Djokovic">Djokovic</option>
+            </select>
+          play next?</h1>
+        <div style={divStyles2}>
         {
           this.state.allMatchesInfo &&
             allMatchesInfo.map((matchInfo) => (
               <TennisMatch matchInfo={matchInfo} />
             ))
         }
-      </>
+        </div>
+      </div>
     );
   }
 }
