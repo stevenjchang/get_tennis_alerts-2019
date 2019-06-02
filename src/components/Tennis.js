@@ -33,18 +33,13 @@ class Tennis extends Component {
     switchValue: false,
   }
 
-  handleChange = (event) => {
-    this.setState({ selectedPlayer: event.target.value });
-    this.filterPlayer(event.target.value)
-}
-
-  handleSubmit = (event) => {
-    alert('Your favorite flavor is: ' + this.state.value);
-    event.preventDefault();
-  }
-
   handleSwitch = (value) => {
     this.setState({ switchValue: !this.state.switchValue })
+  }
+
+  handleOnValueChange = (itemValue, itemIndex) => {
+    this.setState({selectedPlayer: itemValue});
+    this.filterPlayer(itemValue);
   }
 
   filterPlayer = (playerName) => {
@@ -53,11 +48,6 @@ class Tennis extends Component {
     )
     this.setState({ allMatchesInfo: result })
     return result
-  }
-
-  handleOnValueChange = (itemValue, itemIndex) => {
-    this.setState({selectedPlayer: itemValue});
-    this.filterPlayer(itemValue);
   }
 
   render() {
@@ -73,7 +63,7 @@ class Tennis extends Component {
               style={pickerStyles}
               onValueChange={this.handleOnValueChange}
             >
-              <Picker.Item label="______________________" value="java" />
+              <Picker.Item label="______________________" value="no player selected" />
               <Picker.Item label="Roger Federer" value="Roger Federer" />
               <Picker.Item label="Rafael Nadal" value="Rafael Nadal" />
               <Picker.Item label="Novak Djokovic" value="Novak Djokovic" />
@@ -81,10 +71,14 @@ class Tennis extends Component {
             </Picker>
           play next?</div>
 
-          <Switch
-            value={this.state.switchValue}
-            onValueChange={this.handleSwitch}
-          ></Switch><span>advanced</span>
+          <div
+            style={{ marginLeft: '560px'}}
+          >
+            <Switch
+              value={this.state.switchValue}
+              onValueChange={this.handleSwitch}
+            ></Switch><span style={{fontSize: '11px'}}>advanced</span>
+          </div>
 
         <div style={divStyles2}>
         {
