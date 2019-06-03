@@ -34,10 +34,37 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
+const createResultRow = (playerName, resultArray) => {
+  if (resultArray.length === 0) return[playerName, '', '', '', '', '']
+  let resultRow = [];
+  resultRow.push(playerName);
+  if (resultArray.length < 5) {
+    if (resultArray.length === 4) {
+      resultRow.push('');
+      resultRow.push(...resultArray)
+    }
+    if (resultArray.length === 3) {
+      console.log('here ==>', );
+      resultRow.push('');
+      resultRow.push('');
+      resultRow.push(...resultArray)
+    }
+  } else {
+    resultRow.push(...resultArray)
+
+  }
+  resultRow.push('');
+  return resultRow;
+}
+
 function DenseTable({ matchInfo }) {
   const classes = useStyles();
-  let { dateTime, player1, player2 } = matchInfo;
+  let { dateTime, player1, player2, round } = matchInfo;
+  let month = dateTime.getMonth() + 1;
+  let day = dateTime.getDate();
   let isFinal = dateTime.getTime() < Date.now();
+  let player1Row = createResultRow(player1.name, player1.result);
+  let player2Row = createResultRow(player2.name, player2.result);
 
   return (
     <div className={classes.root}>
@@ -48,8 +75,9 @@ function DenseTable({ matchInfo }) {
               <TableCell>
                 {
                   isFinal
-                  && <span>Final</span>
+                  && <span>Final&nbsp;-&nbsp;</span>
                 }
+                <span>{month}/{day}</span>
               </TableCell>
               <TableCell />
               <TableCell />
@@ -61,34 +89,43 @@ function DenseTable({ matchInfo }) {
           </TableHead>
           <TableBody>
             <TableRow>
-              <TableCell style={{width: '150px'}}>{player1.name}</TableCell>
-              <TableCell></TableCell>
-              <TableCell></TableCell>
-              <TableCell>3</TableCell>
-              <TableCell>6</TableCell>
-              <TableCell>6</TableCell>
-              <TableCell></TableCell>
+            {
+              player1Row.map((row, index) => {
+                if (index === 0) {
+                  return (
+                    <TableCell
+                      style={{width: '150px'}}
+                    >{row}
+                    </TableCell>
+                  )
+                } else {
+                  return (<TableCell>{row}</TableCell>)
+                }
+              })
+            }
             </TableRow>
             <TableRow>
-            <TableCell>{player2.name}</TableCell>
-              <TableCell></TableCell>
-              <TableCell></TableCell>
-              <TableCell>6</TableCell>
-              <TableCell>5</TableCell>
-              <TableCell>5</TableCell>
-              <TableCell></TableCell>
+            {
+              player2Row.map((row, index) => {
+                if (index === 0) {
+                  return (
+                    <TableCell
+                      style={{width: '150px'}}
+                    >{row}
+                    </TableCell>
+                  )
+                } else {
+                  return (<TableCell>{row}</TableCell>)
+                }
+              })
+            }
             </TableRow>
-            {/* {rows.map(row => (
-              <TableRow key={row.name}>
-                <TableCell component="th" scope="row">
-                  {row.name}
-                </TableCell>
-                <TableCell align="right">{row.calories}</TableCell>
-                <TableCell align="right">{row.fat}</TableCell>
-                <TableCell align="right">{row.carbs}</TableCell>
-                <TableCell align="right">{row.protein}</TableCell>
-              </TableRow>
-            ))} */}
+            <TableRow>
+              <TableCell
+                style={{fontSize: '10px'}}
+              >Round {round}</TableCell>
+            </TableRow>
+
           </TableBody>
         </Table>
       </Paper>
