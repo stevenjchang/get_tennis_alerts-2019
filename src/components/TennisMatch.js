@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TennisMatchTable from './TennisMatchTable';
 
 //TODO: abstract into helper function
 var weekday = new Array(7);
@@ -31,6 +32,12 @@ const TennisMatch = ({ matchInfo, showHistory }) => {
   let hour = dateTime.getUTCHours();
   let dayOfTheWeek = weekday[dateTime.getDay()];
   let isFinal = dateTime.getTime() < Date.now();
+
+  return (
+    <TennisMatchTable
+      matchInfo={matchInfo}
+    />
+  )
 
   if (!showHistory && isFinal) {
     return <></>
