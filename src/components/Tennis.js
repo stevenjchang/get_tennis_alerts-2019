@@ -3,6 +3,8 @@ import { Button, Picker, Switch } from 'react-native-web';
 import { tournament } from '../tennisData/data';
 import TennisMatch from './TennisMatch';
 
+import MultiSelect from './MultiSelect';
+
 const divStyles = {
   display: 'flex',
   flexDirection: 'column',
@@ -58,6 +60,15 @@ class Tennis extends Component {
     return result
   }
 
+  filterSelected = (array) => {
+    let result = tournament.matches
+      .filter((match) => {
+        return array.includes(match.player1.name) || array.includes(match.player2.name);
+      })
+      .sort((a, b) => b.dateTime.getTime() - a.dateTime.getTime())
+    this.setState({ allMatchesInfo: result })
+  }
+
   render() {
     let { allMatchesInfo, showAdvanced, showHistory } = this.state;
     const browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -65,6 +76,9 @@ class Tennis extends Component {
     return (
       <div style={divStyles}>
         <p>{browserTimeZone}</p>
+        <MultiSelect
+          filterSelected={this.filterSelected}
+        />
         <div>When does
           <Picker
             selectedValue={this.state.selectedPlayer}
