@@ -37,7 +37,7 @@ const rows = [
 ];
 
 const createResultRow = (playerName, resultArray) => {
-  if (resultArray.length === 0) return[playerName, '', '', '', '', '']
+  if (resultArray.length === 0) return[playerName, '', '', '', '', '', '']
   let resultRow = [];
   resultRow.push(playerName);
   if (resultArray.length < 5) {
@@ -46,14 +46,12 @@ const createResultRow = (playerName, resultArray) => {
       resultRow.push(...resultArray)
     }
     if (resultArray.length === 3) {
-      console.log('here ==>', );
       resultRow.push('');
       resultRow.push('');
       resultRow.push(...resultArray)
     }
   } else {
     resultRow.push(...resultArray)
-
   }
   resultRow.push('');
   return resultRow;
@@ -127,7 +125,7 @@ function DenseTable({ matchInfo }) {
                 } else if (index === 6) {
                   return (<TableCell>
                     {
-                      player1.winner
+                      player2.winner
                       && <ArrowLeftIcon />
                     }
                   </TableCell>)
