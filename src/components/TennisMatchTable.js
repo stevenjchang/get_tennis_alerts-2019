@@ -7,6 +7,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
+
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
@@ -98,7 +100,15 @@ function DenseTable({ matchInfo }) {
                     >{row}
                     </TableCell>
                   )
-                } else {
+                } else if (index === 6) {
+                  return (<TableCell>
+                    {
+                      player1.winner
+                      && <ArrowLeftIcon />
+                    }
+                  </TableCell>)
+                }
+                else {
                   return (<TableCell>{row}</TableCell>)
                 }
               })
@@ -114,6 +124,13 @@ function DenseTable({ matchInfo }) {
                     >{row}
                     </TableCell>
                   )
+                } else if (index === 6) {
+                  return (<TableCell>
+                    {
+                      player1.winner
+                      && <ArrowLeftIcon />
+                    }
+                  </TableCell>)
                 } else {
                   return (<TableCell>{row}</TableCell>)
                 }
