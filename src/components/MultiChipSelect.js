@@ -19,6 +19,7 @@ const styles = theme => ({
   },
   paper: {
     maxHeight: "150px",
+    maxWidth: '200px',
     overflowY: "auto"
   }
 });
