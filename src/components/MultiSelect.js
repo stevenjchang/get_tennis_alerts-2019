@@ -48,7 +48,7 @@ export default class MultiSelect extends Component {
     return (
       <FormGroup>
         <FormControl>
-          <FormLabel>Find a Star Wars character</FormLabel>
+          {/* <FormLabel>Find a Star Wars character</FormLabel> */}
           <MultiChipSelect
             onInputValueChange={this.handleChangeInput}
             inputValue={this.state.inputValue}
