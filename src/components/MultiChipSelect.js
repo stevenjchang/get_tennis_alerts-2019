@@ -15,10 +15,11 @@ const styles = theme => ({
   },
   chip: {
     marginTop: 10,
-    marginRight: 5
+    marginRight: 5,
   },
   paper: {
     maxHeight: "150px",
+    maxWidth: '200px',
     overflowY: "auto"
   }
 });
@@ -29,19 +30,21 @@ const renderInput = inputProps => {
   const allItemSelected = availableItems.length === 0;
 
   return (
-    <TextField
-      fullWidth
-      label={
-        allItemSelected ? "No more character to add" : "Choose a character"
-      }
-      disabled={allItemSelected}
-      InputProps={{
-        classes: {
-          input: classes.input
-        },
-        ...InputProps
-      }}
-    />
+    <div>
+      <TextField
+        // fullWidth
+        label={
+          allItemSelected ? "No more players to add" : "Find player"
+        }
+        disabled={allItemSelected}
+        InputProps={{
+          classes: {
+            input: classes.input
+          },
+          ...InputProps
+        }}
+      />
+    </div>
   );
 };
 
