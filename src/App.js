@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import ReactGA from 'react-ga';
 import logo from "./logo.svg"
 import "./App.css"
 
@@ -34,6 +35,15 @@ class LambdaDemo extends Component {
 }
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    if (process.env.NODE_ENV === 'production') {
+      console.log('production')
+      ReactGA.initialize('UA-73381859-5');
+      ReactGA.pageview(window.location.pathname);
+    }
+  }
+
   render() {
     return (
       <div className="App">
