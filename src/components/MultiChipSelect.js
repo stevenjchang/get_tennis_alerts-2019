@@ -34,7 +34,7 @@ const renderInput = inputProps => {
       <TextField
         // fullWidth
         label={
-          allItemSelected ? "No more players to add" : "Choose a player"
+          allItemSelected ? "No more players to add" : "Find player"
         }
         disabled={allItemSelected}
         InputProps={{
