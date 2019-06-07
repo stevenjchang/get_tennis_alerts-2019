@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Picker, Switch } from 'react-native-web';
+import { Button, Picker } from 'react-native-web';
 import { tournament } from '../tennisData/data';
 import TennisMatch from './TennisMatch';
 
@@ -92,13 +92,6 @@ class Tennis extends Component {
             <Picker.Item label="Kei Nishikori" value="Kei Nishikori" />
           </Picker>
         play next?</div>
-
-        <div style={{ marginLeft: '560px'}}>
-          <Switch
-            value={this.state.showAdvanced}
-            onValueChange={this.handleSwitch}
-          ></Switch><span style={{fontSize: '11px'}}>advanced</span>
-        </div>
 
         <div style={divStyles2}>
           {
