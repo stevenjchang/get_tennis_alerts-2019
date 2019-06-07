@@ -4,6 +4,7 @@ import { tournament } from '../tennisData/data';
 import TennisMatch from './TennisMatch';
 
 import MultiSelect from './MultiSelect';
+import SignUpForm from './SignUpForm';
 
 const divStyles = {
   display: 'flex',
@@ -135,6 +136,7 @@ class Tennis extends Component {
           && <p onClick={this.handleShowHistory}>hide completed matches</p>
         }
         </div>
+        <SignUpForm />
       </div>
     );
   }
