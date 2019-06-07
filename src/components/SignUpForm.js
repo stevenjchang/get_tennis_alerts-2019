@@ -68,10 +68,11 @@ const SignUpForm = ({ playerList }) => {
   return (
     <>
       <Typography variant="h8" id="modal-title" style={msgStyles}>
-        Never miss another match because you forgot,
-        sign up for email alerts. Choose the players you want to follow, and get notifications 1 day or 1 hour before match!
+        <p>Sign up for email alerts!</p>
+        <p>Never miss another match!</p>
       </Typography>
       <Button
+        style={{backgroundColor: '#007bff'}}
         variant="outlined"
         onClick={handleOpen}
       >Get Alerts
