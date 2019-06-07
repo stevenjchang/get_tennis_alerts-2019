@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import Modal from '@material-ui/core/Modal';
+import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -23,6 +24,10 @@ const useStyles = makeStyles(theme => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(4),
     outline: 'none',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
   },
 }));
 
@@ -70,6 +75,17 @@ const SignUpForm = ({ playerList }) => {
           <Typography variant="subtitle1" id="simple-modal-description">
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
           </Typography>
+
+          <TextField
+            id="outlined-email-input"
+            label="Email"
+            className={classes.textField}
+            type="email"
+            name="email"
+            autoComplete="email"
+            margin="normal"
+            variant="outlined"
+          />
         </div>
       </Modal>
     </>
