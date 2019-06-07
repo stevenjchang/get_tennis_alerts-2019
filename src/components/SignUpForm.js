@@ -71,8 +71,13 @@ const SignUpForm = ({ playerList }) => {
         Never miss another match because you forgot,
         sign up for email alerts. Choose the players you want to follow, and get notifications 1 day or 1 hour before match!
       </Typography>
-      <Button onClick={handleOpen}>Get Alerts</Button>
+      <Button
+        variant="outlined"
+        onClick={handleOpen}
+      >Get Alerts
+      </Button>
       <Modal
+        style={{textAlign: 'center'}}
         open={open}
         onClose={handleClose}
       >
@@ -140,6 +145,7 @@ const SignUpForm = ({ playerList }) => {
 
           <div>
           <Button
+            variant="outlined"
             onClick={handleSubmit}
           >
             Sign Up
