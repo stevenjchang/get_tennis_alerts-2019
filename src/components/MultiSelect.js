@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { FormControl, FormGroup, FormLabel } from "@material-ui/core";
-import { playerNames } from '../tennisData/playerNames';
 
 import MultiChipSelect from "./MultiChipSelect";
+import { playerNames } from '../tennisData/playerNames';
+import SignUpForm from './SignUpForm';
+
 
 export default class MultiSelect extends Component {
   state = {
@@ -46,19 +48,24 @@ export default class MultiSelect extends Component {
   render() {
     const { selectedItem, items } = this.state;
     return (
-      <FormGroup>
-        <FormControl>
-          {/* <FormLabel>Find a Star Wars character</FormLabel> */}
-          <MultiChipSelect
-            onInputValueChange={this.handleChangeInput}
-            inputValue={this.state.inputValue}
-            availableItems={items}
-            selectedItem={selectedItem}
-            onChange={this.handleChange}
-            onRemoveItem={this.removeSelectedItem}
-          />
-        </FormControl>
-      </FormGroup>
+      <>
+        <FormGroup>
+          <FormControl>
+            {/* <FormLabel>Find a Star Wars character</FormLabel> */}
+            <MultiChipSelect
+              onInputValueChange={this.handleChangeInput}
+              inputValue={this.state.inputValue}
+              availableItems={items}
+              selectedItem={selectedItem}
+              onChange={this.handleChange}
+              onRemoveItem={this.removeSelectedItem}
+            />
+          </FormControl>
+        </FormGroup>
+        <SignUpForm
+          playerList={selectedItem}
+        />
+      </>
     );
   }
 }

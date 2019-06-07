@@ -33,7 +33,7 @@ const msgStyles = {
 }
 
 
-const SignUpForm = () => {
+const SignUpForm = ({ playerList }) => {
   const [open, setOpen] = React.useState(false);
   const [modalStyle] = React.useState(getModalStyle);
   const classes = useStyles();
@@ -60,6 +60,12 @@ const SignUpForm = () => {
         <div style={modalStyle} className={classes.paper}>
           <Typography variant="h6" id="modal-title">
             Set alerts for these players:
+            {
+              playerList
+              && playerList.map((player) => (
+                <p>{player}</p>
+              ))
+            }
           </Typography>
           <Typography variant="subtitle1" id="simple-modal-description">
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
