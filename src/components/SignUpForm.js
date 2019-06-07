@@ -79,32 +79,19 @@ const SignUpForm = ({ playerList }) => {
         <div style={modalStyle} className={classes.paper}>
           <Typography variant="h6" id="modal-title">
             Set alerts for these players:
+          </Typography>
+          <Typography variant="subtitle1" id="simple-modal-description">
             {
               playerList
               && playerList.map((player) => (
-                <p>{player}</p>
+                <p>* {player}</p>
               ))
             }
           </Typography>
-          <Typography variant="subtitle1" id="simple-modal-description">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
 
-          <div>
-          <TextField
-            id="outlined-email-input"
-            label="Email"
-            className={classes.textField}
-            type="email"
-            name="email"
-            autoComplete="email"
-            margin="normal"
-            variant="filled"
-            fullWidth
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          </div>
+          <br />
+
+          <div><Typography variant="h8">Send me alerts</Typography></div>
 
           <div>
           <Checkbox
@@ -130,6 +117,27 @@ const SignUpForm = ({ playerList }) => {
           />
             <span>1 hour before match</span>
           </div>
+
+          <br />
+
+          <div>
+          <TextField
+            id="outlined-email-input"
+            label="Email"
+            className={classes.textField}
+            type="email"
+            name="email"
+            autoComplete="email"
+            margin="normal"
+            variant="filled"
+            fullWidth
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          </div>
+
+          <br />
+
           <div>
           <Button
             onClick={handleSubmit}
