@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Picker } from 'react-native-web';
-import { tournament } from '../tennisData/data';
-import TennisMatch from './TennisMatch';
 
+import { tournament } from '../tennisData/data';
 import MultiSelect from './MultiSelect';
+import TennisMatch from './TennisMatch';
 
 const divStyles = {
   display: 'flex',
@@ -32,32 +32,11 @@ class Tennis extends Component {
   state = {
     selectedPlayer: '',
     allMatchesInfo: '',
-    showAdvanced: false,
     showHistory: false,
-  }
-
-  handleSwitch = (value) => {
-    this.setState({ showAdvanced: !this.state.showAdvanced })
-  }
-
-  handleOnValueChange = (itemValue, itemIndex) => {
-    this.setState({selectedPlayer: itemValue});
-    this.filterPlayer(itemValue);
   }
 
   handleShowHistory = () => {
     this.setState({ showHistory: !this.state.showHistory})
-
-  }
-
-  filterPlayer = (playerName) => {
-    let result = tournament.matches
-      .filter((match) => 
-        match.player1.name === playerName || match.player2.name === playerName
-      )
-      .sort((a, b) => b.dateTime.getTime() - a.dateTime.getTime())
-    this.setState({ allMatchesInfo: result })
-    return result
   }
 
   filterSelected = (array) => {
@@ -70,7 +49,7 @@ class Tennis extends Component {
   }
 
   render() {
-    let { allMatchesInfo, showAdvanced, showHistory } = this.state;
+    let { allMatchesInfo, showHistory } = this.state;
     const browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     return (
@@ -79,31 +58,6 @@ class Tennis extends Component {
         <MultiSelect
           filterSelected={this.filterSelected}
         />
-        <div>When does
-          <Picker
-            selectedValue={this.state.selectedPlayer}
-            style={pickerStyles}
-            onValueChange={this.handleOnValueChange}
-          >
-            <Picker.Item label="______________________" value="no player selected" />
-            <Picker.Item label="Roger Federer" value="Roger Federer" />
-            <Picker.Item label="Rafael Nadal" value="Rafael Nadal" />
-            <Picker.Item label="Novak Djokovic" value="Novak Djokovic" />
-            <Picker.Item label="Kei Nishikori" value="Kei Nishikori" />
-          </Picker>
-        play next?</div>
-
-        <div style={divStyles2}>
-          {
-            showAdvanced
-            && <>
-              <Button title={'Roger Federer'} />
-              <Button title={'Rafael Nadal'} />
-              <Button title={'Novak Djokovic'} />
-              <Button title={'Kei Nishikori'} />
-            </>
-          }
-        </div>
 
         <div style={divStyles2}>
         {
