@@ -29,6 +29,10 @@ const pickerStyles = {
 
 
 class Tennis extends Component {
+  componentDidMount() {
+    this.props.getTournamentData2();
+  }
+
   state = {
     selectedPlayer: '',
     allMatchesInfo: '',
