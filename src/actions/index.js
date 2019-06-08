@@ -1,7 +1,6 @@
 import { tournament } from '../tennisData/data';
-
-const GET_TOURNAMENT_DATA = 'GET_TOURNAMENT_DATA'
-const GET_TOURNAMENT_DATA_ERROR = 'GET_TOURNAMENT_DATA_ERROR'
+import { playerNames } from '../tennisData/playerNames';
+import { GET_TOURNAMENT_DATA, GET_TOURNAMENT_DATA_ERROR } from '../constants';
 
 export const getTournamentData = () => {
   return {
@@ -9,3 +8,14 @@ export const getTournamentData = () => {
     data: tournament,
   };
 };
+
+export const setAllPlayerNames = () => {
+  // return {
+  //   type: 
+  // }
+}
+
+export const setSelectedPlayers = () => {
+
+};
+

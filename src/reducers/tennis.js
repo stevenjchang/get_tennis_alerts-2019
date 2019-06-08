@@ -1,5 +1,4 @@
-const GET_TOURNAMENT_DATA = 'GET_TOURNAMENT_DATA'
-const GET_TOURNAMENT_DATA_ERROR = 'GET_TOURNAMENT_DATA_ERROR'
+import { GET_TOURNAMENT_DATA, GET_TOURNAMENT_DATA_ERROR } from '../constants';
 
 //TODO: rename reducer to tennisMatches?
 const tennis = (state = [], action) => {
