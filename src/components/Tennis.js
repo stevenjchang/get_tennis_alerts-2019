@@ -34,7 +34,6 @@ class Tennis extends Component {
   }
 
   state = {
-    selectedPlayer: '',
     allMatchesInfo: '',
     showHistory: false,
   }

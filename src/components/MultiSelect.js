@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import { FormControl, FormGroup, FormLabel } from "@material-ui/core";
-
+import { setSelectedPlayers } from '../actions';
 import MultiChipSelect from "./MultiChipSelect";
 import { playerNames } from '../tennisData/playerNames';
 import SignUpForm from './SignUpForm';
 
 
-export default class MultiSelect extends Component {
+class MultiSelect extends Component {
   state = {
     items: playerNames,
     selectedItem: []
@@ -47,6 +48,7 @@ export default class MultiSelect extends Component {
 
   render() {
     const { selectedItem, items } = this.state;
+    this.props.setSelectedPlayers([1,3])
     return (
       <>
         <FormGroup>
@@ -69,3 +71,20 @@ export default class MultiSelect extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setSelectedPlayers: (selectedPlayers) => dispatch(setSelectedPlayers(selectedPlayers))
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(MultiSelect);
