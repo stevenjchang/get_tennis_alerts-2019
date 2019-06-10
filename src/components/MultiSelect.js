@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { FormControl, FormGroup, FormLabel } from "@material-ui/core";
-import { setSelectedPlayers } from '../actions';
+import ConnectTennis from '../containers/ConnectTennis';
 import MultiChipSelect from "./MultiChipSelect";
 import { playerNames } from '../tennisData/playerNames';
 import SignUpForm from './SignUpForm';
@@ -72,19 +72,6 @@ class MultiSelect extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
+const ConnectTennisMultiSelect = ConnectTennis(MultiSelect);
 
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setSelectedPlayers: (selectedPlayers) => dispatch(setSelectedPlayers(selectedPlayers))
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(MultiSelect);
+export default ConnectTennisMultiSelect;
