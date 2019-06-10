@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Picker } from 'react-native-web';
-
+import connectTennis from '../containers/connectTennis';
 import { tournament } from '../tennisData/data';
 import MultiSelect from './MultiSelect';
 import TennisMatch from './TennisMatch';
@@ -90,4 +90,6 @@ class Tennis extends Component {
   }
 }
 
-export default Tennis;
+const ConnectTennisTennis = connectTennis(Tennis);
+
+export default ConnectTennisTennis;

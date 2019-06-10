@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import logo from "./logo.svg"
 import "./App.css"
 
-import TennisContainer from './containers/TennisContainer';
+import Tennis from './components/Tennis';
 
 class LambdaDemo extends Component {
   constructor(props) {
@@ -47,7 +47,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <TennisContainer />
+        <Tennis />
       </div>
     )
     return (

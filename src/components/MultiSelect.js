@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { FormControl, FormGroup, FormLabel } from "@material-ui/core";
-import ConnectTennis from '../containers/ConnectTennis';
+import connectTennis from '../containers/connectTennis';
 import MultiChipSelect from "./MultiChipSelect";
 import { playerNames } from '../tennisData/playerNames';
 import SignUpForm from './SignUpForm';
@@ -72,6 +72,6 @@ class MultiSelect extends Component {
   }
 }
 
-const ConnectTennisMultiSelect = ConnectTennis(MultiSelect);
+const ConnectTennisMultiSelect = connectTennis(MultiSelect);
 
 export default ConnectTennisMultiSelect;
