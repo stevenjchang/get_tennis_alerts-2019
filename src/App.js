@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import ReactGA from 'react-ga';
 import logo from "./logo.svg"
 import "./App.css"
-
+import Container from '@material-ui/core/Container';
 import Tennis from './components/Tennis';
 
 class LambdaDemo extends Component {
@@ -46,9 +46,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Tennis />
-      </div>
+      <Container
+        maxWidth='xs'
+      >
+        <div className="App">
+          <Tennis />
+        </div>
+      </Container>
     )
     return (
       <div className="App">
