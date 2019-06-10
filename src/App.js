@@ -2,8 +2,12 @@ import React, { Component } from "react"
 import ReactGA from 'react-ga';
 import logo from "./logo.svg"
 import "./App.css"
-
+import Container from '@material-ui/core/Container';
+import NavBar from './components/NavBar';
 import Tennis from './components/Tennis';
+
+import BottomNavigation from './components/BottomNavigation';
+
 
 class LambdaDemo extends Component {
   constructor(props) {
@@ -47,18 +51,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Tennis />
-      </div>
-    )
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <LambdaDemo />
-        </header>
+        <NavBar />
+        <Container
+          maxWidth='xs'
+        >
+          <Tennis />
+        </Container>
+        <BottomNavigation />
       </div>
     )
   }
