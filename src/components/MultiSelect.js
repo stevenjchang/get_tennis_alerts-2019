@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import { FormControl, FormGroup, FormLabel } from "@material-ui/core";
-
+import connectTennis from '../containers/connectTennis';
 import MultiChipSelect from "./MultiChipSelect";
 import { playerNames } from '../tennisData/playerNames';
 import SignUpForm from './SignUpForm';
 
 
-export default class MultiSelect extends Component {
+class MultiSelect extends Component {
   state = {
     items: playerNames,
     selectedItem: []
@@ -26,7 +27,10 @@ export default class MultiSelect extends Component {
       selectedItem: [...selectedItem, item],
       items: items.filter(i => i.name !== item)
     }),
-    () => this.props.filterSelected(this.state.selectedItem)
+    () => {
+      this.props.filterSelected(this.state.selectedItem);
+      this.props.setSelectedPlayers(this.state.selectedItem);
+    }
     )
   }
 
@@ -35,7 +39,9 @@ export default class MultiSelect extends Component {
       inputValue: "",
       selectedItem: selectedItem.filter(i => i !== item),
       items: [...items, { name: item, id: item.toLowerCase() }]
-    }));
+    }),
+    () =>  this.props.setSelectedPlayers(this.state.selectedItem)
+    );
   };
 
   handleChangeInput = inputVal => {
@@ -69,3 +75,7 @@ export default class MultiSelect extends Component {
     );
   }
 }
+
+const ConnectTennisMultiSelect = connectTennis(MultiSelect);
+
+export default ConnectTennisMultiSelect;
