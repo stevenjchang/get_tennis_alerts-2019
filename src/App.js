@@ -3,7 +3,11 @@ import ReactGA from 'react-ga';
 import logo from "./logo.svg"
 import "./App.css"
 import Container from '@material-ui/core/Container';
+import NavBar from './components/NavBar';
 import Tennis from './components/Tennis';
+
+import BottomNavigation from './components/BottomNavigation';
+
 
 class LambdaDemo extends Component {
   constructor(props) {
@@ -46,13 +50,15 @@ class App extends Component {
 
   render() {
     return (
-      <Container
-        maxWidth='xs'
-      >
-        <div className="App">
+      <div className="App">
+        <NavBar />
+        <Container
+          maxWidth='xs'
+        >
           <Tennis />
-        </div>
-      </Container>
+        </Container>
+        <BottomNavigation />
+      </div>
     )
     return (
       <div className="App">

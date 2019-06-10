@@ -53,11 +53,9 @@ class Tennis extends Component {
 
   render() {
     let { allMatchesInfo, showHistory } = this.state;
-    const browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     return (
-      <div style={divStyles}>
-        <p>{browserTimeZone}</p>
+      <div >
         <MultiSelect
           filterSelected={this.filterSelected}
         />
