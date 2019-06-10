@@ -27,7 +27,10 @@ class MultiSelect extends Component {
       selectedItem: [...selectedItem, item],
       items: items.filter(i => i.name !== item)
     }),
-    () => this.props.filterSelected(this.state.selectedItem)
+    () => {
+      this.props.filterSelected(this.state.selectedItem);
+      this.props.setSelectedPlayers(this.state.selectedItem);
+    }
     )
   }
 
@@ -36,7 +39,9 @@ class MultiSelect extends Component {
       inputValue: "",
       selectedItem: selectedItem.filter(i => i !== item),
       items: [...items, { name: item, id: item.toLowerCase() }]
-    }));
+    }),
+    () =>  this.props.setSelectedPlayers(this.state.selectedItem)
+    );
   };
 
   handleChangeInput = inputVal => {
@@ -48,7 +53,6 @@ class MultiSelect extends Component {
 
   render() {
     const { selectedItem, items } = this.state;
-    this.props.setSelectedPlayers([1,3])
     return (
       <>
         <FormGroup>
