@@ -417,13 +417,6 @@ export const tournament = {
 
 }
 
-const result = tournament.matches.filter((match) => {
-  // console.log('match ==>', match);
-  if (match.player1.name === '') {
-    console.log('found ==>', match);
-  }
-})
-
 // -----------------  FIELDS TO ADD  -----------------
 
 /*
