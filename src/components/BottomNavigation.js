@@ -57,7 +57,7 @@ export default function SimpleBottomNavigation() {
       className={classes.root}
     >
       <BottomNavigationAction
-        label='Get Match Alerts'
+        label='Match Schedule'
         classes={{
           root: classes.actionItem,
           selected: classes.selected,
@@ -66,7 +66,7 @@ export default function SimpleBottomNavigation() {
         }}
       />
       <BottomNavigationAction
-        label='Get Match Alerts'
+        label='Set Alerts'
         classes={{
           root: classes.actionItem,
           selected: classes.selected,
@@ -74,7 +74,7 @@ export default function SimpleBottomNavigation() {
           label: classes.label,
         }}
       /><BottomNavigationAction
-        label='Get Match Alerts'
+        label='Give Feedback'
         classes={{
           root: classes.actionItem,
           selected: classes.selected,
