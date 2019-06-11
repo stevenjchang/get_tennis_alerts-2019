@@ -82,7 +82,7 @@ const SignUpForm = ({ playerList, alerts, toggleNavigation }) => {
       <Modal
         style={{ textAlign: "center" }}
         open={alerts}
-        onClose={handleClose}
+        onClick={toggleNavigation}
       >
         <div style={modalStyle} className={classes.paper}>
           <Typography variant="h6" id="modal-title">
