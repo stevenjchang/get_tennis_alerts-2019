@@ -5,6 +5,8 @@ import { tournament } from '../tennisData/data';
 import MultiSelect from './MultiSelect';
 import TennisMatch from './TennisMatch';
 
+import LandingPage from '../components/LandingPage';
+
 const divStyles = {
   display: 'flex',
   flexDirection: 'column',
@@ -56,6 +58,7 @@ class Tennis extends Component {
 
     return (
       <div >
+        <LandingPage />
         <MultiSelect
           filterSelected={this.filterSelected}
         />
