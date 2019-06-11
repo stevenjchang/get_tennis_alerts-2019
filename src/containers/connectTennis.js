@@ -2,12 +2,12 @@ import { connect } from 'react-redux';
 import {
   getTournamentData,
   setSelectedPlayers,
-  toggleNavigation,
+  toggleShowSignUpForm,
 } from "../actions";
 
 const mapStateToProps = (state) => {
   return {
-    alerts: state.navigation.alerts
+    showSignUpForm: state.showSignUpForm
   };
 };
 
@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => {
     getTournamentData: () => dispatch(getTournamentData()),
     setSelectedPlayers: selectedPlayers =>
       dispatch(setSelectedPlayers(selectedPlayers)),
-    toggleNavigation: (toggleName) => dispatch(toggleNavigation(toggleName))
+    toggleShowSignUpForm: (toggleName) => dispatch(toggleShowSignUpForm(toggleName))
   };
 };
 

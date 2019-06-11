@@ -95,7 +95,7 @@ const LandingPage = (props) => {
             marginTop: "40px"
           }}
           variant="outlined"
-          onClick={() => props.toggleNavigation('alerts')}
+          onClick={props.toggleShowSignUpForm}
         >
           Sign Up For Alerts
         </Button>

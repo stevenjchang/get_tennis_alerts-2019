@@ -41,7 +41,7 @@ const msgStyles = {
 }
 
 
-const SignUpForm = ({ playerList, alerts, toggleNavigation }) => {
+const SignUpForm = ({ playerList, showSignUpForm, toggleShowSignUpForm }) => {
   const [open, setOpen] = React.useState(false);
   const [checkboxA, setCheckboxA] = React.useState(true);
   const [checkboxB, setCheckboxB] = React.useState(true);
@@ -75,14 +75,14 @@ const SignUpForm = ({ playerList, alerts, toggleNavigation }) => {
       <Button
         style={{ backgroundColor: "#007bff" }}
         variant="outlined"
-        onClick={toggleNavigation}
+        onClick={toggleShowSignUpForm}
       >
         Get Alerts
       </Button>
       <Modal
         style={{ textAlign: "center" }}
-        open={alerts}
-        onClick={toggleNavigation}
+        open={showSignUpForm}
+        onClick={toggleShowSignUpForm}
       >
         <div style={modalStyle} className={classes.paper}>
           <Typography variant="h6" id="modal-title">

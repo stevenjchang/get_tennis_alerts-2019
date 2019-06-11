@@ -1,12 +1,10 @@
 import { SHOW_SIGN_UP_FORM, SHOW_SIGN_UP_FORM_ERROR } from '../constants';
 
-const navigation = (state = {}, action) => {
+const showSignUpForm = (state = false, action) => {
+  console.log('state ==>', state);
   switch(action.type) {
     case SHOW_SIGN_UP_FORM:
-      return {
-        ...state,
-        [action.data]: !state[action.data]
-      }
+      return !state;
     case SHOW_SIGN_UP_FORM_ERROR:
       return action.err.response;
     default:
@@ -14,4 +12,4 @@ const navigation = (state = {}, action) => {
   }
 };
 
-export default navigation;
+export default showSignUpForm;
