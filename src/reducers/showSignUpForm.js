@@ -1,7 +1,6 @@
 import { SHOW_SIGN_UP_FORM, SHOW_SIGN_UP_FORM_ERROR } from '../constants';
 
 const showSignUpForm = (state = false, action) => {
-  console.log('state ==>', state);
   switch(action.type) {
     case SHOW_SIGN_UP_FORM:
       return !state;
