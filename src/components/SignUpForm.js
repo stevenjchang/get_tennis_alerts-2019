@@ -42,43 +42,17 @@ const msgStyles = {
 
 
 const SignUpForm = ({ playerList, showSignUpForm, toggleShowSignUpForm }) => {
-  const [open, setOpen] = React.useState(false);
   const [checkboxA, setCheckboxA] = React.useState(true);
   const [checkboxB, setCheckboxB] = React.useState(true);
   const [email, setEmail] = React.useState("");
   const [modalStyle] = React.useState(getModalStyle);
   const classes = useStyles();
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   const handleSubmit = () => {
-    let payload = {
-      email,
-      checkboxA,
-      checkboxB,
-      playerList
-    };
   };
 
   return (
     <>
-      <Typography variant="h8" id="modal-title" style={msgStyles}>
-        <p>Sign up for email alerts!</p>
-        <p>Never miss another match!</p>
-      </Typography>
-      <Button
-        style={{ backgroundColor: "#007bff" }}
-        variant="outlined"
-        onClick={toggleShowSignUpForm}
-      >
-        Get Alerts
-      </Button>
       <Modal
         style={{ textAlign: "center" }}
         open={showSignUpForm}
