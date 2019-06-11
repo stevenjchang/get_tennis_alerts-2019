@@ -6,6 +6,8 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
+import connectTennis from "../containers/connectTennis";
+
 function getModalStyle() {
   const top = 50;
   const left = 50;
@@ -39,11 +41,11 @@ const msgStyles = {
 }
 
 
-const SignUpForm = ({ playerList }) => {
+const SignUpForm = ({ playerList, alerts, toggleNavigation }) => {
   const [open, setOpen] = React.useState(false);
   const [checkboxA, setCheckboxA] = React.useState(true);
   const [checkboxB, setCheckboxB] = React.useState(true);
-  const [email, setEmail] = React.useState('');
+  const [email, setEmail] = React.useState("");
   const [modalStyle] = React.useState(getModalStyle);
   const classes = useStyles();
 
@@ -60,10 +62,9 @@ const SignUpForm = ({ playerList }) => {
       email,
       checkboxA,
       checkboxB,
-      playerList,
-    }
-    console.log('payload ==>', payload);
-  }
+      playerList
+    };
+  };
 
   return (
     <>
@@ -72,14 +73,15 @@ const SignUpForm = ({ playerList }) => {
         <p>Never miss another match!</p>
       </Typography>
       <Button
-        style={{backgroundColor: '#007bff'}}
+        style={{ backgroundColor: "#007bff" }}
         variant="outlined"
-        onClick={handleOpen}
-      >Get Alerts
+        onClick={toggleNavigation}
+      >
+        Get Alerts
       </Button>
       <Modal
-        style={{textAlign: 'center'}}
-        open={open}
+        style={{ textAlign: "center" }}
+        open={alerts}
         onClose={handleClose}
       >
         <div style={modalStyle} className={classes.paper}>
@@ -87,79 +89,78 @@ const SignUpForm = ({ playerList }) => {
             Set alerts for these players:
           </Typography>
           <Typography variant="subtitle1" id="simple-modal-description">
-            {
-              playerList
-              && playerList.map((player) => (
-                <p>* {player}</p>
-              ))
-            }
+            {playerList && playerList.map(player => <p>* {player}</p>)}
           </Typography>
 
           <br />
 
-          <div><Typography variant="h8">Send me alerts</Typography></div>
+          <div>
+            <Typography variant="h8">Send me alerts</Typography>
+          </div>
 
           <div>
-          <Checkbox
-            checked={checkboxA}
-            onChange={() => {setCheckboxA(!checkboxA)}}
-            value={checkboxA}
-            color="primary"
-            inputProps={{
-              'aria-label': 'primary checkbox',
-            }}
-          />
+            <Checkbox
+              checked={checkboxA}
+              onChange={() => {
+                setCheckboxA(!checkboxA);
+              }}
+              value={checkboxA}
+              color="primary"
+              inputProps={{
+                "aria-label": "primary checkbox"
+              }}
+            />
             <span>1 day before match</span>
           </div>
           <div>
-          <Checkbox
-            checked={checkboxB}
-            onChange={() => {setCheckboxB(!checkboxB)}}
-            value={checkboxA}
-            color="primary"
-            inputProps={{
-              'aria-label': 'secondary checkbox',
-            }}
-          />
+            <Checkbox
+              checked={checkboxB}
+              onChange={() => {
+                setCheckboxB(!checkboxB);
+              }}
+              value={checkboxA}
+              color="primary"
+              inputProps={{
+                "aria-label": "secondary checkbox"
+              }}
+            />
             <span>1 hour before match</span>
           </div>
 
           <br />
 
           <div>
-          <TextField
-            id="outlined-email-input"
-            label="Email"
-            className={classes.textField}
-            type="email"
-            name="email"
-            autoComplete="email"
-            margin="normal"
-            variant="filled"
-            fullWidth
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+            <TextField
+              id="outlined-email-input"
+              label="Email"
+              className={classes.textField}
+              type="email"
+              name="email"
+              autoComplete="email"
+              margin="normal"
+              variant="filled"
+              fullWidth
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
           </div>
 
           <br />
 
           <div>
-          <Button
-            variant="outlined"
-            onClick={handleSubmit}
-          >
-            Sign Up
-          </Button>
+            <Button variant="outlined" onClick={handleSubmit}>
+              Sign Up
+            </Button>
           </div>
-
         </div>
       </Modal>
     </>
   );
-}
+};
 
-export default SignUpForm;
+const ConnectTennisSignUpForm = connectTennis(SignUpForm);
+
+export default ConnectTennisSignUpForm;
 
 /*
   What does this component look like?

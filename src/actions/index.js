@@ -5,7 +5,9 @@ import {
   GET_TOURNAMENT_DATA_ERROR,
   SET_ALL_PLAYER_NAMES,
   SET_SELECTED_PLAYERS,
-} from '../constants';
+  TOGGLE_OPEN,
+  TOGGLE_OPEN_ERROR,
+} from "../constants";
 
 export const getTournamentData = () => {
   return {
@@ -26,4 +28,11 @@ export const setSelectedPlayers = (selectedPlayers) => {
     type: SET_SELECTED_PLAYERS,
     data: selectedPlayers,
   }
+};
+
+export const toggleNavigation = (toggleName) => {
+  return {
+    type: TOGGLE_OPEN,
+    data: toggleName
+  };
 };

@@ -32,7 +32,7 @@ const pickerStyles = {
 
 class Tennis extends Component {
   componentDidMount() {
-    this.props.getTournamentData2();
+    this.props.getTournamentData();
   }
 
   state = {

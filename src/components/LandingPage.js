@@ -7,6 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import connectTennis from "../containers/connectTennis";
+
 const useStyles = makeStyles({
   card: {
     minWidth: 275,
@@ -25,7 +27,7 @@ const useStyles = makeStyles({
 });
 
 
-const LandingPage = () => {
+const LandingPage = (props) => {
   const classes = useStyles();
   const bullet = <span className={classes.bullet}>•</span>;
 
@@ -93,7 +95,7 @@ const LandingPage = () => {
             marginTop: "40px"
           }}
           variant="outlined"
-          // onClick={handleOpen}
+          onClick={() => props.toggleNavigation('alerts')}
         >
           Sign Up For Alerts
         </Button>
@@ -120,7 +122,9 @@ const LandingPage = () => {
   );
 }
 
-export default LandingPage;
+const ConnectTennisLandingPage = connectTennis(LandingPage)
+
+export default ConnectTennisLandingPage;
 
 /*
 VERSION 1:

@@ -1,15 +1,22 @@
 import { connect } from 'react-redux';
-import { getTournamentData, setSelectedPlayers } from '../actions';
+import {
+  getTournamentData,
+  setSelectedPlayers,
+  toggleNavigation,
+} from "../actions";
 
 const mapStateToProps = (state) => {
   return {
+    alerts: state.navigation.alerts
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getTournamentData2: () => dispatch(getTournamentData()),
-    setSelectedPlayers: (selectedPlayers) => dispatch(setSelectedPlayers(selectedPlayers)),
+    getTournamentData: () => dispatch(getTournamentData()),
+    setSelectedPlayers: selectedPlayers =>
+      dispatch(setSelectedPlayers(selectedPlayers)),
+    toggleNavigation: (toggleName) => dispatch(toggleNavigation(toggleName))
   };
 };
 
