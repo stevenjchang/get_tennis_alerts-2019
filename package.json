@@ -6,6 +6,7 @@
     "@material-ui/core": "^4.0.1",
     "@material-ui/icons": "^4.0.1",
     "@material-ui/styles": "^4.0.1",
+    "axios": "^0.19.0",
     "downshift": "^3.2.10",
     "encoding": "^0.1.12",
     "node-fetch": "^2.3.0",
