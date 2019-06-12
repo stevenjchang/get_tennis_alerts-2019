@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { LAMBDA_URI } from "../constants";
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import Modal from '@material-ui/core/Modal';
@@ -50,6 +51,7 @@ const SignUpForm = ({ playerList, showSignUpForm, toggleShowSignUpForm }) => {
   const classes = useStyles();
 
   const handleSubmit = () => {
+    console.log('LAMBDA_URI ==>', LAMBDA_URI);
     let body = {
       playerList: playerList.sort(),
       email,
@@ -57,7 +59,7 @@ const SignUpForm = ({ playerList, showSignUpForm, toggleShowSignUpForm }) => {
       checkboxB
     };
 
-    axios.post("/signup", body);
+    axios.post(`${LAMBDA_URI}/signup`, body);
   };
 
   return (

@@ -1,4 +1,3 @@
-// 'use strict';
 require("dotenv").config();
 const MongoClient = require("mongodb").MongoClient;
 require("dotenv").config();
@@ -41,25 +40,25 @@ function connectToDatabase (uri) {
     });
 }
 
-function addEmailToMailingList(db, dbName) {
+function addEmailToMailingList(db, dbName, payload) {
 
-  return (
-    db
-      .db(dbName)
-      .collection("mailingList")
-      .insertOne({
-        name: "persons_name2",
-        round: 5
-      })
-      .then(data => {
-        console.log("data  ==>", data);
-        return data;
-      })
-      .catch(err => {
-        console.log("=> an error occurred: ", err);
-        return { statusCode: 500, body: "error" };
-      })
-  );
+  return db
+    .db(dbName)
+    .collection("mailingList")
+    .insertOne({
+      playerList: payload.playerList,
+      email: payload.email,
+      checkboxA: payload.checkboxA,
+      checkboxB: payload.checkboxB
+    })
+    .then(data => {
+      // console.log("data  ==>", data);
+      return data;
+    })
+    .catch(err => {
+      console.log("=> an error occurred: ", err);
+      return { statusCode: 500, body: "error" };
+    });
 }
 
 /* how to get http request payload:
@@ -70,6 +69,9 @@ get requests -
 post requests -
   axios.post(url, {})
   received as event.body
+
+  **NOTE**
+  event.body is stringify'ed, and needs to be parsed!
 */
 
 exports.handler = function(event, context, callback) {
@@ -78,27 +80,21 @@ exports.handler = function(event, context, callback) {
     "event[queryStringParameters] stringify==>",
     JSON.stringify(event.queryStringParameters)
   );
-  console.log("event[body] stringify==>", JSON.stringify(event.body));
   console.log('event.body ==>', event.body);
 
-        callback(null, {
+  const payload = JSON.parse(event.body);
+
+  connectToDatabase(DB_URI)
+    .then(db => addEmailToMailingList(db, DB_NAME, payload))
+    .then(result => {
+      // console.log("=> returning result: ", result);
+      callback(null, {
         statusCode: 200,
-        body: JSON.stringify({msg: 'yes'})
+        body: JSON.stringify(result)
       });
-
-
-
-  // connectToDatabase(DB_URI)
-  //   .then(db => addEmailToMailingList(db, DB_NAME, event))
-  //   .then(result => {
-  //     console.log("=> returning result: ", result);
-  //     callback(null, {
-  //       statusCode: 200,
-  //       body: JSON.stringify(result)
-  //     });
-  //   })
-  //   .catch(err => {
-  //     console.log("=> an error occurred: ", err);
-  //     callback(err);
-  //   });
+    })
+    .catch(err => {
+      console.log("=> an error occurred: ", err);
+      callback(err);
+    });
 }
