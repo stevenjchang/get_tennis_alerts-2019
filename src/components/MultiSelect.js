@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
 import { FormControl, FormGroup, FormLabel } from "@material-ui/core";
 import connectTennis from '../containers/connectTennis';
 import MultiChipSelect from "./MultiChipSelect";
 import { playerNames } from '../tennisData/playerNames';
-import SignUpForm from './SignUpForm';
 
 
 class MultiSelect extends Component {
@@ -68,9 +66,6 @@ class MultiSelect extends Component {
             />
           </FormControl>
         </FormGroup>
-        <SignUpForm
-          playerList={selectedItem}
-        />
       </>
     );
   }

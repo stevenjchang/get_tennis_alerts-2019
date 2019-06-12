@@ -43,7 +43,7 @@ const msgStyles = {
 }
 
 
-const SignUpForm = ({ playerList, showSignUpForm, toggleShowSignUpForm }) => {
+const SignUpForm = ({ selectedPlayers, showSignUpForm, toggleShowSignUpForm }) => {
   const [checkboxA, setCheckboxA] = React.useState(true);
   const [checkboxB, setCheckboxB] = React.useState(true);
   const [email, setEmail] = React.useState("");
@@ -52,7 +52,7 @@ const SignUpForm = ({ playerList, showSignUpForm, toggleShowSignUpForm }) => {
 
   const handleSubmit = () => {
     let body = {
-      playerList: playerList.sort(),
+      selectedPlayers: selectedPlayers.sort(),
       email,
       checkboxA,
       checkboxB
@@ -73,7 +73,7 @@ const SignUpForm = ({ playerList, showSignUpForm, toggleShowSignUpForm }) => {
             Set alerts for these players:
           </Typography>
           <Typography variant="subtitle1" id="simple-modal-description">
-            {playerList && playerList.map(player => <p>* {player}</p>)}
+            {selectedPlayers && selectedPlayers.map(player => <p>* {player}</p>)}
           </Typography>
 
           <br />

@@ -7,7 +7,8 @@ import {
 
 const mapStateToProps = (state) => {
   return {
-    showSignUpForm: state.showSignUpForm
+    selectedPlayers: state.selectedPlayers,
+    showSignUpForm: state.showSignUpForm,
   };
 };
 
