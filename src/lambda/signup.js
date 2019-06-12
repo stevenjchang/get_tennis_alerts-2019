@@ -26,10 +26,6 @@ function successResponse(callback, res) {
   });
 }
 
-function add(callback, res) {
-  console.log(' ==>', );
-}
-
 function connectToDatabase (uri) {
   console.log('=> connect to database');
 
@@ -45,42 +41,64 @@ function connectToDatabase (uri) {
     });
 }
 
-function queryDatabase (db, dbName) {
-  console.log('=> query database');
+function addEmailToMailingList(db, dbName) {
 
-  return db.db(dbName).collection('testing')
-    // .find({}).toArray()
-    .insertOne({
-      name: 'persons_name2',
-      round: 5,
-    })
-    .then((data) => {
-      console.log('data  ==>', data )
-      return data
-    })
-    .catch(err => {
-      console.log('=> an error occurred: ', err);
-      return { statusCode: 500, body: 'error' };
-    });
+  return (
+    db
+      .db(dbName)
+      .collection("mailingList")
+      .insertOne({
+        name: "persons_name2",
+        round: 5
+      })
+      .then(data => {
+        console.log("data  ==>", data);
+        return data;
+      })
+      .catch(err => {
+        console.log("=> an error occurred: ", err);
+        return { statusCode: 500, body: "error" };
+      })
+  );
 }
+
+/* how to get http request payload:
+
+get requests - 
+  axios.get(url, {params: {}})
+  received as event.queryStringParameters
+post requests -
+  axios.post(url, {})
+  received as event.body
+*/
 
 exports.handler = function(event, context, callback) {
   context.callbackWaitsForEmptyEventLoop = false;
-  console.log('event[queryStringParameters] ==>',
-    JSON.stringify(event['queryStringParameters'])
+  console.log(
+    "event[queryStringParameters] stringify==>",
+    JSON.stringify(event.queryStringParameters)
   );
+  console.log("event[body] stringify==>", JSON.stringify(event.body));
+  console.log('event.body ==>', event.body);
 
-  connectToDatabase(DB_URI)
-    .then(db => queryDatabase(db, DB_NAME))
-    .then(result => {
-      console.log("=> returning result: ", result);
-      callback(null, {
+        callback(null, {
         statusCode: 200,
-        body: JSON.stringify(result)
+        body: JSON.stringify({msg: 'yes'})
       });
-    })
-    .catch(err => {
-      console.log("=> an error occurred: ", err);
-      callback(err);
-    });
+
+
+
+  // connectToDatabase(DB_URI)
+  //   .then(db => addEmailToMailingList(db, DB_NAME, event))
+  //   .then(result => {
+  //     console.log("=> returning result: ", result);
+  //     callback(null, {
+  //       statusCode: 200,
+  //       body: JSON.stringify(result)
+  //     });
+  //   })
+  //   .catch(err => {
+  //     console.log("=> an error occurred: ", err);
+  //     callback(err);
+  //   });
 }
