@@ -52,7 +52,7 @@ class MultiSelect extends Component {
   render() {
     const { selectedItem, items } = this.state;
     return (
-      <>
+      <div id='123' style={{marginBottom: '130px'}}>
         <FormGroup>
           <FormControl>
             {/* <FormLabel>Find a Star Wars character</FormLabel> */}
@@ -66,7 +66,7 @@ class MultiSelect extends Component {
             />
           </FormControl>
         </FormGroup>
-      </>
+      </div>
     );
   }
 }
