@@ -11,6 +11,7 @@ import connectTennis from "../containers/connectTennis";
 
 const useStyles = makeStyles({
   card: {
+    marginTop: '25px',
     minWidth: 275,
   },
   bullet: {

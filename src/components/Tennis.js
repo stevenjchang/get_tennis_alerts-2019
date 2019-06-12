@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Button, Picker } from 'react-native-web';
-import connectTennis from '../containers/connectTennis';
-import { tournament } from '../tennisData/data';
-import MultiSelect from './MultiSelect';
-import TennisMatch from './TennisMatch';
 
+import { tournament } from '../tennisData/data';
+import connectTennis from '../containers/connectTennis';
 import LandingPage from '../components/LandingPage';
+import MultiSelect from './MultiSelect';
+import SignUpForm from './SignUpForm';
+import TennisMatch from './TennisMatch';
 
 const divStyles = {
   display: 'flex',
@@ -57,35 +58,29 @@ class Tennis extends Component {
     let { allMatchesInfo, showHistory } = this.state;
 
     return (
-      <div >
+      <div>
         <LandingPage />
-        <MultiSelect
-          filterSelected={this.filterSelected}
-        />
+        <MultiSelect filterSelected={this.filterSelected} />
 
         <div style={divStyles2}>
-        {
-          allMatchesInfo
-          && allMatchesInfo.map((matchInfo) => (
-            <>
-              <TennisMatch
-                matchInfo={matchInfo}
-                showHistory={showHistory}
-              />
-            </>
-          ))
-        }
-        {
-          allMatchesInfo
-          && !showHistory
-          && <p onClick={this.handleShowHistory}>show completed matches</p>
-        }
-        {
-          allMatchesInfo
-          && showHistory
-          && <p onClick={this.handleShowHistory}>hide completed matches</p>
-        }
+          {allMatchesInfo &&
+            allMatchesInfo.map(matchInfo => (
+              <>
+                <TennisMatch
+                  matchInfo={matchInfo}
+                  showHistory={showHistory}
+                />
+              </>
+            ))}
+          {allMatchesInfo && !showHistory && (
+            <p onClick={this.handleShowHistory}>show completed matches</p>
+          )}
+          {allMatchesInfo && showHistory && (
+            <p onClick={this.handleShowHistory}>hide completed matches</p>
+          )}
         </div>
+
+        <SignUpForm />
       </div>
     );
   }

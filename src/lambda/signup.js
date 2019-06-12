@@ -1,4 +1,3 @@
-require("dotenv").config();
 const MongoClient = require("mongodb").MongoClient;
 require("dotenv").config();
 
@@ -6,33 +5,15 @@ const DB_URI = process.env.MONGODB_URI;
 const DB_NAME = process.env.MONGODB_DBNAME;
 let cachedDb = null;
 
-// this pattern comes from:
+// this pattern comes from: 
 // https://docs.atlas.mongodb.com/best-practices-connecting-to-aws-lambda/
-
-function errorResponse(callback, err) {
-  console.error('there was an error in mongoInsert.js  ==>', err);
-  callback(null, {
-    statusCode: 500,
-    body: JSON.stringify({ error: err })
-  })
-}
-
-function successResponse(callback, res) {
-  console.log('successResponse sent successfully from mongoInsert.js');
-  callback(null, {
-    statusCode: 200,
-    body: JSON.stringify(res)
-  });
-}
 
 function connectToDatabase (uri) {
   console.log('=> connect to database');
-
   if (cachedDb) {
     console.log('=> using cached database instance');
     return Promise.resolve(cachedDb);
   }
-
   return MongoClient.connect(uri)
     .then(db => {
       cachedDb = db;
@@ -41,7 +22,6 @@ function connectToDatabase (uri) {
 }
 
 function addEmailToMailingList(db, dbName, payload) {
-
   return db
     .db(dbName)
     .collection("mailingList")
@@ -52,7 +32,6 @@ function addEmailToMailingList(db, dbName, payload) {
       checkboxB: payload.checkboxB
     })
     .then(data => {
-      // console.log("data  ==>", data);
       return data;
     })
     .catch(err => {
@@ -76,18 +55,14 @@ post requests -
 
 exports.handler = function(event, context, callback) {
   context.callbackWaitsForEmptyEventLoop = false;
-  console.log(
-    "event[queryStringParameters] stringify==>",
-    JSON.stringify(event.queryStringParameters)
-  );
-  console.log('event.body ==>', event.body);
+  console.log("=> queryStringParameters: ", JSON.stringify(event.queryStringParameters));
+  console.log('=> event.body: ', event.body);
 
   const payload = JSON.parse(event.body);
 
   connectToDatabase(DB_URI)
     .then(db => addEmailToMailingList(db, DB_NAME, payload))
     .then(result => {
-      // console.log("=> returning result: ", result);
       callback(null, {
         statusCode: 200,
         body: JSON.stringify(result)

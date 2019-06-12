@@ -43,7 +43,7 @@ const msgStyles = {
 }
 
 
-const SignUpForm = ({ playerList, showSignUpForm, toggleShowSignUpForm }) => {
+const SignUpForm = ({ selectedPlayers, showSignUpForm, toggleShowSignUpForm }) => {
   const [checkboxA, setCheckboxA] = React.useState(true);
   const [checkboxB, setCheckboxB] = React.useState(true);
   const [email, setEmail] = React.useState("");
@@ -51,9 +51,8 @@ const SignUpForm = ({ playerList, showSignUpForm, toggleShowSignUpForm }) => {
   const classes = useStyles();
 
   const handleSubmit = () => {
-    console.log('LAMBDA_URI ==>', LAMBDA_URI);
     let body = {
-      playerList: playerList.sort(),
+      selectedPlayers: selectedPlayers.sort(),
       email,
       checkboxA,
       checkboxB
@@ -74,7 +73,7 @@ const SignUpForm = ({ playerList, showSignUpForm, toggleShowSignUpForm }) => {
             Set alerts for these players:
           </Typography>
           <Typography variant="subtitle1" id="simple-modal-description">
-            {playerList && playerList.map(player => <p>* {player}</p>)}
+            {selectedPlayers && selectedPlayers.map(player => <p>* {player}</p>)}
           </Typography>
 
           <br />
@@ -146,21 +145,3 @@ const SignUpForm = ({ playerList, showSignUpForm, toggleShowSignUpForm }) => {
 const ConnectTennisSignUpForm = connectTennis(SignUpForm);
 
 export default ConnectTennisSignUpForm;
-
-/*
-  What does this component look like?
-
-  There a button:
-   "Get Email Alerts"
-
-  "Send me alerts for these players",
-
-  "My email address is"
-
-  "Send me alerts"
-    "24 hours before match"
-    "1 hour before match"
-    "on Sunday before the match"
-  
-  "Sign up for alerts"
-*/
