@@ -51,7 +51,6 @@ const SignUpForm = ({ playerList, showSignUpForm, toggleShowSignUpForm }) => {
   const classes = useStyles();
 
   const handleSubmit = () => {
-    console.log('LAMBDA_URI ==>', LAMBDA_URI);
     let body = {
       playerList: playerList.sort(),
       email,
