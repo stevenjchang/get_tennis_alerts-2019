@@ -2,12 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import RestoreIcon from '@material-ui/icons/Restore';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-
-import NotificationImportant from '@material-ui/icons/NotificationImportant';
-import WatchLater from '@material-ui/icons/WatchLater';
 
 const useStyles = makeStyles({
   root: {
@@ -83,13 +77,6 @@ export default function SimpleBottomNavigation() {
         }}
       />
 
-      {/* <BottomNavigationAction label="Recents" icon={<RestoreIcon />} /> */}
-      {/* <BottomNavigationAction
-        label="Quickview"
-        // icon={<WatchLater/>}
-        className={classes.action}
-        /> */}
-      {/* <BottomNavigationAction label="Get Match Alerts" icon={<NotificationImportant />} /> */}
     </BottomNavigation>
   );
 };

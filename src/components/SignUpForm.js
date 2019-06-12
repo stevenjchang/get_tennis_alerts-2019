@@ -145,21 +145,3 @@ const SignUpForm = ({ selectedPlayers, showSignUpForm, toggleShowSignUpForm }) =
 const ConnectTennisSignUpForm = connectTennis(SignUpForm);
 
 export default ConnectTennisSignUpForm;
-
-/*
-  What does this component look like?
-
-  There a button:
-   "Get Email Alerts"
-
-  "Send me alerts for these players",
-
-  "My email address is"
-
-  "Send me alerts"
-    "24 hours before match"
-    "1 hour before match"
-    "on Sunday before the match"
-  
-  "Sign up for alerts"
-*/
