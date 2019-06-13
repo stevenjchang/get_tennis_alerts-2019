@@ -6,7 +6,7 @@ import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
 import Typography from '../components/Typography';
 import TextField from '../components/TextField';
-import compose from 'docs/src/modules/utils/compose';
+import compose from '../../_utils/compose';
 
 const styles = theme => ({
   root: {

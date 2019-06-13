@@ -12,7 +12,7 @@ import { email, required } from './modules/form/validation';
 import RFTextField from './modules/form/RFTextField';
 import FormButton from './modules/form/FormButton';
 import FormFeedback from './modules/form/FormFeedback';
-import compose from 'docs/src/modules/utils/compose';
+import compose from './_utils/compose';
 
 const styles = theme => ({
   form: {

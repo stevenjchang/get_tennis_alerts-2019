@@ -8,6 +8,8 @@ import Container from '@material-ui/core/Container';
 import NavBar from './components/NavBar';
 import Tennis from './components/Tennis';
 
+import Home from './onepirate/Home';
+
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +22,11 @@ class App extends Component {
   }
 
   render() {
+
+    return (
+      <Home />
+    )
+
     return (
       <div className="App">
         <NavBar />
