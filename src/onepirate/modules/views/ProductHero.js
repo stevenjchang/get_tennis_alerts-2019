@@ -37,10 +37,12 @@ function ProductHero(props) {
       {/* Increase the network loading priority of the background image. */}
       <img style={{ display: 'none' }} src={backgroundImage} alt="" />
       <Typography color="inherit" align="center" variant="h2" marked="center">
-        Upgrade your Sundays
+        {/* Upgrade your Sundays */}
+        FREE email alerts to all your favorite players
       </Typography>
       <Typography color="inherit" align="center" variant="h5" className={classes.h5}>
-        Enjoy secret offers up to -70% off the best luxury hotels every Sunday.
+        {/* Enjoy secret offers up to -70% off the best luxury hotels every Sunday. */}
+        Customize players and alert times! Never miss another match
       </Typography>
       <Button
         color="secondary"
@@ -50,10 +52,12 @@ function ProductHero(props) {
         component="a"
         href="/premium-themes/onepirate/sign-up/"
       >
-        Register
+        {/* Register */}
+        Sign Up
       </Button>
       <Typography variant="body2" color="inherit" className={classes.more}>
-        Discover the experience
+        {/* Discover the experience */}
+        No Spam! This a hobby project, made for tennis fans.
       </Typography>
     </ProductHeroLayout>
   );
