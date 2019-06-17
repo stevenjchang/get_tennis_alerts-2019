@@ -6,7 +6,8 @@ import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
 
 const backgroundImage =
-  'https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=1400&q=80';
+  // 'https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=1400&q=80';
+  '/static/themes/onepirate/tennis-575578-unsplash.jpg';
 
 const styles = theme => ({
   background: {
@@ -36,11 +37,16 @@ function ProductHero(props) {
     <ProductHeroLayout backgroundClassName={classes.background}>
       {/* Increase the network loading priority of the background image. */}
       <img style={{ display: 'none' }} src={backgroundImage} alt="" />
-      <Typography color="inherit" align="center" variant="h2" marked="center">
+      <Typography color="inherit" align="center" variant="h4" marked="center">
         {/* Upgrade your Sundays */}
-        Follow your favorite players. Get FREE email alerts when the next match happens.
+        Follow your favorite players.
+        <br/>
+        <Typography color="inherit" align="center" variant="h5" marked="center">
+          Get FREE email alerts when the next match happens.
+        </Typography>
       </Typography>
-      <Typography color="inherit" align="center" variant="h5" className={classes.h5}>
+
+      <Typography color="inherit" align="center" variant="h6" className={classes.h5}>
         {/* Enjoy secret offers up to -70% off the best luxury hotels every Sunday. */}
         Simple and easy. Customize players and alert times! Never miss another match
       </Typography>
