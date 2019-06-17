@@ -22,12 +22,15 @@ const styles = theme => ({
     marginBottom: theme.spacing(4),
     marginTop: theme.spacing(4),
     [theme.breakpoints.up('sm')]: {
-      marginTop: theme.spacing(10),
+      marginTop: theme.spacing(4),
     },
   },
   more: {
     marginTop: theme.spacing(2),
   },
+  title1: {
+    maxWidth: '625px',
+  }
 });
 
 function ProductHero(props) {
@@ -37,18 +40,22 @@ function ProductHero(props) {
     <ProductHeroLayout backgroundClassName={classes.background}>
       {/* Increase the network loading priority of the background image. */}
       <img style={{ display: 'none' }} src={backgroundImage} alt="" />
-      <Typography color="inherit" align="center" variant="h4" marked="center">
+      <Typography color="inherit" align="center" variant="h3" marked="center" className={classes.title1}>
         {/* Upgrade your Sundays */}
-        Follow your favorite players.
-        <br/>
+        Get FREE email alerts when the next match happens.
+      
+        <br />
+        <br />
         <Typography color="inherit" align="center" variant="h5" marked="center">
-          Get FREE email alerts when the next match happens.
+          Follow your favorite players.
+          <br />
+          <br />
         </Typography>
       </Typography>
 
-      <Typography color="inherit" align="center" variant="h6" className={classes.h5}>
+      <Typography color="inherit" align="center" variant="h7" className={classes.h5}>
         {/* Enjoy secret offers up to -70% off the best luxury hotels every Sunday. */}
-        Simple and easy. Customize players and alert times! Never miss another match
+        Simple and easy. Never miss another match!
       </Typography>
       <Button
         color="secondary"
@@ -61,9 +68,9 @@ function ProductHero(props) {
         {/* Register */}
         Choose Players
       </Button>
-      <Typography variant="body2" color="inherit" className={classes.more}>
+      <Typography variant="h8" color="inherit" className={classes.more}>
         {/* Discover the experience */}
-        No Spam! This a hobby project, made for tennis fans.
+        {/* No Spam! This a hobby project, made for tennis fans. */}
       </Typography>
     </ProductHeroLayout>
   );
