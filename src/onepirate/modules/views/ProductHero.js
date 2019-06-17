@@ -38,7 +38,7 @@ function ProductHero(props) {
       <img style={{ display: 'none' }} src={backgroundImage} alt="" />
       <Typography color="inherit" align="center" variant="h2" marked="center">
         {/* Upgrade your Sundays */}
-        Follow your favorite players. Get customer email alerts when the next match happens.
+        Follow your favorite players. Get FREE email alerts when the next match happens.
       </Typography>
       <Typography color="inherit" align="center" variant="h5" className={classes.h5}>
         {/* Enjoy secret offers up to -70% off the best luxury hotels every Sunday. */}

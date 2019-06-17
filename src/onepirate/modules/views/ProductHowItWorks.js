@@ -120,7 +120,7 @@ function ProductHowItWorks(props) {
           component="a"
           href="/premium-themes/onepirate/sign-up/"
         >
-          Get started
+          Choose Players
         </Button>
       </Container>
     </section>

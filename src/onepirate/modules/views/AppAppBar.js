@@ -35,6 +35,14 @@ const styles = theme => ({
   },
 });
 
+const spanStyles = {
+  fontSize: '11px',
+  color: 'red',
+  marginLeft: '7px',
+  top: '-9px',
+  position: 'relative',
+}
+
 function AppAppBar(props) {
   const { classes } = props;
 
@@ -51,6 +59,7 @@ function AppAppBar(props) {
             href="/premium-themes/onepirate/"
           >
             {'Get Tennis Alerts'}
+            <span style={spanStyles}>beta</span>
           </Link>
           <div className={classes.right}>
             {/* <Link
