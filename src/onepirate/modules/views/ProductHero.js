@@ -38,11 +38,11 @@ function ProductHero(props) {
       <img style={{ display: 'none' }} src={backgroundImage} alt="" />
       <Typography color="inherit" align="center" variant="h2" marked="center">
         {/* Upgrade your Sundays */}
-        FREE email alerts to all your favorite tennis players
+        Follow your favorite players. Get customer email alerts when the next match happens.
       </Typography>
       <Typography color="inherit" align="center" variant="h5" className={classes.h5}>
         {/* Enjoy secret offers up to -70% off the best luxury hotels every Sunday. */}
-        Customize players and alert times! Never miss another match
+        Simple and easy. Customize players and alert times! Never miss another match
       </Typography>
       <Button
         color="secondary"
