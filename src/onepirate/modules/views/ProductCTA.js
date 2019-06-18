@@ -65,6 +65,13 @@ const styles = theme => ({
   },
 });
 
+const anchorStyles = {
+  display: 'block',
+  position: 'relative',
+  top: '-10px',
+  visibility: 'hidden',
+}
+
 class ProductCTA extends React.Component {
   state = {
     open: false,
@@ -108,52 +115,57 @@ class ProductCTA extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Container className={classes.root} component="section">
-        <Grid justify="center" container>
-          <Grid item xs={12} md={10} className={classes.cardWrapper}>
-            <div className={classes.card}>
-              <form onSubmit={this.handleSubmit} className={classes.cardContent}>
-                <PlayerSearchBar />
-                <Typography variant="h2" component="h2" gutterBottom>
-                  {/* Receive offers */}
-                </Typography>
-                <Typography variant="h5">
-                  {/* Taste the holidays of the everyday close to home. */}
-                </Typography>
-                <div style={{marginTop: '70px'}}>
-                  <Checkbox 
-                    name="checkboxA"
-                    checked={this.state.checkboxA}
-                    onChange={this.handleCheckbox}
-                  />
-                  <span>1 day before match</span>
-                  <Checkbox
-                    name="checkboxB"
-                    checked={this.state.checkboxB}
-                    onChange={this.handleCheckbox}
-                  />
-                  <span>1 hour before match</span>
-                </div>
-                <TextField
-                  noBorder
-                  className={classes.textField}
-                  placeholder="Your email"
-                  name="email"
-                  onChange={this.handleOnChange}
-                />
-                <Button
-                  type="submit"
-                  color="primary"
-                  variant="contained"
-                  className={classes.button}
+      <>
+        <a name="sign-up" style={anchorStyles} />
+        <Container className={classes.root} component="section">
+          <Grid justify="center" container>
+            <Grid item xs={12} md={10} className={classes.cardWrapper}>
+              <div className={classes.card}>
+                <form
+                  onSubmit={this.handleSubmit}
+                  className={classes.cardContent}
                 >
-                  {/* Keep me updated */}
-                  Get Email Alerts!
-                </Button>
-              </form>
-            </div>
-          </Grid>
-          {/* <Grid item xs={12} md={6} className={classes.imagesWrapper}>
+                  <PlayerSearchBar />
+                  <Typography variant="h2" component="h2" gutterBottom>
+                    {/* Receive offers */}
+                  </Typography>
+                  <Typography variant="h5">
+                    {/* Taste the holidays of the everyday close to home. */}
+                  </Typography>
+                  <div style={{ marginTop: "70px" }}>
+                    <Checkbox
+                      name="checkboxA"
+                      checked={this.state.checkboxA}
+                      onChange={this.handleCheckbox}
+                    />
+                    <span>1 day before match</span>
+                    <Checkbox
+                      name="checkboxB"
+                      checked={this.state.checkboxB}
+                      onChange={this.handleCheckbox}
+                    />
+                    <span>1 hour before match</span>
+                  </div>
+                  <TextField
+                    noBorder
+                    className={classes.textField}
+                    placeholder="Your email"
+                    name="email"
+                    onChange={this.handleOnChange}
+                  />
+                  <Button
+                    type="submit"
+                    color="primary"
+                    variant="contained"
+                    className={classes.button}
+                  >
+                    {/* Keep me updated */}
+                    Get Email Alerts!
+                  </Button>
+                </form>
+              </div>
+            </Grid>
+            {/* <Grid item xs={12} md={6} className={classes.imagesWrapper}>
             <Hidden smDown>
               <div className={classes.imageDots} />
               <img
@@ -163,13 +175,14 @@ class ProductCTA extends React.Component {
               />
             </Hidden>
           </Grid> */}
-        </Grid>
-        <Snackbar
-          open={this.state.open}
-          onClose={this.handleClose}
-          message="We will send you our best offers, once a week."
-        />
-      </Container>
+          </Grid>
+          <Snackbar
+            open={this.state.open}
+            onClose={this.handleClose}
+            message="We will send you our best offers, once a week."
+          />
+        </Container>
+      </>
     );
   }
 }

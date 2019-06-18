@@ -118,7 +118,7 @@ function ProductHowItWorks(props) {
           variant="contained"
           className={classes.button}
           component="a"
-          href="/premium-themes/onepirate/sign-up/"
+          href="/#sign-up"
         >
           Choose Players
         </Button>
