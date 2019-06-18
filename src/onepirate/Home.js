@@ -10,6 +10,8 @@ import ProductHowItWorks from './modules/views/ProductHowItWorks';
 import ProductCTA from './modules/views/ProductCTA';
 import AppAppBar from './modules/views/AppAppBar';
 
+import PlayerSearchBar from '../components/PlayerSearchBar';
+
 function Index() {
   return (
     <React.Fragment>
@@ -18,6 +20,7 @@ function Index() {
       {/* <ProductValues /> */}
       {/* <ProductCategories /> */}
       <ProductHowItWorks />
+      <PlayerSearchBar />
       <ProductCTA />
       <ProductSmokingHero />
       {/* <AppFooter /> */}
