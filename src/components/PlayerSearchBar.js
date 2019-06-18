@@ -15,7 +15,8 @@ const PlayerSearchBar = ({ setSelectedPlayers }) => {
 
   return (
     <>
-      <h4>Type your favorite players:</h4>
+      <h4>Choose your favorite players:</h4>
+      <h5>(begin typing)</h5>
       <Select
         // defaultValue={[playerNames[0], playerNames[2]]}
         isMulti
@@ -26,7 +27,7 @@ const PlayerSearchBar = ({ setSelectedPlayers }) => {
         onChange={handleOnChange}
       />
     </>
-  )
+  );
 };
 
 const ConnectTennisPlayerSearchBar = connectTennis(PlayerSearchBar);
