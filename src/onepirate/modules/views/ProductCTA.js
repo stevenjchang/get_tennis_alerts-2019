@@ -83,8 +83,8 @@ class ProductCTA extends React.Component {
 
     return (
       <Container className={classes.root} component="section">
-        <Grid container>
-          <Grid item xs={12} md={6} className={classes.cardWrapper}>
+        <Grid justify="center" container>
+          <Grid item xs={12} md={10} className={classes.cardWrapper}>
             <div className={classes.card}>
               <form onSubmit={this.handleSubmit} className={classes.cardContent}>
                 <PlayerSearchBar />
@@ -107,7 +107,7 @@ class ProductCTA extends React.Component {
               </form>
             </div>
           </Grid>
-          <Grid item xs={12} md={6} className={classes.imagesWrapper}>
+          {/* <Grid item xs={12} md={6} className={classes.imagesWrapper}>
             <Hidden smDown>
               <div className={classes.imageDots} />
               <img
@@ -116,7 +116,7 @@ class ProductCTA extends React.Component {
                 className={classes.image}
               />
             </Hidden>
-          </Grid>
+          </Grid> */}
         </Grid>
         <Snackbar
           open={this.state.open}
