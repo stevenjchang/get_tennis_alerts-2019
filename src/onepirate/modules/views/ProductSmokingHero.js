@@ -5,6 +5,8 @@ import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '../components/Typography';
 
+const GOOGLE_FORMS_SURVEY_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSdOAh7UE6efE7fSJOzPOFbw7utJrx5ypsYFeOgjjy-W82Cziw/viewform?usp=sf_link';
+
 const styles = theme => ({
   root: {
     display: 'flex',
@@ -30,20 +32,32 @@ const styles = theme => ({
 
 function ProductSmokingHero(props) {
   const { classes } = props;
+  console.log('GOOGLE_FORMS_SURVEY_URL ==>', GOOGLE_FORMS_SURVEY_URL);
 
   return (
     <Container className={classes.root} component="section">
       <Button className={classes.button}>
-        <Typography variant="h4" component="span">
-          {/* Got any questions? Need help? */}
-          Got Feedback? Take our survey!
-        </Typography>
+        <a
+          href={GOOGLE_FORMS_SURVEY_URL}
+          style={{textDecoration: 'none'}}
+          target="_blank"
+        >
+          <Typography variant="h4" component="span">
+            {/* Got any questions? Need help? */}
+            Got Feedback? Take our survey!
+          </Typography>
+        </a>
       </Button>
       <Typography variant="subtitle1" className={classes.link}>
         {/* We are here to help. Get in touch! */}
-        We are rapidly building out more features. We would love to hear from you!
+        We are rapidly building out more features. We would love to hear from
+        you!
       </Typography>
-      <img src="/static/themes/onepirate/producBuoy.svg" className={classes.buoy} alt="buoy" />
+      <img
+        src="/static/themes/onepirate/producBuoy.svg"
+        className={classes.buoy}
+        alt="buoy"
+      />
     </Container>
   );
 }
