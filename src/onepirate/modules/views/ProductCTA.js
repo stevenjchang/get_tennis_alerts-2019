@@ -23,7 +23,7 @@ const styles = theme => ({
   card: {
     display: 'flex',
     justifyContent: 'center',
-    backgroundColor: theme.palette.warning.main,
+    backgroundColor: '#e4e9ed',
     padding: theme.spacing(8, 3),
   },
   cardContent: {
@@ -31,11 +31,12 @@ const styles = theme => ({
   },
   textField: {
     width: '100%',
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(2),
+    marginTop: theme.spacing(9),
+    marginBottom: theme.spacing(4),
   },
   button: {
     width: '100%',
+    backgroundColor: '#d64541',
   },
   imagesWrapper: {
     position: 'relative',
