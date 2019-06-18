@@ -9,6 +9,9 @@ import TextField from '../components/TextField';
 import Snackbar from '../components/Snackbar';
 import Button from '../components/Button';
 
+import Checkbox from '@material-ui/core/Checkbox';
+import PlayerSearchBar from '../../../components/PlayerSearchBar';
+
 const styles = theme => ({
   root: {
     marginTop: theme.spacing(10),
@@ -21,7 +24,7 @@ const styles = theme => ({
   card: {
     display: 'flex',
     justifyContent: 'center',
-    backgroundColor: theme.palette.warning.main,
+    backgroundColor: '#e4e9ed',
     padding: theme.spacing(8, 3),
   },
   cardContent: {
@@ -29,11 +32,12 @@ const styles = theme => ({
   },
   textField: {
     width: '100%',
-    marginTop: theme.spacing(3),
-    marginBottom: theme.spacing(2),
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(4),
   },
   button: {
     width: '100%',
+    backgroundColor: '#d64541',
   },
   imagesWrapper: {
     position: 'relative',
@@ -81,16 +85,25 @@ class ProductCTA extends React.Component {
 
     return (
       <Container className={classes.root} component="section">
-        <Grid container>
-          <Grid item xs={12} md={6} className={classes.cardWrapper}>
+        <Grid justify="center" container>
+          <Grid item xs={12} md={10} className={classes.cardWrapper}>
             <div className={classes.card}>
               <form onSubmit={this.handleSubmit} className={classes.cardContent}>
+                <PlayerSearchBar />
                 <Typography variant="h2" component="h2" gutterBottom>
-                  Receive offers
+                  {/* Receive offers */}
                 </Typography>
                 <Typography variant="h5">
-                  Taste the holidays of the everyday close to home.
+                  {/* Taste the holidays of the everyday close to home. */}
                 </Typography>
+                <div style={{marginTop: '70px'}}>
+                  <Checkbox 
+                  />
+                  <span>1 day before match</span>
+                  <Checkbox
+                  />
+                  <span>1 hour before match</span>
+                </div>
                 <TextField noBorder className={classes.textField} placeholder="Your email" />
                 <Button
                   type="submit"
@@ -98,12 +111,13 @@ class ProductCTA extends React.Component {
                   variant="contained"
                   className={classes.button}
                 >
-                  Keep me updated
+                  {/* Keep me updated */}
+                  Get Email Alerts!
                 </Button>
               </form>
             </div>
           </Grid>
-          <Grid item xs={12} md={6} className={classes.imagesWrapper}>
+          {/* <Grid item xs={12} md={6} className={classes.imagesWrapper}>
             <Hidden smDown>
               <div className={classes.imageDots} />
               <img
@@ -112,7 +126,7 @@ class ProductCTA extends React.Component {
                 className={classes.image}
               />
             </Hidden>
-          </Grid>
+          </Grid> */}
         </Grid>
         <Snackbar
           open={this.state.open}
