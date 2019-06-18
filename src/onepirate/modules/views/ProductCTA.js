@@ -40,7 +40,7 @@ const styles = theme => ({
   },
   button: {
     width: '100%',
-    backgroundColor: '#d64541',
+    backgroundColor: '#ff3366',
   },
   imagesWrapper: {
     position: 'relative',

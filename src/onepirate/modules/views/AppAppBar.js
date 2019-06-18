@@ -37,7 +37,7 @@ const styles = theme => ({
 
 const spanStyles = {
   fontSize: '11px',
-  color: 'red',
+  color: '#ff3366',
   marginLeft: '7px',
   top: '-9px',
   position: 'relative',
