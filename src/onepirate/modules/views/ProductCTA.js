@@ -11,6 +11,9 @@ import Button from '../components/Button';
 
 import Checkbox from '@material-ui/core/Checkbox';
 import PlayerSearchBar from '../../../components/PlayerSearchBar';
+import axios from 'axios';
+import { LAMBDA_URI } from '../../../constants';
+import connectTennis from '../../../containers/connectTennis';
 
 const styles = theme => ({
   root: {
@@ -37,7 +40,7 @@ const styles = theme => ({
   },
   button: {
     width: '100%',
-    backgroundColor: '#d64541',
+    backgroundColor: '#ff3366',
   },
   imagesWrapper: {
     position: 'relative',
@@ -69,9 +72,19 @@ class ProductCTA extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.setState({
-      open: true,
-    });
+
+    let body = {
+      selectedPlayers: this.props.selectedPlayers.sort(),
+      email: this.state.email,
+      checkboxA: this.state.checkboxA,
+      checkboxB: this.state.checkboxB,
+    }
+    
+    axios.post(`${LAMBDA_URI}/signup`, body)
+      .then((res) => {
+        this.setState({ open: true });
+      })
+      .catch((err) => console.log('err in axios.post in ProductCTA ==>', err))
   };
 
   handleClose = () => {
@@ -79,6 +92,15 @@ class ProductCTA extends React.Component {
       open: false,
     });
   };
+
+  handleOnChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
+  handleCheckbox = (e) => {
+    const name = e.target.name;
+    this.setState({ [name]: !(this.state[name]) })
+  }
 
   render() {
     const { classes } = this.props;
@@ -98,13 +120,23 @@ class ProductCTA extends React.Component {
                 </Typography>
                 <div style={{marginTop: '70px'}}>
                   <Checkbox 
+                    name="checkboxA"
+                    onChange={this.handleCheckbox}
                   />
                   <span>1 day before match</span>
                   <Checkbox
+                    name="checkboxB"
+                    onChange={this.handleCheckbox}
                   />
                   <span>1 hour before match</span>
                 </div>
-                <TextField noBorder className={classes.textField} placeholder="Your email" />
+                <TextField
+                  noBorder
+                  className={classes.textField}
+                  placeholder="Your email"
+                  name="email"
+                  onChange={this.handleOnChange}
+                />
                 <Button
                   type="submit"
                   color="primary"
@@ -142,4 +174,6 @@ ProductCTA.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ProductCTA);
+const ConnectTennisProductCTA = connectTennis(withStyles(styles)(ProductCTA));
+
+export default ConnectTennisProductCTA;
