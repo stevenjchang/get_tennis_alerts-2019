@@ -9,6 +9,8 @@ import TextField from '../components/TextField';
 import Snackbar from '../components/Snackbar';
 import Button from '../components/Button';
 
+import PlayerSearchBar from '../../../components/PlayerSearchBar';
+
 const styles = theme => ({
   root: {
     marginTop: theme.spacing(10),
@@ -85,11 +87,12 @@ class ProductCTA extends React.Component {
           <Grid item xs={12} md={6} className={classes.cardWrapper}>
             <div className={classes.card}>
               <form onSubmit={this.handleSubmit} className={classes.cardContent}>
+                <PlayerSearchBar />
                 <Typography variant="h2" component="h2" gutterBottom>
-                  Receive offers
+                  {/* Receive offers */}
                 </Typography>
                 <Typography variant="h5">
-                  Taste the holidays of the everyday close to home.
+                  {/* Taste the holidays of the everyday close to home. */}
                 </Typography>
                 <TextField noBorder className={classes.textField} placeholder="Your email" />
                 <Button
@@ -98,7 +101,8 @@ class ProductCTA extends React.Component {
                   variant="contained"
                   className={classes.button}
                 >
-                  Keep me updated
+                  {/* Keep me updated */}
+                  Get Email Alerts!
                 </Button>
               </form>
             </div>
