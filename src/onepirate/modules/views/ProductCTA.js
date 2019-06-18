@@ -9,6 +9,7 @@ import TextField from '../components/TextField';
 import Snackbar from '../components/Snackbar';
 import Button from '../components/Button';
 
+import Checkbox from '@material-ui/core/Checkbox';
 import PlayerSearchBar from '../../../components/PlayerSearchBar';
 
 const styles = theme => ({
@@ -31,7 +32,7 @@ const styles = theme => ({
   },
   textField: {
     width: '100%',
-    marginTop: theme.spacing(9),
+    marginTop: theme.spacing(2),
     marginBottom: theme.spacing(4),
   },
   button: {
@@ -95,6 +96,14 @@ class ProductCTA extends React.Component {
                 <Typography variant="h5">
                   {/* Taste the holidays of the everyday close to home. */}
                 </Typography>
+                <div style={{marginTop: '70px'}}>
+                  <Checkbox 
+                  />
+                  <span>1 day before match</span>
+                  <Checkbox
+                  />
+                  <span>1 hour before match</span>
+                </div>
                 <TextField noBorder className={classes.textField} placeholder="Your email" />
                 <Button
                   type="submit"
