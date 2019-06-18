@@ -12,7 +12,8 @@ import Button from '../components/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import PlayerSearchBar from '../../../components/PlayerSearchBar';
 import axios from 'axios';
-import { LAMBDA_URI } from "../../../constants";
+import { LAMBDA_URI } from '../../../constants';
+import connectTennis from '../../../containers/connectTennis';
 
 const styles = theme => ({
   root: {
@@ -73,7 +74,7 @@ class ProductCTA extends React.Component {
     event.preventDefault();
 
     let body = {
-      // selectedPlayers: this.props.selectedPlayers.sort(),
+      selectedPlayers: this.props.selectedPlayers.sort(),
       email: this.state.email,
       checkboxA: this.state.checkboxA,
       checkboxB: this.state.checkboxB,
@@ -173,4 +174,6 @@ ProductCTA.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ProductCTA);
+const ConnectTennisProductCTA = connectTennis(withStyles(styles)(ProductCTA));
+
+export default ConnectTennisProductCTA;
