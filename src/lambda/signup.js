@@ -26,7 +26,7 @@ function addEmailToMailingList(db, dbName, payload) {
     .db(dbName)
     .collection("mailingList")
     .insertOne({
-      playerList: payload.playerList,
+      selectedPlayers: payload.selectedPlayers,
       email: payload.email,
       checkboxA: payload.checkboxA,
       checkboxB: payload.checkboxB
