@@ -161,6 +161,7 @@ class ProductCTA extends React.Component {
                     placeholder="Your email"
                     name="email"
                     onChange={this.handleOnChange}
+                    value={this.state.email}
                   />
                   <Button
                     type="submit"
