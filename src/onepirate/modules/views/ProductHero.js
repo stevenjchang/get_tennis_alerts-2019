@@ -38,13 +38,17 @@ const styles = theme => ({
     fontSize: pxToRem(50),
     fontFamily: "Roboto",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "50px"
+      fontSize: pxToRem(39)
     }
   },
   paper: {
     padding: theme.spacing(2, 6),
     backgroundColor: "#ffff7e",
-    marginBottom: "30px"
+    marginBottom: "30px",
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(2, 2),
+      fontSize: pxToRem(12)
+    }
   }
 });
 
