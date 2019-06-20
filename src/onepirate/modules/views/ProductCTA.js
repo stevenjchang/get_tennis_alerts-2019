@@ -187,7 +187,7 @@ class ProductCTA extends React.Component {
           <Snackbar
             open={this.state.open}
             onClose={this.handleClose}
-            message="We will send you our best offers, once a week."
+            message="Thank you. You are now subscribed."
           />
         </Container>
       </>
