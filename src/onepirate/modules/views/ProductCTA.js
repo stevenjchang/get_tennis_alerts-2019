@@ -96,7 +96,11 @@ class ProductCTA extends React.Component {
     
     axios.post(`${LAMBDA_URI}/signup`, body)
       .then((res) => {
-        this.setState({ open: true });
+        this.setState({
+          open: true,
+          email: '',
+        });
+        this.props.clearSelectedPlayers();
       })
       .catch((err) => console.log('err in axios.post in ProductCTA ==>', err))
   };
@@ -157,6 +161,7 @@ class ProductCTA extends React.Component {
                     placeholder="Your email"
                     name="email"
                     onChange={this.handleOnChange}
+                    value={this.state.email}
                   />
                   <Button
                     type="submit"
@@ -187,7 +192,7 @@ class ProductCTA extends React.Component {
           <Snackbar
             open={this.state.open}
             onClose={this.handleClose}
-            message="We will send you our best offers, once a week."
+            message="Thank you. You are now subscribed."
           />
         </Container>
       </>

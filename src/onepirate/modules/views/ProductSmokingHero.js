@@ -32,7 +32,6 @@ const styles = theme => ({
 
 function ProductSmokingHero(props) {
   const { classes } = props;
-  console.log('GOOGLE_FORMS_SURVEY_URL ==>', GOOGLE_FORMS_SURVEY_URL);
 
   return (
     <Container className={classes.root} component="section">

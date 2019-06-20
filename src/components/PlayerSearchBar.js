@@ -8,7 +8,7 @@ const values = [
 ]
 
 
-const PlayerSearchBar = ({ setSelectedPlayers }) => {
+const PlayerSearchBar = ({ selectedPlayers,setSelectedPlayers }) => {
   const handleOnChange = (selectedPlayers) => {
     setSelectedPlayers(selectedPlayers);
   }
@@ -25,6 +25,7 @@ const PlayerSearchBar = ({ setSelectedPlayers }) => {
         className="basic-multi-select"
         classNamePrefix="select"
         onChange={handleOnChange}
+        value={selectedPlayers}
       />
     </>
   );
