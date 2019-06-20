@@ -30,12 +30,16 @@ const styles = theme => ({
     marginTop: theme.spacing(2)
   },
   title1: {
-    maxWidth: "625px"
+    maxWidth: "625px",
+    fontSize: '50px',
+    fontFamily: 'Roboto',
+      [theme.breakpoints.down("sm")]: {
+        fontSize: '39px',
+    }
   },
   paper: {
     padding: theme.spacing(2, 6),
     backgroundColor: "#ffff7e",
-    // marginTop: "-4.5%",
     marginBottom: "30px"
   }
 });
@@ -53,7 +57,7 @@ function ProductHero(props) {
       <Typography
         color="inherit"
         align="center"
-        variant="h3"
+        variant="h1"
         marked="center"
         className={classes.title1}
       >
