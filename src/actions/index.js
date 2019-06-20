@@ -1,6 +1,7 @@
 import { tournament } from '../tennisData/data';
 import { playerNames } from '../tennisData/playerNames';
 import {
+  CLEAR_SELECTED_PLAYERS,
   GET_TOURNAMENT_DATA,
   GET_TOURNAMENT_DATA_ERROR,
   SET_ALL_PLAYER_NAMES,
@@ -29,6 +30,12 @@ export const setSelectedPlayers = (selectedPlayers) => {
     data: selectedPlayers,
   }
 };
+
+export const clearSelectedPlayers = () => {
+  return {
+    type: CLEAR_SELECTED_PLAYERS,
+  }
+}
 
 export const toggleShowSignUpForm = toggleName => {
   return {

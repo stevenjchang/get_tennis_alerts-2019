@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import {
+  clearSelectedPlayers,
   getTournamentData,
   setSelectedPlayers,
   toggleShowSignUpForm,
@@ -14,6 +15,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    clearSelectedPlayers: () => dispatch(clearSelectedPlayers()),
     getTournamentData: () => dispatch(getTournamentData()),
     setSelectedPlayers: selectedPlayers =>
       dispatch(setSelectedPlayers(selectedPlayers)),

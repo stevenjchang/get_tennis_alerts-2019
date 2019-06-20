@@ -96,7 +96,11 @@ class ProductCTA extends React.Component {
     
     axios.post(`${LAMBDA_URI}/signup`, body)
       .then((res) => {
-        this.setState({ open: true });
+        this.setState({
+          open: true,
+          email: '',
+        });
+        this.props.clearSelectedPlayers();
       })
       .catch((err) => console.log('err in axios.post in ProductCTA ==>', err))
   };
