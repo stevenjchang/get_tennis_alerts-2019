@@ -10,6 +10,10 @@ const backgroundImage =
   // 'https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=1400&q=80';
   '/static/themes/onepirate/tennis-575578-unsplash.jpg';
 
+function pxToRem(value) {
+  return `${value / 16}rem`;
+}
+
 const styles = theme => ({
   background: {
     backgroundImage: `url(${backgroundImage})`,
@@ -30,13 +34,21 @@ const styles = theme => ({
     marginTop: theme.spacing(2)
   },
   title1: {
-    maxWidth: "625px"
+    maxWidth: "625px",
+    fontSize: pxToRem(50),
+    fontFamily: "Roboto",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: pxToRem(39)
+    }
   },
   paper: {
     padding: theme.spacing(2, 6),
     backgroundColor: "#ffff7e",
-    // marginTop: "-4.5%",
-    marginBottom: "30px"
+    marginBottom: "30px",
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(2, 2),
+      fontSize: pxToRem(12)
+    }
   }
 });
 
@@ -53,7 +65,7 @@ function ProductHero(props) {
       <Typography
         color="inherit"
         align="center"
-        variant="h3"
+        variant="h1"
         marked="center"
         className={classes.title1}
       >
