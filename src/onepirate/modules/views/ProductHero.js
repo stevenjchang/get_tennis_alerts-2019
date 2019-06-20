@@ -10,6 +10,10 @@ const backgroundImage =
   // 'https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=1400&q=80';
   '/static/themes/onepirate/tennis-575578-unsplash.jpg';
 
+function pxToRem(value) {
+  return `${value / 16}rem`;
+}
+
 const styles = theme => ({
   background: {
     backgroundImage: `url(${backgroundImage})`,
@@ -31,10 +35,10 @@ const styles = theme => ({
   },
   title1: {
     maxWidth: "625px",
-    fontSize: '50px',
-    fontFamily: 'Roboto',
-      [theme.breakpoints.down("sm")]: {
-        fontSize: '39px',
+    fontSize: pxToRem(50),
+    fontFamily: "Roboto",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "50px"
     }
   },
   paper: {
