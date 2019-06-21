@@ -17,7 +17,7 @@ class App extends Component {
     if (process.env.NODE_ENV === 'production') {
       console.log('production')
       ReactGA.initialize('UA-73381859-5');
-      ReactGA.pageview(window.location.pathname);
+      ReactGA.pageview(window.location.pathname + window.location.hash);
     }
   }
 
