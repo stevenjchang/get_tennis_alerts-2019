@@ -6,6 +6,8 @@ import Typography from '../components/Typography';
 import ProductHeroLayout from './ProductHeroLayout';
 import Paper from '@material-ui/core/Paper';
 
+import ga from '../../../util/ReactGA';
+
 const backgroundImage =
   // 'https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=1400&q=80';
   '/static/themes/onepirate/tennis-575578-unsplash.jpg';
@@ -101,6 +103,7 @@ function ProductHero(props) {
         className={classes.button}
         component="a"
         href="/#sign-up"
+        onClick={() => ga.trackSignUpClick(2)}
       >
         {/* Register */}
         Choose Players

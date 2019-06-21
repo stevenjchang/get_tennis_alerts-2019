@@ -6,6 +6,8 @@ import Link from '@material-ui/core/Link';
 import AppBar from '../components/AppBar';
 import Toolbar, { styles as toolbarStyles } from '../components/Toolbar';
 
+import ga from '../../../util/ReactGA';
+
 const styles = theme => ({
   title: {
     fontSize: 19,
@@ -43,6 +45,7 @@ const spanStyles = {
   position: 'relative',
 }
 
+
 function AppAppBar(props) {
   const { classes } = props;
 
@@ -76,6 +79,7 @@ function AppAppBar(props) {
               underline="none"
               className={clsx(classes.rightLink, classes.linkSecondary)}
               href="/#sign-up"
+              onClick={() => ga.trackSignUpClick(1)}
             >
               {'Sign Up'}
             </Link>
