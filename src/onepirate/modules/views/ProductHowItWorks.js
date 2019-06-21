@@ -6,6 +6,8 @@ import Container from '@material-ui/core/Container';
 import Button from '../components/Button';
 import Typography from '../components/Typography';
 
+import ga from "../../../util/ReactGA";
+
 const styles = theme => ({
   root: {
     display: 'flex',
@@ -62,7 +64,12 @@ function ProductHowItWorks(props) {
           className={classes.curvyLines}
           alt="curvy lines"
         />
-        <Typography variant="h4" marked="center" className={classes.title} component="h2">
+        <Typography
+          variant="h4"
+          marked="center"
+          className={classes.title}
+          component="h2"
+        >
           How it works
         </Typography>
         <div>
@@ -119,6 +126,7 @@ function ProductHowItWorks(props) {
           className={classes.button}
           component="a"
           href="/#sign-up"
+          onClick={() => ga.trackSignUpClick(3)}
         >
           Choose Players
         </Button>
