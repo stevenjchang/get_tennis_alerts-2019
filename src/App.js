@@ -1,14 +1,14 @@
+import 'babel-polyfill';
 import React, { Component } from "react";
 import ReactGA from 'react-ga';
 
 import "./App.css"
 import BottomNavigation from './components/BottomNavigation';
 import Container from '@material-ui/core/Container';
+import Home from './onepirate/Home';
 // import LambdaDemo from './util/LambdaDemo';
 import NavBar from './components/NavBar';
 import Tennis from './components/Tennis';
-
-import Home from './onepirate/Home';
 
 
 class App extends Component {
