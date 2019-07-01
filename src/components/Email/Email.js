@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import connectTennis from '../../containers/connectTennis';
 import { mockMailingList } from './mockMailingListData';
-import { tournament } from "../../tennisData/frenchOpen";
+import { tournament } from "../../tennisData/wimbledonOpen";
 
 
 // input: selectedPlayers Array
