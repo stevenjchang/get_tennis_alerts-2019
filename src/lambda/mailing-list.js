@@ -16,8 +16,13 @@ export async function handler(event, context) {
     }
   });
 
+  console.log(
+    "event.queryStringParameters.email ==>",
+    event.queryStringParameters.email
+  );
+
   var mailOptions = {
-    from: event.body.email,
+    from: event.body.email, //TODO: not used
     to: process.env.EMAIL_ADDRESS_2,
     subject: `Subscribe by ${event.body.email}`,
     text: "Please add me to the mailing list"
