@@ -10,12 +10,15 @@ import ProductHowItWorks from './modules/views/ProductHowItWorks';
 import ProductCTA from './modules/views/ProductCTA';
 import AppAppBar from './modules/views/AppAppBar';
 
+import Email from '../components/Email/Email';
+
 
 function Index() {
   return (
     <React.Fragment>
       <AppAppBar />
       <ProductHero />
+      <Email />
       {/* <ProductValues /> */}
       {/* <ProductCategories /> */}
       <ProductHowItWorks />
