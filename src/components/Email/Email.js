@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import connectTennis from '../../containers/connectTennis';
 import { mockMailingList } from './mockMailingListData';
-import { tournament } from "../../tennisData/wimbledonOpen";
+import { tournament } from "../../tennisData/wimbledonOpen0701";
 
 
 // input: selectedPlayers Array
@@ -42,7 +42,7 @@ let _addDateDividers = (list) => {
 
 
 const Email = () => {
-  let filteredList = _filterMatches(mockMailingList[0].selectedPlayers, tournament, 3);
+  let filteredList = _filterMatches(mockMailingList[0].selectedPlayers, tournament, 1);
   let filteredListWithDateDividers = _addDateDividers(filteredList);
 
   return (
