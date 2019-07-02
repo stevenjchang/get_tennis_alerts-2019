@@ -80,6 +80,8 @@ const loadTemplate = (templateName, contexts) => {
 
 const customEmailContexts = _generateCustomEmailContexts(mockMailingList, tournament, 1);
 
+console.log('customEmailContexts ==>', JSON.stringify(customEmailContexts));
+
 
 loadTemplate("alerts", customEmailContexts)
   .then(results => {

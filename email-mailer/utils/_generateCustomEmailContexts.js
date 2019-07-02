@@ -39,6 +39,8 @@ export const _generateCustomEmailContexts = (mailingList, tournament, currentRou
     const filteredMatches = _filterMatches(user.selectedPlayers, tournament, currentRound)
     const filteredMatchesWithDateDividers = _addDateDividers(filteredMatches);
     return {
+      email: user.email,
+      // timeZoneOffset,
       matches: filteredMatchesWithDateDividers,
     };
   })
