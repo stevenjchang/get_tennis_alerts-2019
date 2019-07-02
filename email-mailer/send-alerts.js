@@ -1,20 +1,20 @@
-var nodemailer = require("nodemailer");
+const nodemailer = require("nodemailer");
+const EmailTemplate = require("email-templates").EmailTemplate;
+const path = require("path");
 require("dotenv").config();
 
-const _generateTransporter = () => {
-  return nodemailer.createTransport({
-    service: "gmail",
-    secure: false,
-    port: 25,
-    auth: {
-      user: process.env.EMAIL_ADDRESS,
-      pass: process.env.EMAIL_PASSWORD
-    },
-    tls: {
-      rejectUnauthorized: false
-    }
-  });
-};
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  secure: false,
+  port: 25,
+  auth: {
+    user: process.env.EMAIL_ADDRESS,
+    pass: process.env.EMAIL_PASSWORD
+  },
+  tls: {
+    rejectUnauthorized: false
+  }
+});
 
 const _generateMailOptions = (userEmail) => {
   return {
@@ -25,15 +25,69 @@ const _generateMailOptions = (userEmail) => {
   };
 };
 
+const sendEmail = obj => {
+  return transporter.sendMail(obj);
+};
+
+
+
+
+
+
+let users = [
+  {
+    name: "name 1",
+    email: "1@1.com"
+  },
+  {
+    name: "name 2",
+    email: "2@1.com"
+  },
+  {
+    name: 'name 3',
+    email: '3@1.com'
+  },
+];
+
+const loadTemplate = (templateName, contexts) => {
+  let template = new EmailTemplate(path.join(__dirname, 'templates', templateName));
+  return Promise.all(contexts.map((context) => {
+    return new Promise((resolve, reject) => {
+      template.render(context, (err, result) => {
+        if (err) reject(err);
+        else resolve(result);
+      })
+    })
+  }))
+};
+
+loadTemplate('alerts', users)
+  .then((results) => {
+    console.log('results ==>', JSON.stringify(results, null, 4));
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Main function
 const sendAlert = (email) => {
-  let transporter = _generateTransporter();
   let mailOptions = _generateMailOptions(email);
 
-  // return
-
+  return
   transporter.sendMail(mailOptions, (err, info) => {
     if (err) console.log('Error in transport.sendMail ==>', err);
     console.log('email sent! ==>', info.response);
   })
 };
+
+
+
