@@ -8,7 +8,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - Court 11",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Marcos Giron",
@@ -25,7 +25,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - Court 4",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Peter Gojowczyk",
@@ -42,7 +42,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - No 2 Court",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Stanislas Wawrinka",
@@ -59,7 +59,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:00:00.000Z",
       court: "First Round - Centre Court",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "8:00 AM ET",
       player1: {
         name: "Novak Djokovic",
@@ -76,7 +76,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:00:00.000Z",
       court: "First Round - Court 12",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "8:00 AM ET",
       player1: {
         name: "Felix Auger-Aliassime",
@@ -93,7 +93,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:00:00.000Z",
       court: "First Round - Court 18",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "8:00 AM ET",
       player1: {
         name: "Karen Khachanov",
@@ -110,7 +110,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:00:00.000Z",
       court: "First Round - Court 9",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "8:00 AM ET",
       player1: {
         name: "Steve Darcis",
@@ -127,7 +127,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:00:00.000Z",
       court: "First Round - Court 17",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "10:00 AM ET",
       player1: {
         name: "Marius Copil",
@@ -144,7 +144,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:30:00.000Z",
       court: "First Round - Court 11",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "10:30 AM ET",
       player1: {
         name: "Pablo Cuevas",
@@ -161,7 +161,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:30:00.000Z",
       court: "First Round - Court 15",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "10:30 AM ET",
       player1: {
         name: "Grigor Dimitrov",
@@ -178,7 +178,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:30:00.000Z",
       court: "First Round - Court 18",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "10:30 AM ET",
       player1: {
         name: "Daniil Medvedev",
@@ -195,7 +195,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:30:00.000Z",
       court: "First Round - Court 8",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "10:30 AM ET",
       player1: {
         name: "Pablo Carreno Busta",
@@ -212,7 +212,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T16:00:00.000Z",
       court: "First Round - Court 6",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "12:00 PM ET",
       player1: {
         name: "Hubert Hurkacz",
@@ -229,7 +229,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T16:30:00.000Z",
       court: "First Round - Court 14",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "12:30 PM ET",
       player1: {
         name: "Benoit Paire",
@@ -246,7 +246,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T16:30:00.000Z",
       court: "First Round - Court 4",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "12:30 PM ET",
       player1: {
         name: "Lorenzo Sonego",
@@ -263,7 +263,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T16:30:00.000Z",
       court: "First Round - Court 9",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "12:30 PM ET",
       player1: {
         name: "Jeremy Chardy",
@@ -280,7 +280,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - Court 15",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Janko Tipsarevic",
@@ -297,7 +297,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - Court 7",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Cedrik-Marcel Stebe",
@@ -314,7 +314,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - No 3 Court",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Kevin Anderson",
@@ -331,7 +331,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:00:00.000Z",
       court: "First Round - Court 10",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "8:00 AM ET",
       player1: {
         name: "Denis Kudla",
@@ -348,7 +348,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:00:00.000Z",
       court: "First Round - Court 16",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "8:00 AM ET",
       player1: {
         name: "Andreas Seppi",
@@ -365,7 +365,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:00:00.000Z",
       court: "First Round - Court 8",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "8:00 AM ET",
       player1: {
         name: "Ernests Gulbis",
@@ -382,7 +382,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:00:00.000Z",
       court: "First Round - Court 14",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "10:00 AM ET",
       player1: {
         name: "Jozef Kovalik",
@@ -399,7 +399,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:00:00.000Z",
       court: "First Round - No 1 Court",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "10:00 AM ET",
       player1: {
         name: "Jiri Vesely",
@@ -416,7 +416,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:30:00.000Z",
       court: "First Round - Court 12",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "10:30 AM ET",
       player1: {
         name: "Prajnesh Gunneswaran",
@@ -433,7 +433,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:30:00.000Z",
       court: "First Round - Court 16",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "10:30 AM ET",
       player1: {
         name: "Kamil Majchrzak",
@@ -450,7 +450,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:30:00.000Z",
       court: "First Round - Court 7",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "10:30 AM ET",
       player1: {
         name: "Andrea Arnaboldi",
@@ -467,7 +467,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:30:00.000Z",
       court: "First Round - No 2 Court",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "10:30 AM ET",
       player1: {
         name: "Thomas Fabbiano",
@@ -484,7 +484,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T16:30:00.000Z",
       court: "First Round - Centre Court",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "12:30 PM ET",
       player1: {
         name: "Kyle Edmund",
@@ -501,7 +501,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T16:30:00.000Z",
       court: "First Round - Court 17",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "12:30 PM ET",
       player1: {
         name: "Bradley Klahn",
@@ -518,7 +518,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T16:30:00.000Z",
       court: "First Round - Court 6",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "12:30 PM ET",
       player1: {
         name: "Roberto Carballes Baena",
@@ -535,7 +535,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T16:30:00.000Z",
       court: "First Round - No 3 Court",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "12:30 PM ET",
       player1: {
         name: "Ugo Humbert",
@@ -552,7 +552,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - Court 10",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Margarita Gasparyan",
@@ -569,7 +569,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - Court 14",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Sofia Kenin",
@@ -586,7 +586,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - Court 17",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Madison Keys",
@@ -603,7 +603,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - Court 6",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Polona Hercog",
@@ -620,7 +620,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - Court 9",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Marie Bouzkova",
@@ -637,7 +637,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:00:00.000Z",
       court: "First Round - Court 17",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "8:00 AM ET",
       player1: {
         name: "Petra Martic",
@@ -654,7 +654,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:00:00.000Z",
       court: "First Round - No 1 Court",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "8:00 AM ET",
       player1: {
         name: "Simona Halep",
@@ -671,7 +671,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:30:00.000Z",
       court: "First Round - Court 15",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "8:30 AM ET",
       player1: {
         name: "Marketa Vondrousova",
@@ -688,7 +688,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:30:00.000Z",
       court: "First Round - Court 7",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "8:30 AM ET",
       player1: {
         name: "Karolina Muchova",
@@ -705,7 +705,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:30:00.000Z",
       court: "First Round - No 3 Court",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "8:30 AM ET",
       player1: {
         name: "Magdalena Rybarikova",
@@ -722,7 +722,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:30:00.000Z",
       court: "First Round - Court 10",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "10:30 AM ET",
       player1: {
         name: "Anastasia Potapova",
@@ -739,7 +739,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:30:00.000Z",
       court: "First Round - Court 9",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "10:30 AM ET",
       player1: {
         name: "Veronika Kudermetova",
@@ -756,7 +756,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T16:30:00.000Z",
       court: "First Round - Court 10",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "12:30 PM ET",
       player1: {
         name: "Rebecca Peterson",
@@ -773,7 +773,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T17:00:00.000Z",
       court: "First Round - Court 12",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "1:00 PM ET",
       player1: {
         name: "Alize Cornet",
@@ -790,7 +790,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T17:00:00.000Z",
       court: "First Round - Court 16",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "1:00 PM ET",
       player1: {
         name: "Ajla Tomljanovic",
@@ -807,7 +807,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T17:00:00.000Z",
       court: "First Round - Court 7",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "1:00 PM ET",
       player1: {
         name: "Dalila Jakupovic",
@@ -824,7 +824,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - Court 12",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Catherine McNally",
@@ -841,7 +841,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - Court 16",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Bernarda Pera",
@@ -858,7 +858,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - Court 18",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Elina Svitolina",
@@ -875,7 +875,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T10:00:00.000Z",
       court: "First Round - Court 8",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "6:00 AM ET",
       player1: {
         name: "Dayana Yastremska",
@@ -892,7 +892,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:00:00.000Z",
       court: "First Round - Court 14",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "8:00 AM ET",
       player1: {
         name: "Shelby Rogers",
@@ -909,7 +909,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:00:00.000Z",
       court: "First Round - Court 6",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "8:00 AM ET",
       player1: {
         name: "Mihaela Buzarnescu",
@@ -926,7 +926,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:30:00.000Z",
       court: "First Round - Court 11",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "8:30 AM ET",
       player1: {
         name: "Iga Swiatek",
@@ -943,7 +943,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:30:00.000Z",
       court: "First Round - Court 4",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "8:30 AM ET",
       player1: {
         name: "Anna Karolina Schmiedlova",
@@ -960,7 +960,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T12:30:00.000Z",
       court: "First Round - No 2 Court",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "8:30 AM ET",
       player1: {
         name: "Lin Zhu",
@@ -977,7 +977,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:30:00.000Z",
       court: "First Round - Centre Court",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "10:30 AM ET",
       player1: {
         name: "Yulia Putintseva",
@@ -994,7 +994,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:30:00.000Z",
       court: "First Round - Court 4",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "10:30 AM ET",
       player1: {
         name: "Danielle Collins",
@@ -1011,7 +1011,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T14:30:00.000Z",
       court: "First Round - No 3 Court",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "10:30 AM ET",
       player1: {
         name: "Kristie Ahn",
@@ -1028,7 +1028,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T16:30:00.000Z",
       court: "First Round - No 1 Court",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "12:30 PM ET",
       player1: {
         name: "Venus Williams",
@@ -1045,7 +1045,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T17:00:00.000Z",
       court: "First Round - Court 15",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "1:00 PM ET",
       player1: {
         name: "Shuai Zhang",
@@ -1062,7 +1062,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T17:00:00.000Z",
       court: "First Round - Court 18",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "1:00 PM ET",
       player1: {
         name: "Su-Wei Hsieh",
@@ -1079,7 +1079,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-01T17:00:00.000Z",
       court: "First Round - No 2 Court",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "1:00 PM ET",
       player1: {
         name: "Caroline Wozniacki",
@@ -1096,7 +1096,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Gilles Simon",
@@ -1113,7 +1113,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Hugo Dellien",
@@ -1130,7 +1130,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Christian Garin",
@@ -1147,7 +1147,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Marton Fucsovics",
@@ -1164,7 +1164,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Frances Tiafoe",
@@ -1181,7 +1181,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Denis Shapovalov",
@@ -1198,7 +1198,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Federico Delbonis",
@@ -1215,7 +1215,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Kei Nishikori",
@@ -1232,7 +1232,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Denis Istomin",
@@ -1249,7 +1249,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Yuichi Sugita",
@@ -1266,7 +1266,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Marco Cecchinato",
@@ -1283,7 +1283,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Jan-Lennard Struff",
@@ -1300,7 +1300,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Casper Ruud",
@@ -1317,7 +1317,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Matteo Berrettini",
@@ -1334,7 +1334,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Jay Clarke",
@@ -1351,7 +1351,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Alexander Bublik",
@@ -1368,7 +1368,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Dominic Thiem",
@@ -1385,7 +1385,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Guido Andreozzi",
@@ -1402,7 +1402,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Marin Cilic",
@@ -1419,7 +1419,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Yasutaka Uchiyama",
@@ -1436,7 +1436,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Joao Sousa",
@@ -1453,7 +1453,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Bernard Tomic",
@@ -1470,7 +1470,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "James Ward",
@@ -1487,7 +1487,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Nick Kyrgios",
@@ -1504,7 +1504,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Steve Johnson",
@@ -1521,7 +1521,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Taylor Fritz",
@@ -1538,7 +1538,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Pablo Andujar",
@@ -1555,7 +1555,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Brayden Schnur",
@@ -1572,7 +1572,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Dominik Koepfer",
@@ -1589,7 +1589,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Matthew Ebden",
@@ -1606,7 +1606,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Lucas Pouille",
@@ -1623,7 +1623,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "atp",
+      matchType: "M",
       isFinalAsString: "TBD",
       player1: {
         name: "Lloyd Harris",
@@ -1640,7 +1640,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Ashleigh Barty",
@@ -1657,7 +1657,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Stefanie Voegele",
@@ -1674,7 +1674,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Harriet Dart",
@@ -1691,7 +1691,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Beatriz Haddad Maia",
@@ -1708,7 +1708,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Serena Williams",
@@ -1725,7 +1725,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Kaja Juvan",
@@ -1742,7 +1742,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Kiki Bertens",
@@ -1759,7 +1759,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Carla Suarez Navarro",
@@ -1776,7 +1776,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Maria Sharapova",
@@ -1793,7 +1793,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Laura Siegemund",
@@ -1810,7 +1810,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Barbora Strycova",
@@ -1827,7 +1827,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Andrea Petkovic",
@@ -1844,7 +1844,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Ana Bogdan",
@@ -1861,7 +1861,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Ekaterina Alexandrova",
@@ -1878,7 +1878,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Magda Linette",
@@ -1895,7 +1895,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Vitalia Diatchenko",
@@ -1912,7 +1912,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Svetlana Kuznetsova",
@@ -1929,7 +1929,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Donna Vekic",
@@ -1946,7 +1946,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Lesley Kerkhove",
@@ -1963,7 +1963,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Paula Badosa",
@@ -1980,7 +1980,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Elena-Gabriela Ruse",
@@ -1997,7 +1997,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Anastasia Pavlyuchenkova",
@@ -2014,7 +2014,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Kateryna Kozlova",
@@ -2031,7 +2031,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Tatjana Maria",
@@ -2048,7 +2048,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Elise Mertens",
@@ -2065,7 +2065,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Tamara Zidansek",
@@ -2082,7 +2082,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Arina Rodionova",
@@ -2099,7 +2099,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Yafan Wang",
@@ -2116,7 +2116,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Vera Lapko",
@@ -2133,7 +2133,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Sloane Stephens",
@@ -2150,7 +2150,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Amanda Anisimova",
@@ -2167,7 +2167,7 @@ export const tournament = {
       round: 1,
       dateTime: "2019-07-02T07:00:00.000Z",
       court: "First Round - ",
-      matchType: "wtp",
+      matchType: "W",
       isFinalAsString: "TBD",
       player1: {
         name: "Ons Jabeur",
