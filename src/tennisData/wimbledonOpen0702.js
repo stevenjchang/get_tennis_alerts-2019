@@ -1,6 +1,6 @@
 export const tournament = {
   custom_id: "2019_wimbledon",
-  name: "2019 Wimbledon",
+  name: "Wimbledon",
   year: 2019,
   open: "wimbledon",
   matches: [
