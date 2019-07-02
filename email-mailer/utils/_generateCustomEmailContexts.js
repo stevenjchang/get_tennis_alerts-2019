@@ -1,10 +1,14 @@
 //input: filteredList
 //output: filteredList with dateDividers
 const _addDateDividers = list => {
-  let dateDivider = new Date(list[0].dateTime).getDate();
+  let dateDivider = new Date(list[0].dateTime)
+    .toISOString()
+    .slice(5, 10);
   let result = [{ dateDivider }];
   for (let match of list) {
-    let date = new Date(match.dateTime).getDate();
+    let date = new Date(match.dateTime)
+      .toISOString()
+      .slice(5, 10);
     if (dateDivider !== date) {
       dateDivider = date;
       result.push({ dateDivider });
