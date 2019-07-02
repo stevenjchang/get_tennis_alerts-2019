@@ -34,6 +34,8 @@ export const _generateCustomEmailContexts = (mailingList, tournament, currentRou
   return mailingList.map((user) => {
     const filteredMatches = _filterMatches(user.selectedPlayers, tournament, currentRound)
     const filteredMatchesWithDateDividers = _addDateDividers(filteredMatches);
-    return filteredMatchesWithDateDividers;
+    return {
+      matches: filteredMatchesWithDateDividers,
+    };
   })
 }

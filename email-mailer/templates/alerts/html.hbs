@@ -1,3 +1,14 @@
-{{#each selectedPlayers}}
-<h1>HEllo {{player1}}</h1>
+
+{{#each matches}}
+  {{#if dateDivider}}
+    <h4>{{dateDivider}}</h4>
+  {{else}}
+    <p>
+      <span>{{dateTime}}</span>
+      <span>{{player1.name}}</span>
+      <span>vs</span>
+      <span>{{player2.name}}</span>
+      <span>{{matchType}}</span>
+    </p>
+  {{/if}}
 {{/each}}

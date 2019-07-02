@@ -23,6 +23,10 @@ const sendEmail = obj => {
   return transporter.sendMail(obj);
 };
 
+const fakeSendEmail = obj => {
+  console.log('email ==>', obj)
+}
+
 // let users = [
 //   {
 //     name: "name 1",
@@ -80,15 +84,15 @@ const customEmailContexts = _generateCustomEmailContexts(mockMailingList, tourna
 loadTemplate("alerts", customEmailContexts)
   .then(results => {
     console.log("results ==>", JSON.stringify(results, null, 4));
-    // return Promise.all(results.map((result) => {
-    //   sendEmail({
-    //     to: result.context.email,
-    //     from: 'me',
-    //     subject: result.email.subject,
-    //     html: result.email.html,
-    //     text: result.email.text,
-    //   })
-    // }))
+    return Promise.all(results.map((result) => {
+      fakeSendEmail({
+        // to: result.context.email,
+        // from: 'me',
+        // subject: result.email.subject,
+        html: result.email.html,
+        // text: result.email.text,
+      })
+    }))
   })
   .then(() => {
     console.log("email sent ==>");
