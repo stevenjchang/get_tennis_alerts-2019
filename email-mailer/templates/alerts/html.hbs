@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <style>
+  </style>
+  </head>
+  <body>
+    {{#each matches}}
+      {{#if dateDivider}}
+        <h4>{{dateDivider}}</h4>
+      {{else}}
+        <p>
+          <span>{{dateTime}}</span>
+          <span>{{player1.name}}</span>
+          <span>vs</span>
+          <span>{{player2.name}}</span>
+          <span>{{matchType}}</span>
+        </p>
+      {{/if}}
+    {{/each}}
+  </body>
+</html>
