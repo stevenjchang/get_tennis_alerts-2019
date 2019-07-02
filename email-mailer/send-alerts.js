@@ -1,6 +1,9 @@
 const nodemailer = require("nodemailer");
 const EmailTemplate = require("email-templates").EmailTemplate;
+const { _generateCustomEmailContexts } = require("./utils/_generateCustomEmailContexts");
 const path = require("path");
+const { mockMailingList } = require('../src/components/Email/mockMailingListData');
+const { tournament } = require('../src/tennisData/wimbledonOpen0702');
 require("dotenv").config();
 
 const transporter = nodemailer.createTransport({
@@ -16,59 +19,45 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-const _generateMailOptions = (userEmail) => {
-  return {
-    from: process.env.EMAIL_ADDRESS,
-    to: userEmail,
-    subject: `Tennis Alerts - Wimbledon round 1 - 07/01`,
-    text: "Here are your daily alerts"
-  };
-};
-
 const sendEmail = obj => {
   return transporter.sendMail(obj);
 };
 
-
-
-
-
-
-let users = [
-  {
-    name: "name 1",
-    email: process.env.EMAIL_ADDRESS_2,
-    selectedPlayers: [
-      {
-        player1: "Federer"
-      },
-      {
-        player1: "Nedal"
-      },
-      {
-        player1: "Joker"
-      }
-    ]
-  },
-  {
-    name: "name 2",
-    email: process.env.EMAIL_ADDRESS_2,
-    selectedPlayers: [
-      {
-        player1: "Federer 2"
-      }
-    ]
-  },
-  {
-    name: "name 3",
-    email: process.env.EMAIL_ADDRESS_2,
-    selectedPlayers: [
-      {
-        player1: "Federer 3"
-      }
-    ]
-  }
-];
+// let users = [
+//   {
+//     name: "name 1",
+//     email: process.env.EMAIL_ADDRESS_2,
+//     selectedPlayers: [
+//       {
+//         player1: "Federer"
+//       },
+//       {
+//         player1: "Nedal"
+//       },
+//       {
+//         player1: "Joker"
+//       }
+//     ]
+//   },
+//   {
+//     name: "name 2",
+//     email: process.env.EMAIL_ADDRESS_2,
+//     selectedPlayers: [
+//       {
+//         player1: "Federer 2"
+//       }
+//     ]
+//   },
+//   {
+//     name: "name 3",
+//     email: process.env.EMAIL_ADDRESS_2,
+//     selectedPlayers: [
+//       {
+//         player1: "Federer 3"
+//       }
+//     ]
+//   }
+// ];
 
 const loadTemplate = (templateName, contexts) => {
   let template = new EmailTemplate(path.join(__dirname, 'templates', templateName));
@@ -85,9 +74,12 @@ const loadTemplate = (templateName, contexts) => {
   }))
 };
 
-loadTemplate('alerts', users)
-  .then((results) => {
-    console.log('results ==>', JSON.stringify(results, null, 4));
+const customEmailContexts = _generateCustomEmailContexts(mockMailingList, tournament, 1);
+
+
+loadTemplate("alerts", customEmailContexts)
+  .then(results => {
+    console.log("results ==>", JSON.stringify(results, null, 4));
     // return Promise.all(results.map((result) => {
     //   sendEmail({
     //     to: result.context.email,
@@ -99,8 +91,8 @@ loadTemplate('alerts', users)
     // }))
   })
   .then(() => {
-    console.log('email sent ==>');
-  })
+    console.log("email sent ==>");
+  });
 
 
 
@@ -115,15 +107,15 @@ loadTemplate('alerts', users)
 
 
 // Main function
-const sendAlert = (email) => {
-  let mailOptions = _generateMailOptions(email);
+// const sendAlert = (email) => {
+//   let mailOptions = _generateMailOptions(email);
 
-  return
-  transporter.sendMail(mailOptions, (err, info) => {
-    if (err) console.log('Error in transport.sendMail ==>', err);
-    console.log('email sent! ==>', info.response);
-  })
-};
+//   return
+//   transporter.sendMail(mailOptions, (err, info) => {
+//     if (err) console.log('Error in transport.sendMail ==>', err);
+//     console.log('email sent! ==>', info.response);
+//   })
+// };
 
 
 
