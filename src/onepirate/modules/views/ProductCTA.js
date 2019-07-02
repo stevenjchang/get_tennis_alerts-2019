@@ -14,6 +14,7 @@ import PlayerSearchBar from '../../../components/PlayerSearchBar';
 import axios from 'axios';
 import { LAMBDA_URI } from '../../../constants';
 import connectTennis from '../../../containers/connectTennis';
+import TimeZoneSelect from '../../../components/TimeZoneSelect';
 
 const styles = theme => ({
   root: {
@@ -155,6 +156,7 @@ class ProductCTA extends React.Component {
                     />
                     <span>1 hour before match</span>
                   </div>
+                  <TimeZoneSelect />
                   <TextField
                     noBorder
                     className={classes.textField}
