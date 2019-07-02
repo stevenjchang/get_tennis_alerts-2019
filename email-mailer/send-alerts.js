@@ -37,16 +37,37 @@ const sendEmail = obj => {
 let users = [
   {
     name: "name 1",
-    email: "1@1.com"
+    email: process.env.EMAIL_ADDRESS_2,
+    selectedPlayers: [
+      {
+        player1: "Federer"
+      },
+      {
+        player1: "Nedal"
+      },
+      {
+        player1: "Joker"
+      }
+    ]
   },
   {
     name: "name 2",
-    email: "2@1.com"
+    email: process.env.EMAIL_ADDRESS_2,
+    selectedPlayers: [
+      {
+        player1: "Federer 2"
+      }
+    ]
   },
   {
-    name: 'name 3',
-    email: '3@1.com'
-  },
+    name: "name 3",
+    email: process.env.EMAIL_ADDRESS_2,
+    selectedPlayers: [
+      {
+        player1: "Federer 3"
+      }
+    ]
+  }
 ];
 
 const loadTemplate = (templateName, contexts) => {
@@ -55,7 +76,10 @@ const loadTemplate = (templateName, contexts) => {
     return new Promise((resolve, reject) => {
       template.render(context, (err, result) => {
         if (err) reject(err);
-        else resolve(result);
+        else resolve({
+          email: result,
+          context,
+        });
       })
     })
   }))
@@ -64,6 +88,18 @@ const loadTemplate = (templateName, contexts) => {
 loadTemplate('alerts', users)
   .then((results) => {
     console.log('results ==>', JSON.stringify(results, null, 4));
+    // return Promise.all(results.map((result) => {
+    //   sendEmail({
+    //     to: result.context.email,
+    //     from: 'me',
+    //     subject: result.email.subject,
+    //     html: result.email.html,
+    //     text: result.email.text,
+    //   })
+    // }))
+  })
+  .then(() => {
+    console.log('email sent ==>');
   })
 
 
