@@ -150,13 +150,13 @@ class ProductCTA extends React.Component {
                       checked={this.state.checkboxA}
                       onChange={this.handleCheckbox}
                     />
-                    <span>1 day before match</span>
+                    <span>daily</span>
                     <Checkbox
                       name="checkboxB"
                       checked={this.state.checkboxB}
                       onChange={this.handleCheckbox}
                     />
-                    <span>1 hour before match</span>
+                    <span>1 hour before match (work in progress)</span>
                   </div>
                   <TimeZoneSelect />
                   <TextField
