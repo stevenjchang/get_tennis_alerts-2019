@@ -46,7 +46,6 @@ export const toggleShowSignUpForm = toggleName => {
 };
 
 export const setTimeZone = (offset) => {
-  console.log('offset ==>', offset);
   return {
     type: SET_TIME_ZONE,
     data: offset,

@@ -93,7 +93,9 @@ class ProductCTA extends React.Component {
       email: this.state.email,
       checkboxA: this.state.checkboxA,
       checkboxB: this.state.checkboxB,
-    }
+      timeZoneLocationString: this.props.timeZone.timeZoneLocationString,
+      timeZoneOffset: this.props.timeZone.timeZoneOffset,
+    };
     
     axios.post(`${LAMBDA_URI}/signup`, body)
       .then((res) => {
