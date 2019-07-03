@@ -29,7 +29,9 @@ function addEmailToMailingList(db, dbName, payload) {
       selectedPlayers: payload.selectedPlayers,
       email: payload.email,
       checkboxA: payload.checkboxA,
-      checkboxB: payload.checkboxB
+      checkboxB: payload.checkboxB,
+      timeZoneLocationString: payload.timeZoneLocationString,
+      timeZoneOffset: payload.timeZoneOffset,
     })
     .then(data => {
       return data;

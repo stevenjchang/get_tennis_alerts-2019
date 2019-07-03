@@ -14,6 +14,7 @@ import PlayerSearchBar from '../../../components/PlayerSearchBar';
 import axios from 'axios';
 import { LAMBDA_URI } from '../../../constants';
 import connectTennis from '../../../containers/connectTennis';
+import TimeZoneSelect from '../../../components/TimeZoneSelect';
 
 const styles = theme => ({
   root: {
@@ -92,7 +93,9 @@ class ProductCTA extends React.Component {
       email: this.state.email,
       checkboxA: this.state.checkboxA,
       checkboxB: this.state.checkboxB,
-    }
+      timeZoneLocationString: this.props.timeZone.timeZoneLocationString,
+      timeZoneOffset: this.props.timeZone.timeZoneOffset,
+    };
     
     axios.post(`${LAMBDA_URI}/signup`, body)
       .then((res) => {
@@ -147,14 +150,15 @@ class ProductCTA extends React.Component {
                       checked={this.state.checkboxA}
                       onChange={this.handleCheckbox}
                     />
-                    <span>1 day before match</span>
+                    <span>daily</span>
                     <Checkbox
                       name="checkboxB"
                       checked={this.state.checkboxB}
                       onChange={this.handleCheckbox}
                     />
-                    <span>1 hour before match</span>
+                    <span>1 hour before match (work in progress)</span>
                   </div>
+                  <TimeZoneSelect />
                   <TextField
                     noBorder
                     className={classes.textField}

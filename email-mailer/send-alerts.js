@@ -3,7 +3,7 @@ const EmailTemplate = require("email-templates").EmailTemplate;
 const { _generateCustomEmailContexts } = require("./utils/_generateCustomEmailContexts");
 const path = require("path");
 const { mockMailingList } = require('../src/components/Email/mockMailingListData');
-const { tournament } = require('../src/tennisData/wimbledonOpen0702');
+const { tournament } = require('../src/tennisData/wimbledonOpen0704');
 require("dotenv").config();
 
 const transporter = nodemailer.createTransport({
@@ -24,7 +24,7 @@ const sendEmail = obj => {
 };
 
 const fakeSendEmail = obj => {
-  console.log('email ==>', obj)
+  // console.log('email ==>', obj)
 }
 
 const loadTemplate = (templateName, contexts) => {
@@ -42,14 +42,14 @@ const loadTemplate = (templateName, contexts) => {
   }))
 };
 
-const customEmailContexts = _generateCustomEmailContexts(mockMailingList, tournament, 1);
+const customEmailContexts = _generateCustomEmailContexts(mockMailingList, tournament, 2);
 
-// console.log('customEmailContexts ==>', JSON.stringify(customEmailContexts));
+console.log('customEmailContexts ==>', JSON.stringify(customEmailContexts, null, 2));
 
 
 loadTemplate("alerts", customEmailContexts)
   .then(results => {
-    console.log("results ==>", JSON.stringify(results, null, 4));
+    // console.log("results ==>", JSON.stringify(results, null, 4));
     return Promise.all(results.map((result) => {
       fakeSendEmail({
         to: result.context.email,

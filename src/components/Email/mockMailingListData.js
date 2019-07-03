@@ -8,14 +8,18 @@ export const mockMailingList = [
              "Dominic Thiem"
            ],
            checkboxA: true,
-           checkboxB: true
+           checkboxB: true,
+           timeZoneLocationString: "America/Los_Angeles",
+           timeZoneOffset: "-0700"
          },
          {
            id: 2,
            email: "2@test.com",
            selectedPlayers: ["Stanislas Wawrinka"],
            checkboxA: false,
-           checkboxB: false
+           checkboxB: false,
+           timeZoneLocationString: "Asia/Taipei",
+           timeZoneOffset: "+0800"
          }
          //   {
          //   id:,
