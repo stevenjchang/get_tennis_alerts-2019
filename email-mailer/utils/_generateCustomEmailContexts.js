@@ -15,6 +15,7 @@ const _filterMatches = (selectedPlayers, tournament, currentRound) => {
 };
 
 const _addLocalTime = (matches, timeZoneLocationString, timeZoneOffset) => {
+//TODO: handle if timeZoneLocationString is null
   return matches.map((match) => {
     console.log('match.dateTime ==>', match.dateTime);
     console.log('timeZoneLocationString ==>', timeZoneLocationString);
@@ -40,14 +41,10 @@ const _addLocalTime = (matches, timeZoneLocationString, timeZoneOffset) => {
 //input: filteredList
 //output: filteredList with dateDividers
 const _addDateDividers = list => {
-  let dateDivider = new Date(list[0].dateTime)
-    .toISOString()
-    .slice(5, 10);
+  let dateDivider = list[0].localDate
   let result = [{ dateDivider }];
   for (let match of list) {
-    let date = new Date(match.dateTime)
-      .toISOString()
-      .slice(5, 10);
+    let date = match.localDate;
     if (dateDivider !== date) {
       dateDivider = date;
       result.push({ dateDivider });
