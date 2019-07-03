@@ -1,7 +1,11 @@
+require("dotenv").config();
+
+const generateEmail = (id) => (`${process.env.EMAIL_USERNAME}+user${id}${process.env.EMAIL_DOMAIN}`);
+
 export const mockMailingList = [
          {
            id: 1,
-           email: "1@test.com",
+           email: generateEmail(1),
            selectedPlayers: [
              "Novak Djokovic",
              "Rafael Nadal",
@@ -14,7 +18,7 @@ export const mockMailingList = [
          },
          {
            id: 2,
-           email: "2@test.com",
+           email: generateEmail(2),
            selectedPlayers: ["Stanislas Wawrinka"],
            checkboxA: false,
            checkboxB: false,
