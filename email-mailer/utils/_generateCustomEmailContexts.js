@@ -19,14 +19,19 @@ const _addLocalTime = (matches, timeZoneLocationString, timeZoneOffset) => {
     console.log('match.dateTime ==>', match.dateTime);
     console.log('timeZoneLocationString ==>', timeZoneLocationString);
     let utcTime = moment.tz(match.dateTime, 'UTC');
-    let localTime = moment
+    let localDateTime = moment
       .tz(match.dateTime, "UTC")
       .tz(timeZoneLocationString)
       .format()
-      .slice (11, 16)
+    let localDate = localDateTime.slice(5, 10)
+    let localTime = localDateTime.slice(11, 16)
+    console.log('localDateTime ==>', localDateTime);
+    console.log('localDate ==>', localDate);
     console.log("localTime ==>", localTime);
     return {
       ...match,
+      localDateTime,
+      localDate,
       localTime,
     }
   })

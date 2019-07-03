@@ -49,7 +49,7 @@ const customEmailContexts = _generateCustomEmailContexts(mockMailingList, tourna
 
 loadTemplate("alerts", customEmailContexts)
   .then(results => {
-    console.log("results ==>", JSON.stringify(results, null, 4));
+    // console.log("results ==>", JSON.stringify(results, null, 4));
     return Promise.all(results.map((result) => {
       fakeSendEmail({
         to: result.context.email,
