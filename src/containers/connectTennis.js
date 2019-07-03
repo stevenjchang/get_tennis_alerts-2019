@@ -3,6 +3,7 @@ import {
   clearSelectedPlayers,
   getTournamentData,
   setSelectedPlayers,
+  setTimeZone,
   toggleShowSignUpForm,
 } from "../actions";
 
@@ -10,6 +11,7 @@ const mapStateToProps = (state) => {
   return {
     selectedPlayers: state.selectedPlayers,
     showSignUpForm: state.showSignUpForm,
+    timeZone: state.timeZone,
   };
 };
 
@@ -19,6 +21,7 @@ const mapDispatchToProps = (dispatch) => {
     getTournamentData: () => dispatch(getTournamentData()),
     setSelectedPlayers: selectedPlayers =>
       dispatch(setSelectedPlayers(selectedPlayers)),
+    setTimeZone: offset => dispatch(setTimeZone(offset)),
     toggleShowSignUpForm: (toggleName) => dispatch(toggleShowSignUpForm(toggleName))
   };
 };

@@ -6,6 +6,7 @@ import {
   GET_TOURNAMENT_DATA_ERROR,
   SET_ALL_PLAYER_NAMES,
   SET_SELECTED_PLAYERS,
+  SET_TIME_ZONE,
   SHOW_SIGN_UP_FORM,
   SHOW_SIGN_UP_FORM_ERROR,
 } from "../constants";
@@ -42,4 +43,12 @@ export const toggleShowSignUpForm = toggleName => {
     type: SHOW_SIGN_UP_FORM,
     data: toggleName
   };
+};
+
+export const setTimeZone = (offset) => {
+  console.log('offset ==>', offset);
+  return {
+    type: SET_TIME_ZONE,
+    data: offset,
+  }
 };
