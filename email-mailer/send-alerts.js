@@ -24,7 +24,7 @@ const sendEmail = obj => {
 };
 
 const fakeSendEmail = obj => {
-  // console.log('email ==>', obj)
+  console.log('email ==>', JSON.stringify(obj, null, 4))
 }
 
 const loadTemplate = (templateName, contexts) => {

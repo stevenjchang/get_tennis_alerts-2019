@@ -9,6 +9,7 @@ import TextField from '../components/TextField';
 import Snackbar from '../components/Snackbar';
 import Button from '../components/Button';
 
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from '@material-ui/core/Checkbox';
 import PlayerSearchBar from '../../../components/PlayerSearchBar';
 import axios from 'axios';
@@ -145,20 +146,28 @@ class ProductCTA extends React.Component {
                     {/* Taste the holidays of the everyday close to home. */}
                   </Typography>
                   <div style={{ marginTop: "70px" }}>
-                    <Checkbox
-                      name="checkboxA"
-                      checked={this.state.checkboxA}
-                      onChange={this.handleCheckbox}
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          name="checkboxA"
+                          checked={this.state.checkboxA}
+                          onChange={this.handleCheckbox}
+                        />
+                      }
+                      label="daily"
                     />
-                    <span>daily</span>
-                    <Checkbox
-                      name="checkboxB"
-                      checked={this.state.checkboxB}
-                      onChange={this.handleCheckbox}
-                    />
-                    <span>1 hour before match (work in progress)</span>
+                    {/* <FormControlLabel
+                      control={
+                        <Checkbox
+                          name="checkboxB"
+                          checked={this.state.checkboxB}
+                          onChange={this.handleCheckbox}
+                        />
+                      }
+                      label="1 hour before"
+                    /> */}
                   </div>
-                  <TimeZoneSelect />
+                  {/* <TimeZoneSelect /> */}
                   <TextField
                     noBorder
                     className={classes.textField}

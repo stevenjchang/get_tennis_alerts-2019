@@ -34,6 +34,7 @@ const _addLocalTime = (matches, timeZoneLocationString, timeZoneOffset) => {
       localDateTime,
       localDate,
       localTime,
+      timeZoneLocationString,
     }
   })
 }
@@ -71,7 +72,8 @@ export const _generateCustomEmailContexts = (mailingList, tournament, currentRou
       email: user.email,
       tournamentName: tournament.name,
       round: currentRound,
-      // timeZoneOffset,
+      timeZoneLocationString: user.timeZoneLocationString,
+      timeZoneOffset: user.timeZoneOffset,
       matches: filteredMatchesWithDateDividers,
     };
   })

@@ -32,6 +32,7 @@ function addEmailToMailingList(db, dbName, payload) {
       checkboxB: payload.checkboxB,
       timeZoneLocationString: payload.timeZoneLocationString,
       timeZoneOffset: payload.timeZoneOffset,
+      created_at: new Date(),
     })
     .then(data => {
       return data;
