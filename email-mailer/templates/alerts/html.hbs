@@ -6,6 +6,7 @@
   </style>
   </head>
   <body>
+    <h2>Here are your daily updates for {{tournamentName}} round: {{round}}</h2>
     {{#each matches}}
       {{#if dateDivider}}
         <h4>{{dateDivider}}</h4>
@@ -15,9 +16,10 @@
           <span>{{player1.name}}</span>
           <span>vs</span>
           <span>{{player2.name}}</span>
-          <span>{{matchType}}</span>
         </p>
       {{/if}}
     {{/each}}
+    <br />
+    <p>your timezone is {{timeZoneLocationString}}</p>
   </body>
 </html>
