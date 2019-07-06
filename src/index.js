@@ -10,8 +10,16 @@ import rootReducer from './reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+
+const initialState = {
+  selectedPlayers: localStorage.getItem('selectedPlayers')
+    ? JSON.parse(localStorage.getItem('selectedPlayers'))
+    : [],
+};
+
 const store = createStore(
   rootReducer,
+  initialState,
   composeEnhancers(applyMiddleware(thunk)),
 );
 
