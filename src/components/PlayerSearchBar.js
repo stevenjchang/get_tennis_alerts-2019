@@ -3,21 +3,17 @@ import Select from 'react-select';
 import { playerNames } from '../tennisData/playerNames';
 import connectTennis from '../containers/connectTennis';
 
-const values = [
-  {value: 'val', label: 'label'}
-]
-
 
 const PlayerSearchBar = ({ selectedPlayers,setSelectedPlayers }) => {
 
   useEffect(() => {
     localStorage.setItem("selectedPlayers", JSON.stringify(selectedPlayers));
     return;
-  })
-
+  });
+  
   const handleOnChange = (selectedPlayers) => {
     setSelectedPlayers(selectedPlayers);
-  }
+  };
 
   return (
     <>
