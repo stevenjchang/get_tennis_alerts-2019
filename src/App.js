@@ -23,22 +23,22 @@ class App extends Component {
 
   render() {
 
-    return (
-      <Home />
-    )
+    // return (
+    //   <Home />
+    // )
 
     return (
       <div className="App">
-        <NavBar />
-        {/* <LambdaDemo /> */}
-        <Container
-          maxWidth='xs'
-        >
-          <Tennis />
+        <Container maxWidth="md">
+          <NavBar />
+          {/* <LambdaDemo /> */}
+          <Container maxWidth="md">
+            <Tennis />
+          </Container>
+          <BottomNavigation />
         </Container>
-        <BottomNavigation />
       </div>
-    )
+    );
   }
 }
 

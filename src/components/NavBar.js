@@ -15,9 +15,11 @@ const useStyles = makeStyles(theme => ({
   },
   menuButton: {
     // marginRight: theme.spacing(2),
+    color: 'black',
   },
   title: {
     flexGrow: 1,
+    color: 'green',
   },
 }));
 
@@ -27,11 +29,11 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ backgroundColor: "#d64541" }}>
+      <AppBar position="static" style={{ backgroundColor: "white" }}>
         <Container maxWidth="lg">
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
-              TennisMatchAlerts
+              Tennis Alerts
             </Typography>
 
             <IconButton
