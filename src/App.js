@@ -9,6 +9,7 @@ import Home from './onepirate/Home';
 // import LambdaDemo from './util/LambdaDemo';
 import NavBar from './components/NavBar';
 import Tennis from './components/Tennis';
+import MainContainer from './components/MainContainer';
 
 
 class App extends Component {
@@ -33,7 +34,8 @@ class App extends Component {
           <NavBar />
           {/* <LambdaDemo /> */}
           <Container maxWidth="md">
-            <Tennis />
+            <MainContainer />
+            {/* <Tennis /> */}
           </Container>
           <BottomNavigation />
         </Container>
