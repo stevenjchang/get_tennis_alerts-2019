@@ -45,6 +45,7 @@ class Tennis extends Component {
     this.setState({ showHistory: !this.state.showHistory})
   }
 
+  //TODO: delete, code no longer used
   filterSelected = (array) => {
     let result = tournament.matches
       .filter((match) => {
