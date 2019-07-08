@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import connectTennis from '../containers/connectTennis';
+import PlayerSearchBar from './PlayerSearchBar';
 
 
 const Scores = ({ getTournamentData }) => {
@@ -9,7 +10,7 @@ const Scores = ({ getTournamentData }) => {
 
   return (
     <>
-      <h1>Scores</h1>
+      <PlayerSearchBar />
     </>
   );
 };
