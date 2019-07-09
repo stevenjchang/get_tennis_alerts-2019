@@ -67,7 +67,7 @@ function DenseTable({ matchInfo }) {
                 if (index === 0) {
                   return (
                     <TableCell
-                      style={{width: '150px'}}
+                      style={{minWidth: '9rem'}}
                     >{row}
                     </TableCell>
                   )
