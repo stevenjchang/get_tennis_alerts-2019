@@ -72,20 +72,21 @@ function DenseTable({ matchInfo }) {
             <TableRow>
               {player1Row.map((row, index) => {
                 if (index === 0) {
+                  let player1styles = player1.isWinner ? { fontWeight: '500'} : { fontWeight: '400' }
                   return (
                     <TableCell
                       className={classes.tableCell}
-                      style={{ minWidth: "9rem" }}
+                      style={player1styles}
                     >
                       {row}
                     </TableCell>
                   );
-                } else if (index === 6) {
-                  return (
-                    <TableCell>
-                      {player1.winner && <ArrowLeftIcon />}
-                    </TableCell>
-                  );
+                // } else if (index === 6) {
+                //   return (
+                //     <TableCell className={classes.tableCell}>
+                //       {player1.isWinner && <ArrowLeftIcon />}
+                //     </TableCell>
+                //   );
                 } else {
                   return <TableCell className={classes.tableCell}>{row}</TableCell>;
                 }
@@ -93,21 +94,22 @@ function DenseTable({ matchInfo }) {
             </TableRow>
             <TableRow>
               {player2Row.map((row, index) => {
+                let player2styles = player2.isWinner ? { fontWeight: '500'} : { fontWeight: '400' }
                 if (index === 0) {
                   return (
                     <TableCell
                       className={classes.tableCell}
-                      style={{ width: "150px" }}
+                      style={player2styles}
                     >
                       {row}
                     </TableCell>
                   );
-                } else if (index === 6) {
-                  return (
-                    <TableCell>
-                      {player2.winner && <ArrowLeftIcon />}
-                    </TableCell>
-                  );
+                // } else if (index === 6) {
+                //   return (
+                //     <TableCell className={classes.tableCell}>
+                //       {player2.isWinner && <ArrowLeftIcon />}
+                //     </TableCell>
+                //   );
                 } else {
                   return (
                     <TableCell className={classes.tableCell}>
