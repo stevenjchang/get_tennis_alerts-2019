@@ -24,24 +24,10 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const _createResultRow = (playerName, resultArray) => {
-  if (resultArray.length === 0) return[playerName, '', '', '', '', '', '']
-  let resultRow = [];
-  resultRow.push(playerName);
-  if (resultArray.length < 5) {
-    if (resultArray.length === 4) {
-      resultRow.push('');
-      resultRow.push(...resultArray)
-    }
-    if (resultArray.length === 3) {
-      resultRow.push('');
-      resultRow.push('');
-      resultRow.push(...resultArray)
-    }
-  } else {
-    resultRow.push(...resultArray)
+  while (resultArray.length < 6) {
+    resultArray.push("")
   }
-  resultRow.push('');
-  return resultRow;
+  return [playerName, ...resultArray]
 }
 
 function DenseTable({ matchInfo }) {
