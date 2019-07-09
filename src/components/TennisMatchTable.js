@@ -7,6 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
+import moment from "moment-timezone";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -70,6 +71,11 @@ function DenseTable({ matchInfo }) {
                 <span>
                   {month}/{day}
                 </span>
+                {!isFinal && (
+                  <span>&nbsp;-&nbsp;{
+                    moment(dateTime).format("h:mm A")
+                  }</span>
+                )}
               </TableCell>
               <TableCell className={classes.tableCell} />
               <TableCell className={classes.tableCell} />
@@ -134,15 +140,13 @@ function DenseTable({ matchInfo }) {
                 }
               })}
             </TableRow>
-            {
-              !isFinal
-              && <TableRow>
+            {!isFinal && (
+              <TableRow>
                 <TableCell className={classes.tableCellCourt}>
                   {court}
                 </TableCell>
               </TableRow>
-            }
-
+            )}
           </TableBody>
         </Table>
       </Paper>
