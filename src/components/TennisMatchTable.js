@@ -58,13 +58,15 @@ const createResultRow = (playerName, resultArray) => {
 }
 
 function DenseTable({ matchInfo }) {
+  // console.log('matchInfo ==>', matchInfo);
   const classes = useStyles();
   let { dateTime, player1, player2, round } = matchInfo;
-  let month = dateTime.getMonth() + 1;
-  let day = dateTime.getDate();
-  let isFinal = dateTime.getTime() < Date.now();
-  let player1Row = createResultRow(player1.name, player1.result);
-  let player2Row = createResultRow(player2.name, player2.result);
+  let [year, month, day] = dateTime.split('-');
+  // let month = dateTime.getMonth() + 1;
+  // let day = dateTime.getDate();
+  let isFinal = new Date(dateTime) < Date.now();
+  let player1Row = createResultRow(player1.name, player1.score);
+  let player2Row = createResultRow(player2.name, player2.score);
 
   return (
     <div className={classes.root}>
