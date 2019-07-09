@@ -27,3 +27,6 @@ yarn-error.log*
 # notes
 NOTES.md
 PLAN.md
+
+#old data
+/src/TennisData/_oldData

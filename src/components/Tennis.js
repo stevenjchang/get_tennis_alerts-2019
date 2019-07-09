@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Picker } from 'react-native-web';
 
-import { tournament } from '../tennisData/data';
+import { tournament } from '../tennisData/_oldData/data'; //FIXME: remove link
 import connectTennis from '../containers/connectTennis';
 import LandingPage from '../components/LandingPage';
 import MultiSelect from './MultiSelect';
