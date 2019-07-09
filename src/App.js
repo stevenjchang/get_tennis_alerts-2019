@@ -24,9 +24,9 @@ class App extends Component {
 
   render() {
 
-    // return (
-    //   <Home />
-    // )
+    return (
+      <Home />
+    )
 
     return (
       <div className="App">
