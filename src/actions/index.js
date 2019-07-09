@@ -1,5 +1,5 @@
-import { tournament } from '../tennisData/wimbledonOpen0709';
-import { playerNames } from '../tennisData/_oldData/playerNames'; //FIXME: remove link
+import { tournament } from '../data/wimbledonOpen0709';
+import { playerNames } from '../data/_oldData/playerNames'; //FIXME: remove link
 import {
   CLEAR_SELECTED_PLAYERS,
   GET_TOURNAMENT_DATA,

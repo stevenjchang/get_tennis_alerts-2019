@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FormControl, FormGroup, FormLabel } from "@material-ui/core";
 import connectTennis from '../containers/connectTennis';
 import MultiChipSelect from "./MultiChipSelect";
-import { playerNames } from '../tennisData/_oldData/playerNames';  //FIXME: remove link
+import { playerNames } from '../data/_oldData/playerNames';  //FIXME: remove link
 
 
 class MultiSelect extends Component {
