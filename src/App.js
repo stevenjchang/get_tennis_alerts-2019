@@ -37,7 +37,7 @@ class App extends Component {
             <MainContainer />
             {/* <Tennis /> */}
           </Container>
-          <BottomNavigation />
+          {/* <BottomNavigation /> */}
         </Container>
       </div>
     );
