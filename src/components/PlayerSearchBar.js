@@ -17,7 +17,7 @@ const PlayerSearchBar = ({ selectedPlayers,setSelectedPlayers }) => {
 
   return (
     <>
-      <h4>Choose your favorite players:</h4>
+      {/* <p>Choose your favorite players:</p> */}
       {/* <h5>(begin typing)</h5> */}
       <Select
         // defaultValue={[playerNames[0], playerNames[2]]}

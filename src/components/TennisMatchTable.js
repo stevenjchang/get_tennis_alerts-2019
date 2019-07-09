@@ -10,17 +10,26 @@ import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%',
+    width: "100%"
   },
   paper: {
     marginTop: theme.spacing(3),
-    width: '100%',
-    overflowX: 'auto',
-    marginBottom: theme.spacing(2),
+    width: "100%",
+    overflowX: "auto",
+    borderRadius: "0px",
+    marginBottom: theme.spacing(2)
   },
   table: {
-    minWidth: 350,
+    minWidth: 350
   },
+  tableFirstRow: {
+    backgroundColor: "#B2DFDB",
+    fontSize: '0.7rem',
+  },
+  tableCell: {
+    padding: "0.5rem",
+    fontSize: "0.7rem",
+  }
 }));
 
 const _createResultRow = (playerName, resultArray) => {
@@ -42,78 +51,77 @@ function DenseTable({ matchInfo }) {
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <Table className={classes.table} size="small">
+        <Table className={classes.table}>
           <TableHead>
-            <TableRow>
+            <TableRow className={classes.tableFirstRow}>
               <TableCell>
-                {
-                  isFinal
-                  && <span>Final&nbsp;-&nbsp;</span>
-                }
-                <span>{month}/{day}</span>
+                {isFinal && <span>Final&nbsp;-&nbsp;</span>}
+                <span>
+                  {month}/{day}
+                </span>
               </TableCell>
-              <TableCell />
-              <TableCell />
-              <TableCell />
-              <TableCell />
-              <TableCell />
-              <TableCell />
+              <TableCell className={classes.tableCell} />
+              <TableCell className={classes.tableCell} />
+              <TableCell className={classes.tableCell} />
+              <TableCell className={classes.tableCell} />
+              <TableCell className={classes.tableCell} />
+              <TableCell className={classes.tableCell} />
             </TableRow>
           </TableHead>
           <TableBody>
             <TableRow>
-            {
-              player1Row.map((row, index) => {
+              {player1Row.map((row, index) => {
                 if (index === 0) {
                   return (
                     <TableCell
-                      style={{minWidth: '9rem'}}
-                    >{row}
+                      className={classes.tableCell}
+                      style={{ minWidth: "9rem" }}
+                    >
+                      {row}
                     </TableCell>
-                  )
+                  );
                 } else if (index === 6) {
-                  return (<TableCell>
-                    {
-                      player1.winner
-                      && <ArrowLeftIcon />
-                    }
-                  </TableCell>)
-                }
-                else {
-                  return (<TableCell>{row}</TableCell>)
-                }
-              })
-            }
-            </TableRow>
-            <TableRow>
-            {
-              player2Row.map((row, index) => {
-                if (index === 0) {
                   return (
-                    <TableCell
-                      style={{width: '150px'}}
-                    >{row}
+                    <TableCell>
+                      {player1.winner && <ArrowLeftIcon />}
                     </TableCell>
-                  )
-                } else if (index === 6) {
-                  return (<TableCell>
-                    {
-                      player2.winner
-                      && <ArrowLeftIcon />
-                    }
-                  </TableCell>)
+                  );
                 } else {
-                  return (<TableCell>{row}</TableCell>)
+                  return <TableCell className={classes.tableCell}>{row}</TableCell>;
                 }
-              })
-            }
+              })}
             </TableRow>
             <TableRow>
-              <TableCell
-                style={{fontSize: '10px'}}
-              >Round {round}</TableCell>
+              {player2Row.map((row, index) => {
+                if (index === 0) {
+                  return (
+                    <TableCell
+                      className={classes.tableCell}
+                      style={{ width: "150px" }}
+                    >
+                      {row}
+                    </TableCell>
+                  );
+                } else if (index === 6) {
+                  return (
+                    <TableCell>
+                      {player2.winner && <ArrowLeftIcon />}
+                    </TableCell>
+                  );
+                } else {
+                  return (
+                    <TableCell className={classes.tableCell}>
+                      {row}
+                    </TableCell>
+                  );
+                }
+              })}
             </TableRow>
-
+            <TableRow>
+              <TableCell style={{ fontSize: "10px" }}>
+                Round {round}
+              </TableCell>
+            </TableRow>
           </TableBody>
         </Table>
       </Paper>

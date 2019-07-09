@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <Container maxWidth="sm">
-          <NavBar />
+          {/* <NavBar /> */}
           {/* <LambdaDemo /> */}
           <Container maxWidth="xs">
             <MainContainer />
