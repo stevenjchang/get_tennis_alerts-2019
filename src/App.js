@@ -30,10 +30,10 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Container maxWidth="md">
+        <Container maxWidth="sm">
           <NavBar />
           {/* <LambdaDemo /> */}
-          <Container maxWidth="md">
+          <Container maxWidth="xs">
             <MainContainer />
             {/* <Tennis /> */}
           </Container>

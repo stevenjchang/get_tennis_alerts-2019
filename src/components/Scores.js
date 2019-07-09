@@ -12,7 +12,7 @@ const Scores = ({ allMatches, getTournamentData, selectedPlayers }) => {
 
   //TODO: refactor using reselect
   let results = []
-  if (selectedPlayers.length > 0 && allMatches.length > 0) {
+  if (selectedPlayers && selectedPlayers.length > 0 && allMatches && allMatches.length > 0) {
     results = MatchFilter
       .calculateFilteredMatches(selectedPlayers, allMatches);
   }

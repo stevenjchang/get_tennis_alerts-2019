@@ -1,4 +1,4 @@
-import { tournament } from '../tennisData/wimbledonOpen0706';
+import { tournament } from '../tennisData/wimbledonOpen0708';
 import { playerNames } from '../tennisData/playerNames';
 import {
   CLEAR_SELECTED_PLAYERS,
