@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import connectTennis from '../../containers/connectTennis';
 import { mockMailingList } from './mockMailingListData';
-import { tournament } from "../../tennisData/wimbledonOpen0702";
+import { tournament } from "../../data/_oldData/wimbledonOpen0702"; //FIXME: remove link
 
 
 // input: selectedPlayers Array

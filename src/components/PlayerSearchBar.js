@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Select from 'react-select';
-import { playerNames } from '../tennisData/playerNames';
+import { playerNames } from '../data/_oldData/playerNames'; //FIXME: remove link
 import connectTennis from '../containers/connectTennis';
 
 
