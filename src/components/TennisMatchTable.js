@@ -6,7 +6,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 
 const useStyles = makeStyles(theme => ({
@@ -15,7 +14,7 @@ const useStyles = makeStyles(theme => ({
   },
   paper: {
     marginTop: theme.spacing(3),
-    width: '100%',
+    width: '50%',
     overflowX: 'auto',
     marginBottom: theme.spacing(2),
   },
@@ -24,19 +23,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
-const createResultRow = (playerName, resultArray) => {
+const _createResultRow = (playerName, resultArray) => {
   if (resultArray.length === 0) return[playerName, '', '', '', '', '', '']
   let resultRow = [];
   resultRow.push(playerName);
@@ -61,12 +48,11 @@ function DenseTable({ matchInfo }) {
   // console.log('matchInfo ==>', matchInfo);
   const classes = useStyles();
   let { dateTime, player1, player2, round } = matchInfo;
-  let [year, month, day] = dateTime.split('-');
-  // let month = dateTime.getMonth() + 1;
-  // let day = dateTime.getDate();
+  let [year, month] = dateTime.split('-');
+  let day = dateTime.slice(8, 10);
   let isFinal = new Date(dateTime) < Date.now();
-  let player1Row = createResultRow(player1.name, player1.score);
-  let player2Row = createResultRow(player2.name, player2.score);
+  let player1Row = _createResultRow(player1.name, player1.score);
+  let player2Row = _createResultRow(player2.name, player2.score);
 
   return (
     <div className={classes.root}>
