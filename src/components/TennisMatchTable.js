@@ -31,7 +31,6 @@ const _createResultRow = (playerName, resultArray) => {
 }
 
 function DenseTable({ matchInfo }) {
-  // console.log('matchInfo ==>', matchInfo);
   const classes = useStyles();
   let { dateTime, player1, player2, round } = matchInfo;
   let [year, month] = dateTime.split('-');
