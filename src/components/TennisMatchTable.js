@@ -22,13 +22,24 @@ const useStyles = makeStyles(theme => ({
   table: {
     minWidth: 350
   },
-  tableFirstRow: {
-    backgroundColor: "#B2DFDB",
-    fontSize: '0.7rem',
+  tableHead: {
+    backgroundColor: "#F5F5F5",
+    fontSize: "0.7rem",
+    padding: "0.1rem"
+  },
+  tableHeadFirstRow: {
+    padding: "0rem 0.5rem",
+    borderBottom: "0px",
+    fontSize: "0.4rem"
   },
   tableCell: {
     padding: "0.5rem",
     fontSize: "0.7rem",
+    borderBottom: "0px"
+  },
+  tableCellCourt: {
+    fontSize: "8.5px",
+    padding: "0.4rem 0.5rem",
   }
 }));
 
@@ -41,7 +52,7 @@ const _createResultRow = (playerName, resultArray) => {
 
 function DenseTable({ matchInfo }) {
   const classes = useStyles();
-  let { dateTime, player1, player2, round } = matchInfo;
+  let { dateTime, player1, player2, court } = matchInfo;
   let [year, month] = dateTime.split('-');
   let day = dateTime.slice(8, 10);
   let isFinal = new Date(dateTime) < Date.now();
@@ -52,9 +63,9 @@ function DenseTable({ matchInfo }) {
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <Table className={classes.table}>
-          <TableHead>
-            <TableRow className={classes.tableFirstRow}>
-              <TableCell>
+          <TableHead className={classes.tableHead}>
+            <TableRow>
+              <TableCell className={classes.tableHeadFirstRow}>
                 {isFinal && <span>Final&nbsp;-&nbsp;</span>}
                 <span>
                   {month}/{day}
@@ -72,7 +83,9 @@ function DenseTable({ matchInfo }) {
             <TableRow>
               {player1Row.map((row, index) => {
                 if (index === 0) {
-                  let player1styles = player1.isWinner ? { fontWeight: '500'} : { fontWeight: '400' }
+                  let player1styles = player1.isWinner
+                    ? { fontWeight: "500" }
+                    : { fontWeight: "400" };
                   return (
                     <TableCell
                       className={classes.tableCell}
@@ -81,20 +94,24 @@ function DenseTable({ matchInfo }) {
                       {row}
                     </TableCell>
                   );
-                // } else if (index === 6) {
-                //   return (
-                //     <TableCell className={classes.tableCell}>
-                //       {player1.isWinner && <ArrowLeftIcon />}
-                //     </TableCell>
-                //   );
+                  // } else if (index === 6) {
+                  //   return (
+                  //     <TableCell className={classes.tableCell}>
+                  //       {player1.isWinner && <ArrowLeftIcon />}
+                  //     </TableCell>
+                  //   );
                 } else {
-                  return <TableCell className={classes.tableCell}>{row}</TableCell>;
+                  return (
+                    <TableCell className={classes.tableCell}>{row}</TableCell>
+                  );
                 }
               })}
             </TableRow>
             <TableRow>
               {player2Row.map((row, index) => {
-                let player2styles = player2.isWinner ? { fontWeight: '500'} : { fontWeight: '400' }
+                let player2styles = player2.isWinner
+                  ? { fontWeight: "500" }
+                  : { fontWeight: "400" };
                 if (index === 0) {
                   return (
                     <TableCell
@@ -104,26 +121,28 @@ function DenseTable({ matchInfo }) {
                       {row}
                     </TableCell>
                   );
-                // } else if (index === 6) {
-                //   return (
-                //     <TableCell className={classes.tableCell}>
-                //       {player2.isWinner && <ArrowLeftIcon />}
-                //     </TableCell>
-                //   );
+                  // } else if (index === 6) {
+                  //   return (
+                  //     <TableCell className={classes.tableCell}>
+                  //       {player2.isWinner && <ArrowLeftIcon />}
+                  //     </TableCell>
+                  //   );
                 } else {
                   return (
-                    <TableCell className={classes.tableCell}>
-                      {row}
-                    </TableCell>
+                    <TableCell className={classes.tableCell}>{row}</TableCell>
                   );
                 }
               })}
             </TableRow>
-            <TableRow>
-              <TableCell style={{ fontSize: "10px" }}>
-                Round {round}
-              </TableCell>
-            </TableRow>
+            {
+              !isFinal
+              && <TableRow>
+                <TableCell className={classes.tableCellCourt}>
+                  {court}
+                </TableCell>
+              </TableRow>
+            }
+
           </TableBody>
         </Table>
       </Paper>
