@@ -1,4 +1,4 @@
-import { tournament } from '../data/wimbledonOpen0709';
+import { tournament } from '../data';
 import { playerNames } from '../data/_oldData/playerNames'; //FIXME: remove link
 import {
   CLEAR_SELECTED_PLAYERS,
