@@ -5,12 +5,14 @@ import {
   getTournamentData,
   setSelectedPlayers,
   setTimeZone,
+  toggleShowHistory,
   toggleShowSignUpForm,
 } from "../actions";
 
 const mapStateToProps = (state) => {
   return {
     selectedPlayers: state.selectedPlayers,
+    showHistory: state.showHistory,
     showSignUpForm: state.showSignUpForm,
     timeZone: state.timeZone,
     allMatches: _get(state, 'tennis.matches', []),
@@ -24,6 +26,7 @@ const mapDispatchToProps = (dispatch) => {
     setSelectedPlayers: selectedPlayers =>
       dispatch(setSelectedPlayers(selectedPlayers)),
     setTimeZone: offset => dispatch(setTimeZone(offset)),
+    toggleShowHistory: () => dispatch(toggleShowHistory()),
     toggleShowSignUpForm: (toggleName) => dispatch(toggleShowSignUpForm(toggleName))
   };
 };

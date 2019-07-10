@@ -1,7 +1,5 @@
-import { array } from "prop-types";
-
-export default class MatchFilter {
-  static calculateFilteredMatches(selectedPlayers, allMatches, showHistory=true) {
+class MatchFilter {
+  static calculateFilteredMatches(selectedPlayers, allMatches, showHistory) {
     return allMatches
       .filter((match) => {
         if (!showHistory && match.isFinalAsString === 'Final') {
@@ -18,3 +16,5 @@ export default class MatchFilter {
       // .sort((a, b) => b.dateTime > a.dateTime)
   }
 };
+
+export default MatchFilter;

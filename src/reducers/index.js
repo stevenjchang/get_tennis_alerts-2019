@@ -1,13 +1,15 @@
 import { combineReducers } from 'redux';
-import showSignUpForm from './showSignUpForm';
 import selectedPlayers from './selectedPlayers';
+import showHistory from './showHistory';
+import showSignUpForm from './showSignUpForm';
 import tennis from './tennis'
 import timeZone from './timeZone';
 
 
 const rootReducer = combineReducers({
-  showSignUpForm,
   selectedPlayers,
+  showHistory,
+  showSignUpForm,
   tennis,
   timeZone,
 });

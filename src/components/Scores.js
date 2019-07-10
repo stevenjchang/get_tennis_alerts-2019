@@ -1,31 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import connectTennis from '../containers/connectTennis';
-import PlayerSearchBar from './PlayerSearchBar';
-import MatchFilter from '../util/MatchFilter';
-import TennisMatchTable from './TennisMatchTable';
-import FloatingActionButton from './FloatingActionButton';
+import React, { useEffect } from "react";
+import connectTennis from "../containers/connectTennis";
+import PlayerSearchBar from "./PlayerSearchBar";
+import MatchFilter from "../util/MatchFilter";
+import TennisMatchTable from "./TennisMatchTable";
+import FloatingActionButton from "./FloatingActionButton";
+import ToggleOptions from './ToggleOptions';
 
-
-const Scores = ({ allMatches, getTournamentData, selectedPlayers }) => {
+const Scores = ({ allMatches, getTournamentData, selectedPlayers, showHistory }) => {
   useEffect(() => {
     getTournamentData();
   });
 
   //TODO: refactor using reselect
-  let results = []
-  if (selectedPlayers && selectedPlayers.length > 0 && allMatches && allMatches.length > 0) {
-    results = MatchFilter
-      .calculateFilteredMatches(selectedPlayers, allMatches);
+  let results = [];
+  if (
+    selectedPlayers &&
+    selectedPlayers.length > 0 &&
+    allMatches &&
+    allMatches.length > 0
+  ) {
+    results = MatchFilter.calculateFilteredMatches(selectedPlayers, allMatches, showHistory);
   }
 
   return (
     <>
+      {/* <PlayerSelectedBar /> */}
       <PlayerSearchBar />
-      {
-        results.map((matchInfo) => (
-          <TennisMatchTable matchInfo={matchInfo} />
-        ))
-      }
+      <ToggleOptions />
+      {results.map(matchInfo => (
+        <TennisMatchTable matchInfo={matchInfo} />
+      ))}
       <FloatingActionButton />
     </>
   );
