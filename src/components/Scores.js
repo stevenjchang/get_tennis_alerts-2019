@@ -3,6 +3,7 @@ import connectTennis from '../containers/connectTennis';
 import PlayerSearchBar from './PlayerSearchBar';
 import MatchFilter from '../util/MatchFilter';
 import TennisMatchTable from './TennisMatchTable';
+import FloatingActionButton from './FloatingActionButton';
 
 
 const Scores = ({ allMatches, getTournamentData, selectedPlayers }) => {
@@ -25,6 +26,7 @@ const Scores = ({ allMatches, getTournamentData, selectedPlayers }) => {
           <TennisMatchTable matchInfo={matchInfo} />
         ))
       }
+      <FloatingActionButton />
     </>
   );
 };
