@@ -24,7 +24,7 @@ const Scores = ({ allMatches, getTournamentData, selectedPlayers, showHistory })
 
   return (
     <>
-      {/* <PlayerSelectedBar /> */}
+      <p>choose players:</p>
       <PlayerSearchBar />
       <ToggleOptions />
       {results.map(matchInfo => (
