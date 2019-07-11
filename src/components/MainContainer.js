@@ -6,6 +6,8 @@ import Tab from "@material-ui/core/Tab";
 import theme from "../onepirate/modules/theme";
 import Scores from './Scores';
 
+// import Home from '../onepirate/Home';
+import ProductHero from '../onepirate/modules/views/ProductHero'
 
 const useStyles = makeStyles({
   root: {
@@ -31,23 +33,20 @@ const MainContainer = () => {
         <Tabs
           value={value}
           onChange={handleChange}
+          variant="standard"
           // indicatorColor="primary"
           // textColor="primary"
-          variant="fullWidth"
+          // variant="fullWidth"
+          scrollButtons="on"
         >
-          <Tab label="SEE SCORES" />
-          <Tab label="GET ALERTS" />
+          <Tab label="HOME" style={{ minWidth: "33%" }} />
+          <Tab label="SCORES" style={{ minWidth: "33%" }} />
+          <Tab label="ALERTS" style={{ minWidth: "33%" }} />
         </Tabs>
       </Paper>
-      { 
-        value === 0
-        && <Scores />
-      }
-      {
-        value === 1
-        // && <Alerts />
-        && <h1>Alerts</h1>
-      }
+      {value === 0 && <ProductHero />} 
+      {value === 1 && <Scores />}
+      {value === 2 && <h1>Alerts</h1>}
     </>
   );
 }

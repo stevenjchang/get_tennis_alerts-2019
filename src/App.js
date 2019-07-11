@@ -24,9 +24,9 @@ class App extends Component {
 
   render() {
 
-    return (
-      <Home />
-    )
+    // return (
+    //   <Home />
+    // )
 
     //NOTE: simple way to toggle in dev while transitioning themes
     return (
