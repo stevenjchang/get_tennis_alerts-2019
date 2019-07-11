@@ -23,7 +23,8 @@ const styles = theme => ({
     backgroundPosition: "center"
   },
   button: {
-    minWidth: 200
+    minWidth: 200,
+    borderRadius: '10px'
   },
   h5: {
     marginBottom: theme.spacing(4),
