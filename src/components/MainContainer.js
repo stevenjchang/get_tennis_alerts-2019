@@ -4,10 +4,10 @@ import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import theme from "../onepirate/modules/theme";
-import Scores from './Scores';
 
+import Alerts from './Alerts/Alerts';
 import Home from '../onepirate/Home';
-// import ProductHero from '../onepirate/modules/views/ProductHero'
+import Scores from './Scores';
 
 const useStyles = makeStyles({
   root: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 
 const MainContainer = () => {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(2);
 
   function handleChange(event, newValue) {
     setValue(newValue);
@@ -46,7 +46,7 @@ const MainContainer = () => {
       </Paper>
       {value === 0 && <Home />} 
       {value === 1 && <Scores />}
-      {value === 2 && <h1>Alerts</h1>}
+      {value === 2 && <Alerts /> }
     </>
   );
 }
