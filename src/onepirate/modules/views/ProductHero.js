@@ -24,7 +24,7 @@ const styles = theme => ({
   },
   button: {
     minWidth: 200,
-    borderRadius: '10px'
+    borderRadius: '10px',
   },
   h5: {
     marginBottom: theme.spacing(4),
@@ -94,7 +94,6 @@ function ProductHero(props) {
         href="/#sign-up"
         onClick={() => ga.trackSignUpClick(2)}
       >
-        {/* Register */}
         Choose Players
       </Button>
       <Typography variant="h8" color="inherit" className={classes.more}>

@@ -16,13 +16,13 @@ import Email from '../components/Email/Email';
 function Index() {
   return (
     <React.Fragment>
-      <AppAppBar />
+      {/* <AppAppBar /> */}
       <ProductHero />
       {/* <Email /> */}
       {/* <ProductValues /> */}
       {/* <ProductCategories /> */}
       <ProductHowItWorks />
-      <ProductCTA />
+      {/* <ProductCTA /> */}
       <ProductSmokingHero />
       {/* <AppFooter /> */}
     </React.Fragment>

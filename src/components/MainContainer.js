@@ -6,8 +6,8 @@ import Tab from "@material-ui/core/Tab";
 import theme from "../onepirate/modules/theme";
 import Scores from './Scores';
 
-// import Home from '../onepirate/Home';
-import ProductHero from '../onepirate/modules/views/ProductHero'
+import Home from '../onepirate/Home';
+// import ProductHero from '../onepirate/modules/views/ProductHero'
 
 const useStyles = makeStyles({
   root: {
@@ -44,7 +44,7 @@ const MainContainer = () => {
           <Tab label="ALERTS" style={{ minWidth: "33%" }} />
         </Tabs>
       </Paper>
-      {value === 0 && <ProductHero />} 
+      {value === 0 && <Home />} 
       {value === 1 && <Scores />}
       {value === 2 && <h1>Alerts</h1>}
     </>

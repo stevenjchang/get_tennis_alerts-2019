@@ -10,47 +10,48 @@ import ga from "../../../util/ReactGA";
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    display: "flex",
     backgroundColor: theme.palette.secondary.light,
-    overflow: 'hidden',
+    overflow: "hidden"
   },
   container: {
     marginTop: theme.spacing(10),
     marginBottom: theme.spacing(15),
-    position: 'relative',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
   },
   item: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: theme.spacing(0, 5),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: theme.spacing(0, 5)
   },
   title: {
-    marginBottom: theme.spacing(14),
+    marginBottom: theme.spacing(14)
   },
   number: {
     fontSize: 24,
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.secondary.main,
-    fontWeight: theme.typography.fontWeightMedium,
+    fontWeight: theme.typography.fontWeightMedium
   },
   image: {
     height: 55,
     marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(4),
+    marginBottom: theme.spacing(4)
   },
   curvyLines: {
-    pointerEvents: 'none',
-    position: 'absolute',
+    pointerEvents: "none",
+    position: "absolute",
     top: -180,
-    opacity: 0.7,
+    opacity: 0.7
   },
   button: {
     marginTop: theme.spacing(8),
-  },
+    borderRadius: "10px",
+  }
 });
 
 function ProductHowItWorks(props) {
