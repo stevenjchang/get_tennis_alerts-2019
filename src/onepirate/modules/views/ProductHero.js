@@ -61,9 +61,9 @@ function ProductHero(props) {
     <ProductHeroLayout backgroundClassName={classes.background}>
       {/* Increase the network loading priority of the background image. */}
       <img style={{ display: "none" }} src={backgroundImage} alt="" />
-      <Paper className={classes.paper}>
+      {/* <Paper className={classes.paper}>
         The draw for Wimbledon will be available starting 06/28
-      </Paper>
+      </Paper> */}
       <Typography
         color="inherit"
         align="center"
