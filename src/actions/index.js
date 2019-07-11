@@ -9,6 +9,7 @@ import {
   SET_TIME_ZONE,
   SHOW_SIGN_UP_FORM,
   SHOW_SIGN_UP_FORM_ERROR,
+  TOGGLE_SHOW_HISTORY,
 } from "../constants";
 
 export const getTournamentData = () => {
@@ -38,6 +39,13 @@ export const clearSelectedPlayers = () => {
   }
 }
 
+export const setTimeZone = (offset) => {
+  return {
+    type: SET_TIME_ZONE,
+    data: offset,
+  }
+};
+
 export const toggleShowSignUpForm = toggleName => {
   return {
     type: SHOW_SIGN_UP_FORM,
@@ -45,9 +53,11 @@ export const toggleShowSignUpForm = toggleName => {
   };
 };
 
-export const setTimeZone = (offset) => {
-  return {
-    type: SET_TIME_ZONE,
-    data: offset,
+export const toggleShowHistory = () => {
+  return (dispatch, getState) => {
+    dispatch({
+      type: TOGGLE_SHOW_HISTORY,
+      data: !getState().showHistory,
+    })
   }
 };

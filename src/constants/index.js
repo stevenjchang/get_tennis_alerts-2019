@@ -7,4 +7,6 @@ export const SET_SELECTED_PLAYERS_ERROR = 'SET_SELECTED_PLAYERS_ERROR';
 export const SET_TIME_ZONE = "SET_TIME_ZONE";
 export const SHOW_SIGN_UP_FORM = "SHOW_SIGN_UP_FORM";
 export const SHOW_SIGN_UP_FORM_ERROR = "SHOW_SIGN_UP_FORM_ERROR";
+export const TOGGLE_SHOW_HISTORY = "TOGGLE_SHOW_HISTORY";
+
 export const LAMBDA_URI = "/.netlify/functions";
