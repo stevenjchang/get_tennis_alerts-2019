@@ -5,7 +5,6 @@ import {
   getTournamentData,
   setActiveTab,
   setSelectedPlayers,
-  setTimeZone,
   toggleShowHistory,
   toggleShowSignUpForm,
 } from "../actions";
@@ -28,7 +27,6 @@ const mapDispatchToProps = (dispatch) => {
     setActiveTab: (index) => dispatch(setActiveTab(index)),
     setSelectedPlayers: selectedPlayers =>
       dispatch(setSelectedPlayers(selectedPlayers)),
-    setTimeZone: offset => dispatch(setTimeZone(offset)),
     toggleShowHistory: () => dispatch(toggleShowHistory()),
     toggleShowSignUpForm: (toggleName) => dispatch(toggleShowSignUpForm(toggleName))
   };

@@ -4,7 +4,6 @@ import selectedPlayers from './selectedPlayers';
 import showHistory from './showHistory';
 import showSignUpForm from './showSignUpForm';
 import tennis from './tennis'
-import timeZone from './timeZone';
 
 
 const rootReducer = combineReducers({
@@ -13,7 +12,6 @@ const rootReducer = combineReducers({
   showHistory,
   showSignUpForm,
   tennis,
-  timeZone,
 });
 
  export default rootReducer; 

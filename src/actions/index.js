@@ -7,7 +7,6 @@ import {
   SET_ALL_PLAYER_NAMES,
   SET_ACTIVE_TAB,
   SET_SELECTED_PLAYERS,
-  SET_TIME_ZONE,
   SHOW_SIGN_UP_FORM,
   SHOW_SIGN_UP_FORM_ERROR,
   TOGGLE_SHOW_HISTORY,
@@ -39,13 +38,6 @@ export const clearSelectedPlayers = () => {
     type: CLEAR_SELECTED_PLAYERS,
   }
 }
-
-export const setTimeZone = (offset) => {
-  return {
-    type: SET_TIME_ZONE,
-    data: offset,
-  }
-};
 
 export const toggleShowSignUpForm = toggleName => {
   return {
