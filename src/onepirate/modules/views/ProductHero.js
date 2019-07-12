@@ -1,4 +1,5 @@
 import React from 'react';
+import connectTennis from '../../../containers/connectTennis';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '../components/Button';
@@ -50,6 +51,11 @@ const styles = theme => ({
 function ProductHero(props) {
   const { classes } = props;
 
+  const handleSubmit = () => {
+    props.setActiveTab(2);
+    ga.trackSignUpClick(2);
+  }
+
   return (
     <ProductHeroLayout backgroundClassName={classes.background}>
       <img style={{ display: "none" }} src={backgroundImage} alt="" />
@@ -90,9 +96,7 @@ function ProductHero(props) {
         variant="contained"
         size="large"
         className={classes.button}
-        component="a"
-        href="/#sign-up"
-        onClick={() => ga.trackSignUpClick(2)}
+        onClick={handleSubmit}
       >
         Choose Players
       </Button>
@@ -108,4 +112,4 @@ ProductHero.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ProductHero);
+export default connectTennis(withStyles(styles)(ProductHero));

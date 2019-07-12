@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import connectTennis from "../../containers/connectTennis";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "../../onepirate/modules/components/Button";
 import Typography from "../../onepirate/modules/components/Typography";
@@ -60,4 +61,6 @@ const EmailSignUp = () => {
   );
 };
 
-export default EmailSignUp;
+const ConnectTennisEmailSignUp = connectTennis(EmailSignUp);
+
+export default ConnectTennisEmailSignUp;

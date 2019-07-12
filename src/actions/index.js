@@ -5,6 +5,7 @@ import {
   GET_TOURNAMENT_DATA,
   GET_TOURNAMENT_DATA_ERROR,
   SET_ALL_PLAYER_NAMES,
+  SET_ACTIVE_TAB,
   SET_SELECTED_PLAYERS,
   SET_TIME_ZONE,
   SHOW_SIGN_UP_FORM,
@@ -61,3 +62,10 @@ export const toggleShowHistory = () => {
     })
   }
 };
+
+export const setActiveTab = (index = 0) => {
+  return {
+    type: SET_ACTIVE_TAB,
+    data: index,
+  }
+}

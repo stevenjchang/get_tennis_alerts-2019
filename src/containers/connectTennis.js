@@ -3,6 +3,7 @@ import _get from 'lodash.get';
 import {
   clearSelectedPlayers,
   getTournamentData,
+  setActiveTab,
   setSelectedPlayers,
   setTimeZone,
   toggleShowHistory,
@@ -11,6 +12,7 @@ import {
 
 const mapStateToProps = (state) => {
   return {
+    activeTab: state.activeTab,
     selectedPlayers: state.selectedPlayers,
     showHistory: state.showHistory,
     showSignUpForm: state.showSignUpForm,
@@ -23,6 +25,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     clearSelectedPlayers: () => dispatch(clearSelectedPlayers()),
     getTournamentData: () => dispatch(getTournamentData()),
+    setActiveTab: (index) => dispatch(setActiveTab(index)),
     setSelectedPlayers: selectedPlayers =>
       dispatch(setSelectedPlayers(selectedPlayers)),
     setTimeZone: offset => dispatch(setTimeZone(offset)),

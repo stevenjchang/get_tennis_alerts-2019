@@ -1,4 +1,5 @@
 import React from "react";
+import connectTennis from '../containers/connectTennis';
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
@@ -19,20 +20,19 @@ const useStyles = makeStyles({
 });
 
 
-const MainContainer = () => {
+const MainContainer = ({ activeTab, setActiveTab}) => {
   const classes = useStyles();
-  const [value, setValue] = React.useState(2);
 
   function handleChange(event, newValue) {
-    setValue(newValue);
+    setActiveTab(newValue);
   }
 
   return (
     <>
       <Paper className={classes.root}>
         <Tabs
-          value={value}
-          onChange={handleChange}
+          value={activeTab}
+          onChange={(handleChange)}
           variant="standard"
           // indicatorColor="primary"
           // textColor="primary"
@@ -44,11 +44,11 @@ const MainContainer = () => {
           <Tab label="ALERTS" style={{ minWidth: "33%" }} />
         </Tabs>
       </Paper>
-      {value === 0 && <Home />} 
-      {value === 1 && <Scores />}
-      {value === 2 && <Alerts /> }
+      {activeTab === 0 && <Home />}
+      {activeTab === 1 && <Scores />}
+      {activeTab === 2 && <Alerts />}
     </>
   );
 }
 
-export default MainContainer;
+export default connectTennis(MainContainer);
