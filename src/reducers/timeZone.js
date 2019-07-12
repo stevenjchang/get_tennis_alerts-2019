@@ -7,6 +7,6 @@ const timeZone = (state='-7', action) => {
     default:
       return state;
   }
-}
+};
 
 export default timeZone;

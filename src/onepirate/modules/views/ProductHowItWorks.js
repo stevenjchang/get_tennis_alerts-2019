@@ -1,4 +1,5 @@
 import React from 'react';
+import connectTennis from '../../../containers/connectTennis';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -10,51 +11,57 @@ import ga from "../../../util/ReactGA";
 
 const styles = theme => ({
   root: {
-    display: 'flex',
+    display: "flex",
     backgroundColor: theme.palette.secondary.light,
-    overflow: 'hidden',
+    overflow: "hidden"
   },
   container: {
     marginTop: theme.spacing(10),
     marginBottom: theme.spacing(15),
-    position: 'relative',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
   },
   item: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: theme.spacing(0, 5),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: theme.spacing(0, 5)
   },
   title: {
-    marginBottom: theme.spacing(14),
+    marginBottom: theme.spacing(14)
   },
   number: {
     fontSize: 24,
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.secondary.main,
-    fontWeight: theme.typography.fontWeightMedium,
+    fontWeight: theme.typography.fontWeightMedium
   },
   image: {
     height: 55,
     marginTop: theme.spacing(4),
-    marginBottom: theme.spacing(4),
+    marginBottom: theme.spacing(4)
   },
   curvyLines: {
-    pointerEvents: 'none',
-    position: 'absolute',
+    pointerEvents: "none",
+    position: "absolute",
     top: -180,
-    opacity: 0.7,
+    opacity: 0.7
   },
   button: {
     marginTop: theme.spacing(8),
-  },
+    borderRadius: "10px",
+  }
 });
 
 function ProductHowItWorks(props) {
   const { classes } = props;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.setActiveTab(2);
+    ga.trackSignUpClick(3);
+  }
 
   return (
     <section className={classes.root}>
@@ -124,9 +131,7 @@ function ProductHowItWorks(props) {
           size="large"
           variant="contained"
           className={classes.button}
-          component="a"
-          href="/#sign-up"
-          onClick={() => ga.trackSignUpClick(3)}
+          onClick={handleSubmit}
         >
           Choose Players
         </Button>
@@ -139,4 +144,4 @@ ProductHowItWorks.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ProductHowItWorks);
+export default connectTennis(withStyles(styles)(ProductHowItWorks));

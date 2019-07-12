@@ -19,7 +19,7 @@ import TimeZoneSelect from '../../../components/TimeZoneSelect';
 
 const styles = theme => ({
   root: {
-    marginTop: theme.spacing(10),
+    marginTop: theme.spacing(2),
     marginBottom: 0,
     display: "flex"
   },
@@ -30,7 +30,7 @@ const styles = theme => ({
     display: "flex",
     justifyContent: "center",
     backgroundColor: "#e4e9ed",
-    padding: theme.spacing(8, 3)
+    // padding: theme.spacing(8, 3)
   },
   cardContent: {
     maxWidth: 400

@@ -23,12 +23,6 @@ class App extends Component {
   }
 
   render() {
-
-    return (
-      <Home />
-    )
-
-    //NOTE: simple way to toggle in dev while transitioning themes
     return (
       <div className="App">
         <Container maxWidth="sm">

@@ -1,4 +1,5 @@
 import React from 'react';
+import connectTennis from '../../../containers/connectTennis';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '../components/Button';
@@ -23,7 +24,8 @@ const styles = theme => ({
     backgroundPosition: "center"
   },
   button: {
-    minWidth: 200
+    minWidth: 200,
+    borderRadius: '10px',
   },
   h5: {
     marginBottom: theme.spacing(4),
@@ -37,33 +39,27 @@ const styles = theme => ({
   },
   title1: {
     maxWidth: "625px",
-    fontSize: pxToRem(50),
+    fontSize: pxToRem(40),
     fontFamily: "Roboto",
+    marginTop: theme.spacing(4),
     [theme.breakpoints.down("sm")]: {
       fontSize: pxToRem(39)
     }
   },
-  paper: {
-    padding: theme.spacing(2, 6),
-    backgroundColor: "#ffff7e",
-    marginBottom: "30px",
-    [theme.breakpoints.down("sm")]: {
-      padding: theme.spacing(2, 2),
-      fontSize: pxToRem(12)
-    }
-  }
 });
 
 function ProductHero(props) {
   const { classes } = props;
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.setActiveTab(2);
+    ga.trackSignUpClick(2);
+  }
+
   return (
     <ProductHeroLayout backgroundClassName={classes.background}>
-      {/* Increase the network loading priority of the background image. */}
       <img style={{ display: "none" }} src={backgroundImage} alt="" />
-      <Paper className={classes.paper}>
-        The draw for Wimbledon will be available starting 06/28
-      </Paper>
       <Typography
         color="inherit"
         align="center"
@@ -101,11 +97,8 @@ function ProductHero(props) {
         variant="contained"
         size="large"
         className={classes.button}
-        component="a"
-        href="/#sign-up"
-        onClick={() => ga.trackSignUpClick(2)}
+        onClick={handleSubmit}
       >
-        {/* Register */}
         Choose Players
       </Button>
       <Typography variant="h8" color="inherit" className={classes.more}>
@@ -120,4 +113,4 @@ ProductHero.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ProductHero);
+export default connectTennis(withStyles(styles)(ProductHero));
