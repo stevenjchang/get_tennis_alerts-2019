@@ -37,6 +37,7 @@ const EmailSignUp = (props) => {
       .then((res) => {
         console.log('Sign Up complete ==>', res);
         toggleSuccessMessage(true);
+        setEmail('')
       })
       .catch((err) => { console.log('Error in EmailSignUp ==>', err) })
   }
