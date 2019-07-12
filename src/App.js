@@ -25,10 +25,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" style={{ padding: '0' }}>
           {/* <NavBar /> */}
           {/* <LambdaDemo /> */}
-          <Container maxWidth="xs">
+          <Container maxWidth="xs" style={{ padding: '0' }}>
             <MainContainer />
             {/* <Tennis /> */}
           </Container>

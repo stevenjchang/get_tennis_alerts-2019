@@ -12,7 +12,6 @@ import Scores from './Scores';
 
 const useStyles = makeStyles({
   root: {
-    marginTop: theme.spacing(2),
     flexGrow: 1,
     color: "white",
     backgroundColor: "#00796B"
