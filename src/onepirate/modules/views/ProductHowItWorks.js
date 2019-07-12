@@ -1,4 +1,5 @@
 import React from 'react';
+import connectTennis from '../../../containers/connectTennis';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -56,6 +57,11 @@ const styles = theme => ({
 
 function ProductHowItWorks(props) {
   const { classes } = props;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.setActiveTab(2);
+    ga.trackSignUpClick(3);
+  }
 
   return (
     <section className={classes.root}>
@@ -125,9 +131,7 @@ function ProductHowItWorks(props) {
           size="large"
           variant="contained"
           className={classes.button}
-          component="a"
-          href="/#sign-up"
-          onClick={() => ga.trackSignUpClick(3)}
+          onClick={handleSubmit}
         >
           Choose Players
         </Button>
@@ -140,4 +144,4 @@ ProductHowItWorks.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ProductHowItWorks);
+export default connectTennis(withStyles(styles)(ProductHowItWorks));

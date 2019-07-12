@@ -51,7 +51,8 @@ const styles = theme => ({
 function ProductHero(props) {
   const { classes } = props;
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     props.setActiveTab(2);
     ga.trackSignUpClick(2);
   }
