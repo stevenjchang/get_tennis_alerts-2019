@@ -13,7 +13,7 @@
     "downshift": "^3.2.10",
     "email-templates": "2",
     "encoding": "^0.1.12",
-    "lodash.get": "^4.4.2",
+    "lodash.get": "^4.17.13",
     "moment-timezone": "^0.5.25",
     "mongoose": "^5.5.14",
     "node-fetch": "^2.3.0",
