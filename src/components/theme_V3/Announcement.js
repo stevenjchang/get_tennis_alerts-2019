@@ -7,7 +7,7 @@ const styles = theme => ({
     backgroundColor: '#76ff03',
     opacity: '0.95',
     borderRadius: '10px',
-    margin: '13% 15%',
+    margin: '10% 15% 15% 15%',
     padding: '3px',
   },
   p: {
