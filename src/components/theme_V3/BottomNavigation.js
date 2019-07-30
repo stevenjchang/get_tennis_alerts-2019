@@ -7,13 +7,20 @@ import Button from "@material-ui/core/Button";
 const useStyles = makeStyles({
   root: {
     bottom: "0px",
-    paddingTop: '15px',
-    paddingBottom: '15px',
-    marginLeft: '-3px',
-    marginRight: '-30px',
+    paddingTop: "15px",
+    paddingBottom: "15px",
+    marginLeft: "-3px",
+    marginRight: "-30px",
     width: "102%",
     backgroundColor: "#00c853",
     position: "sticky"
+  },
+  button1: {
+    backgroundColor: "yellow",
+    width: "60%",
+  },
+  button2: {
+    width: "60%"
   }
 });
 
@@ -22,9 +29,9 @@ const BottomNavigation = (props) => {
 
   return (
     <Container className={classes.root}>
-        <Button>Sign Up</Button>
-        <br />
-        <Button>Customize Players</Button>
+      <Button className={classes.button1}>Sign Up</Button>
+      <br />
+      <Button className={classes.button2}>Customize Players</Button>
     </Container>
   );
 }

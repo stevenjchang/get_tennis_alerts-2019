@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 
 const styles = theme => ({
   root: {
-    backgroundColor: "yellow",
+    backgroundColor: '#76ff03',
     opacity: '0.95',
     borderRadius: '10px',
     margin: '13% 15%',
