@@ -28,7 +28,7 @@ const Scores = ({ allMatches, getTournamentData, selectedPlayers, showHistory })
       {results.map(matchInfo => (
         <TennisMatchTable matchInfo={matchInfo} />
       ))}
-      <FloatingActionButton />
+      {/* <FloatingActionButton /> */}
     </>
   );
 };
