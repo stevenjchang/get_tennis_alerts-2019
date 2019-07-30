@@ -6,7 +6,7 @@ const styles = theme => ({
   heading: {
     color: "white",
     fontSize: "36px",
-    fontWeight: "600",
+    fontWeight: "700",
     marginTop: "45px",
     fontFamily: "Open Sans"
   },
@@ -25,7 +25,7 @@ function MainPage(props) {
   return (
     <>
       <Typography variant="h1" className={classes.heading}>
-        get custom match reminders
+        GET CUSTOM MATCH REMINDERS
       </Typography>
       <Typography variant="subtitle2" className={classes.subtitle2}>
         - straight to your inbox
