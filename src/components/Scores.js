@@ -24,8 +24,6 @@ const Scores = ({ allMatches, getTournamentData, selectedPlayers, showHistory })
 
   return (
     <>
-      <p>choose players:</p>
-      <PlayerSearchBar />
       <ToggleOptions />
       {results.map(matchInfo => (
         <TennisMatchTable matchInfo={matchInfo} />

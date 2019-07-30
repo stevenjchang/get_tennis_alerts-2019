@@ -18,13 +18,15 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     overflowX: "auto",
     borderRadius: "0px",
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
+    opacity: '0.9'
+    // backgroundColor: "#00c853"
   },
   table: {
-    minWidth: 350
+    minWidth: 350,
   },
   tableHead: {
-    backgroundColor: "#F5F5F5",
+    backgroundColor: "#b9f6ca",
     fontSize: "0.7rem",
     padding: "0.1rem"
   },
@@ -36,11 +38,12 @@ const useStyles = makeStyles(theme => ({
   tableCell: {
     padding: "0.5rem",
     fontSize: "0.7rem",
-    borderBottom: "0px"
+    borderBottom: "0px",
+    // color: "white"
   },
   tableCellCourt: {
     fontSize: "8.5px",
-    padding: "0.4rem 0.5rem",
+    padding: "0.4rem 0.5rem"
   }
 }));
 
