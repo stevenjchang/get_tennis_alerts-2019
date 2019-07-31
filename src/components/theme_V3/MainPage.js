@@ -35,7 +35,7 @@ function MainPage(props) {
         • follow your favorite players
       </Typography>
       <Typography variant="subtitle2" className={classes.subtitle2}>
-        • straight to your inbox
+        • sent straight to your inbox
       </Typography>
     </>
   );
