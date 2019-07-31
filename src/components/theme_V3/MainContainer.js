@@ -12,8 +12,8 @@ class MainContainer extends Component {
     return (
       <Container maxWidth="xs">
         <NavBar />
-        <Announcement />
         <MainPage />
+        <Announcement />
         <Scores />
         <BottomNavigation />
       </Container>

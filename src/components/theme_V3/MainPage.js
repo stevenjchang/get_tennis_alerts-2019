@@ -5,9 +5,9 @@ import Typography from "@material-ui/core/Typography";
 const styles = theme => ({
   heading: {
     color: "white",
-    fontSize: "36px",
+    fontSize: "34px",
     fontWeight: "700",
-    marginTop: "45px",
+    margin: "40px 40px 0 40px",
     fontFamily: "Open Sans"
   },
   subtitle2: {
