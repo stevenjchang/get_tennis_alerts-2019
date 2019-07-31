@@ -8,14 +8,18 @@ const styles = theme => ({
     fontSize: "34px",
     fontWeight: "700",
     margin: "40px 40px 0 40px",
+    borderColor: 'white',
     fontFamily: "Open Sans"
   },
   subtitle2: {
     color: "white",
-    fontSize: "16px",
+    fontSize: "13px",
     fontWeight: "400",
+    opacity: '0.9',
     marginTop: "5px",
-    fontFamily: "Open Sans"
+    fontFamily: "Open Sans",
+    // marginLeft: '110px',
+    // textAlign: 'left',
   }
 });
 
@@ -28,10 +32,10 @@ function MainPage(props) {
         GET CUSTOM MATCH REMINDERS
       </Typography>
       <Typography variant="subtitle2" className={classes.subtitle2}>
-        - straight to your inbox
+        • follow your favorite players
       </Typography>
       <Typography variant="subtitle2" className={classes.subtitle2}>
-        - follow your favorite players
+        • straight to your inbox
       </Typography>
     </>
   );
