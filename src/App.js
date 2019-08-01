@@ -9,7 +9,7 @@ import Home from './onepirate/Home';
 // import LambdaDemo from './util/LambdaDemo';
 import NavBar from './components/NavBar';
 import Tennis from './components/Tennis';
-import MainContainer from './components/MainContainer';
+import MainContainer from './components/theme_V3/MainContainer';
 
 
 class App extends Component {
