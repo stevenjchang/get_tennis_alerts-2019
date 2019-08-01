@@ -5,8 +5,6 @@ import BottomNavigation from './BottomNavigation';
 import MainPage from './MainPage';
 import NavBar from '../NavBar';
 import Scores from '../Scores';
-
-import EmailSignUp from '../Alerts/EmailSignUp'
 import SignUpModal from './views/SignUpModal/SignUpModal'
 
 
@@ -18,7 +16,6 @@ class MainContainer extends Component {
         <MainPage />
         <Announcement />
         <Scores />
-        <EmailSignUp />
         <SignUpModal />
         <BottomNavigation />
       </Container>
