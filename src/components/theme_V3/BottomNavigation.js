@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import connectTennis from '../../containers/connectTennis';
 import { makeStyles } from "@material-ui/core/styles";
 // import MuiBottomNavigation from "@material-ui/core/BottomNavigation";
 import Container from "@material-ui/core/Container";
@@ -17,23 +18,25 @@ const useStyles = makeStyles({
   },
   button1: {
     backgroundColor: "yellow",
-    width: "60%",
+    width: "60%"
   },
   button2: {
-    width: "60%"
+    width: "60%",
   }
 });
 
-const BottomNavigation = (props) => {
-  const classes = useStyles()
+const BottomNavigation = ({ toggleShowSignUpForm }) => {
+  const classes = useStyles();
 
   return (
     <Container className={classes.root}>
-      <Button className={classes.button1}>Sign Up</Button>
+      <Button className={classes.button1} onClick={toggleShowSignUpForm}>
+        Sign Up
+      </Button>
       <br />
       <Button className={classes.button2}>Customize Players</Button>
     </Container>
   );
-}
+};
 
-export default BottomNavigation;
+export default connectTennis(BottomNavigation);
