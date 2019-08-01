@@ -22,7 +22,8 @@ const useStyles = makeStyles({
   noSpamText: {
     marginTop: theme.spacing(1),
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
+    fontSize: '12px',
   }
 });
 
@@ -82,6 +83,4 @@ const EmailSignUp = (props) => {
   );
 };
 
-const ConnectTennisEmailSignUp = connectTennis(EmailSignUp);
-
-export default ConnectTennisEmailSignUp;
+export default connectTennis(EmailSignUp);

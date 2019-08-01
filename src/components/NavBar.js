@@ -12,15 +12,23 @@ import Container from '@material-ui/core/Container';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    backgroundColor: "#00c853",
+    boxShadow: 'none',
+  },
+  container: {
+    padding: '0 0',
   },
   menuButton: {
     // marginRight: theme.spacing(2),
-    color: 'black',
+    color: "white",
   },
   title: {
     flexGrow: 1,
-    color: 'green',
-  },
+    color: "white",
+    fontFamily: "Open Sans",
+    fontSize: '29px',
+    fontWeight: '600',
+  }
 }));
 
 
@@ -28,12 +36,12 @@ export default function ButtonAppBar() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static" style={{ backgroundColor: "white" }}>
-        <Container maxWidth="lg">
+    <>
+      <AppBar position="static" className={classes.root}>
+        <Container maxWidth="lg" className={classes.container}>
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
-              Tennis Alerts
+              tennis alerts
             </Typography>
 
             <IconButton
@@ -47,6 +55,6 @@ export default function ButtonAppBar() {
           </Toolbar>
         </Container>
       </AppBar>
-    </div>
+    </>
   );
 }
