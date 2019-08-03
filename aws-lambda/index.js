@@ -1,18 +1,17 @@
 // const transporter
 // const mongoDbMailingList
 const _getUserSubscriptionList = require('./helpers/_getUserSubscriptionList')
-
-
+const _getTournamentData = require('./helpers/_getTournamentData')
 
 const emailDailyScheduleToSubscribers = async () => {
 // _getUserSubscriptionList + _getTournamentData(name)
 // _generateCustomEmailContexts
 // generateTemplates
 // sendEmail
-let result =
-await _getUserSubscriptionList();
+// let userSubscriptionList = await _getUserSubscriptionList();
+let tournamentData = await _getTournamentData();
 
-console.log('result ==>', result);
+console.log('tournamentData ==>', tournamentData);
 }
 
 emailDailyScheduleToSubscribers()
