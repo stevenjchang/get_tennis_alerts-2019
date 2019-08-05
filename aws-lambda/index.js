@@ -2,16 +2,18 @@
 // const mongoDbMailingList
 const _getUserSubscriptionList = require('./helpers/_getUserSubscriptionList')
 const _getTournamentData = require('./helpers/_getTournamentData')
+const _generateEmailContexts = require('./helpers/_generateEmailContexts')
 
 const emailDailyScheduleToSubscribers = async () => {
 // _getUserSubscriptionList + _getTournamentData(name)
-// _generateCustomEmailContexts
+// _generateEmailContexts
 // generateTemplates
 // sendEmail
-// let userSubscriptionList = await _getUserSubscriptionList();
+let userSubscriptionList = await _getUserSubscriptionList();
 let tournamentData = await _getTournamentData();
+let emailContexts = _generateEmailContexts(userSubscriptionList, tournamentData)
 
-console.log('tournamentData ==>', tournamentData);
+console.log("emailContexts ==>", emailContexts);
 }
 
 emailDailyScheduleToSubscribers()
