@@ -1,19 +1,15 @@
-// const transporter
-// const mongoDbMailingList
-const _getUserSubscriptionList = require('./helpers/_getUserSubscriptionList')
-const _getTournamentData = require('./helpers/_getTournamentData')
-const _generateEmailContexts = require('./helpers/_generateEmailContexts')
+const _getUserSubscriptionList = require('./helpers/_getUserSubscriptionList');
+const _getTournamentData = require('./helpers/_getTournamentData');
+const _generateEmailContexts = require('./helpers/_generateEmailContexts');
+const _generateEmailTemplates = require('./helpers/_generateEmailTemplates');
 
 const emailDailyScheduleToSubscribers = async () => {
-// _getUserSubscriptionList + _getTournamentData(name)
-// _generateEmailContexts
-// generateTemplates
-// sendEmail
-let userSubscriptionList = await _getUserSubscriptionList();
-let tournamentData = await _getTournamentData();
-let emailContexts = _generateEmailContexts(userSubscriptionList, tournamentData)
+  let userSubscriptionList = await _getUserSubscriptionList();
+  let tournamentData = await _getTournamentData();
+  let emailContexts = _generateEmailContexts(userSubscriptionList, tournamentData);
+  let emailTemplates = await _generateEmailTemplates('alerts', emailContexts);
 
-console.log("emailContexts ==>", emailContexts);
+  console.log('emailTemplates ==>', emailTemplates);
 }
 
 emailDailyScheduleToSubscribers()
