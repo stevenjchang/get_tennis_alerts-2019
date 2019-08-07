@@ -4,19 +4,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ReactGA from 'react-ga';
 
 import "./App.css"
-import BottomNavigation from './components/BottomNavigation';
 import Container from '@material-ui/core/Container';
-import Home from './onepirate/Home';
-// import LambdaDemo from './util/LambdaDemo';
-import NavBar from './components/NavBar';
-import Tennis from './components/Tennis';
 import MainContainer from './components/theme_V3/MainContainer';
-
-const Error = () => (
-  <div>
-    <h1>Route does not exist</h1>
-  </div>
-);
 
 class App extends Component {
   constructor(props) {
@@ -27,18 +16,13 @@ class App extends Component {
       ReactGA.pageview(window.location.pathname + window.location.hash);
     }
   }
-
   render() {
     return (
       <div className="App">
         <Container maxWidth="sm" style={{ padding: '0' }}>
-          {/* <NavBar /> */}
-          {/* <LambdaDemo /> */}
           <Container maxWidth="xs" style={{ padding: '0' }}>
             <MainContainer />
-            {/* <Tennis /> */}
           </Container>
-          {/* <BottomNavigation /> */}
         </Container>
       </div>
     );
@@ -51,7 +35,6 @@ class Router extends Component {
       <BrowserRouter>
         <div>
           <Switch>
-            <Route path="/list" component={Error} />
             <Route path="/" component={App} exact />
             {/* <Route path="/about" component={About} /> */}
           </Switch>
