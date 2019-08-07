@@ -1,5 +1,6 @@
 import 'babel-polyfill';
 import React, { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ReactGA from 'react-ga';
 
 import "./App.css"
@@ -11,6 +12,11 @@ import NavBar from './components/NavBar';
 import Tennis from './components/Tennis';
 import MainContainer from './components/theme_V3/MainContainer';
 
+const Error = () => (
+  <div>
+    <h1>Route does not exist</h1>
+  </div>
+);
 
 class App extends Component {
   constructor(props) {
@@ -39,4 +45,20 @@ class App extends Component {
   }
 }
 
-export default App
+class Router extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          <Switch>
+            <Route path="/list" component={Error} />
+            <Route path="/" component={App} exact />
+            {/* <Route path="/about" component={About} /> */}
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
+}
+
+export default Router;
