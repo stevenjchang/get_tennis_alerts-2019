@@ -16,13 +16,10 @@ const emailDailyScheduleToSubscribers = async () => {
 
 }
 
-emailDailyScheduleToSubscribers()
-
 exports.handler = async (event, context) => {
 
   try {
     const emailSuccessfullySentMessage = await emailDailyScheduleToSubscribers();
-
 
     const response = {
       statusCode: 200,
@@ -33,14 +30,4 @@ exports.handler = async (event, context) => {
 
   }
 
-
 };
-
-/*
-handler
-  input:  ???
-  output:  confirmation message of all the users
-
-  calls emailDailyScheduleToSubscribers
-
-*/
