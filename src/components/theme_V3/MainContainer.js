@@ -7,7 +7,6 @@ import NavBar from '../NavBar';
 import Scores from '../Scores';
 import SignUpModal from './views/SignUpModal/SignUpModal'
 
-
 class MainContainer extends Component {
   render() {
     return (
