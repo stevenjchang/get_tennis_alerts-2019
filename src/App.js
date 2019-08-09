@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ReactGA from 'react-ga';
 
 import "./App.css"
+import About from './components/theme_V3/views/About';
 import Container from '@material-ui/core/Container';
 import MainContainer from './components/theme_V3/MainContainer';
 
@@ -36,7 +37,7 @@ class Router extends Component {
         <div>
           <Switch>
             <Route path="/" component={App} exact />
-            {/* <Route path="/about" component={About} /> */}
+            <Route path="/about" component={About} />
           </Switch>
         </div>
       </BrowserRouter>
