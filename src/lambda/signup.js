@@ -1,4 +1,5 @@
-const MongoClient = require("mongodb")
+// const MongoClient = require("mongodb").MongoClient;
+import mongoDB from 'mongodb'
 
 // require("dotenv").config();
 
