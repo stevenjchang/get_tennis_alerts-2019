@@ -63,18 +63,23 @@ exports.handler = function(event, context, callback) {
   );
   console.log("=> event.body: ", event.body);
 
-  const payload = JSON.parse(event.body);
+  // const payload = JSON.parse(event.body);
 
-  connectToDatabase(DB_URI)
-    .then(db => addEmailToMailingList(db, DB_NAME, payload))
-    .then(result => {
+  // connectToDatabase(DB_URI)
+  //   .then(db => addEmailToMailingList(db, DB_NAME, payload))
+  //   .then(result => {
+  //     callback(null, {
+  //       statusCode: 200,
+  //       body: JSON.stringify(result)
+  //     });
+  //   })
+  //   .catch(err => {
+  //     console.log("=> an error occurred: ", err);
+  //     callback(err);
+  //   });
+
       callback(null, {
         statusCode: 200,
-        body: JSON.stringify(result)
+        body: JSON.stringify({msg: 'hello'})
       });
-    })
-    .catch(err => {
-      console.log("=> an error occurred: ", err);
-      callback(err);
-    });
 };
