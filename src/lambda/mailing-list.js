@@ -1,7 +1,6 @@
 var nodemailer = require("nodemailer");
 require("dotenv").config();
 
-
 export async function handler(event, context) {
   var transporter = nodemailer.createTransport({
     service: "gmail",
