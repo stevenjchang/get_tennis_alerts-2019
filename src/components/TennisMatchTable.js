@@ -57,8 +57,7 @@ const _createResultRow = (playerName, resultArray) => {
 function DenseTable({ matchInfo }) {
   const classes = useStyles();
   let { dateTime, player1, player2, court } = matchInfo;
-  let [year, month] = dateTime.split('-');
-  let day = dateTime.slice(8, 10);
+  //TODO: calc isFinal using moment
   let isFinal = new Date(dateTime) < Date.now();
   let player1Row = _createResultRow(player1.name, player1.score);
   let player2Row = _createResultRow(player2.name, player2.score);
@@ -72,7 +71,7 @@ function DenseTable({ matchInfo }) {
               <TableCell className={classes.tableHeadFirstRow}>
                 {isFinal && <span>Final&nbsp;-&nbsp;</span>}
                 <span>
-                  {month}/{day}
+                  {moment(dateTime).format("M/DD")}
                 </span>
                 {!isFinal && (
                   <span>&nbsp;-&nbsp;{

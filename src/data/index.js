@@ -1,1 +1,1 @@
-export { tournament } from './wimbledonOpen0711';
+export { tournament } from './usopen/usopen0826';
